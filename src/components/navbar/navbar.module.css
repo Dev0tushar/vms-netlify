@@ -1,18 +1,20 @@
 .navbar_cont{
     display: flex;
-    width : 85% ; 
-    height :  60px ; 
+    width : 100% ; 
     align-items: center;
     justify-content: space-between;
-    margin: .75rem auto;
+    margin: 0rem auto;
     box-sizing: border-box;
-    padding: 1.25rem 1.25rem ; 
+    padding: 0rem 8.5rem ; 
     flex-wrap: wrap;
+    background: #FFFFFF;
+    
 }
 .deviceOnlineBox{
     margin: 0.65rem;
     display: flex;
     gap: 0.313rem ; 
+
 }
 .deviceOnlineHeader{
    font-family:  "Poppins", sans-serif; 

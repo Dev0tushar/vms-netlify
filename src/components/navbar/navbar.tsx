@@ -9,6 +9,7 @@ import userImage from "../../assets/userImage.svg";
 
 
 function Navbar() {
+
     return (
         <div className={styles.navbar_cont}>
             <div className={styles.companyDesc}>
