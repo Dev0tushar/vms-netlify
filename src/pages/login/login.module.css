@@ -1,3 +1,153 @@
-.navbar_cont{
-   
+.container {
+    width: 100%;
+
+}
+.loginDesc{
+    display: flex ; 
+    flex-direction: column;
+    gap: 0px ; 
+}
+.loginBox {
+    width: 38.625rem;
+    margin: 4.375rem auto;
+    border: 1px solid red;
+    padding: 6.25rem 3.125rem;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    
+
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginHeader {
+    font-family: Poppins;
+    font-size: 2.838rem;
+    font-weight: 600;
+    line-height: 4.275rem;
+    text-align: left;
+    margin-bottom: 0;
+
+}
+
+.loginPara {
+    font-family: Poppins;
+    font-size: 1.443rem;
+    font-weight: 400;
+    line-height: 2.165rem;
+    text-align: left;
+    margin-top: 0;
+
+}
+
+.input {
+
+    border: none;
+    width: 32rem;
+    height: 4.11rem;
+    top: 470.88px;
+    border-radius: 0.625rem 0px 0px 0px;
+    opacity: 0px;
+    background-color: #ffff;
+}
+
+.saveForgetBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.875rem;
+    align-items: center;
+}
+
+.saveForgetBox>div {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 1.028rem;
+    font-weight: 400;
+    line-height: 1.541rem;
+    text-align: right;
+    color: #181818
+}
+
+.saveForgetBox>span {
+    font-family: Poppins;
+    font-size: 1.028rem;
+    font-weight: 400;
+    line-height: 1.541rem;
+    text-align: right;
+    color: #181818
+}
+
+.checkbox {
+    color: #FF914D;
+    width: 14px;
+    height: 14px;
+    padding: 3.5px 2.33px 4.08px 2.33px;
+    opacity: 0px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+
+}
+
+.loginBtn {
+    width: 489.51px;
+    height: 62.88px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #FF914D;
+    border: none;
+    border-radius: 10px;
+    color: #ffff;
+    font-family: Poppins;
+    font-size: 1.146rem;
+    font-weight: 600;
+    line-height: 1.71rem;
+    text-align: center;
+}
+.bottom{
+    display: flex;
+    justify-content: center;
+    gap : 5px ; 
+
+}
+
+.dontHave{
+    font-family: Poppins;
+    font-size: 19.65px;
+    font-weight: 500;
+    line-height: 29.48px;
+    text-align: center;
+    
+}
+
+.signLink{
+    font-family: Poppins;
+    font-size: 19.65px;
+    font-weight: 500;
+    line-height: 29.48px;
+    text-align: center;
+    color : #FF914D ; 
+    
+}
+
+.lebel{
+    font-family: Poppins;
+font-size: 16.44px;
+font-weight: 500;
+line-height: 24.66px;
+text-align: left;
+
 }
