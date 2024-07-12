@@ -1,6 +1,5 @@
 import React from "react" ;
 import styles from "./home.module.css"
-import Navbar from "../../components/navbar/navbar";
 import Configuration from "../../components/configuration /configuration";
 import { configArrType } from "../../components/configuration /configuration";
 import liveIcon from "../../assets/liveIcon.svg";
@@ -10,7 +9,7 @@ import engine_warningIcon from "../../assets/engine_workingIcon.svg";
 
 function Home() {
 
-    let operation_arr : configArrType[] = [{
+    const operation_arr : configArrType[] = [{
         icon :liveIcon,
         header : "Live View"
     },
@@ -28,7 +27,7 @@ function Home() {
     }
 ] ;
 
-let config_arr : configArrType[] = [{
+const config_arr : configArrType[] = [{
     icon :liveIcon,
     header : "Device"
 },
@@ -46,7 +45,7 @@ let config_arr : configArrType[] = [{
 
     return (
         <div className={styles.container}>
-            <Navbar/>
+            
             <div className={styles.dashboardBox}>
                 <Configuration heading = "Operation" config_arr = {operation_arr}/>
                 <Configuration heading = "Configuration" config_arr = {config_arr}/>

@@ -30,7 +30,7 @@ function Navbar() {
             </Link>
           </div>
         </div>
-        <div className={styles.logobar}>
+        {/* <div className={styles.logobar}>
           <div className={styles.iconCont}>
             <img className={styles.icon} src={minusIcon} alt="" />
           </div>
@@ -40,7 +40,7 @@ function Navbar() {
           <div className={styles.iconCont}>
             <img className={styles.icon} src={circleIcon} alt="" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
