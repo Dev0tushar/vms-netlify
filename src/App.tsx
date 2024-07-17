@@ -3,8 +3,8 @@ import BlockData from "./components/blocks/commanBlock";
 import Navbar from "./components/navbar/navbar";
 // import SideBarMenu from "./components/sideMenu/sideBar";
 // import Navbar from "./components/navbar/navbar";
-import Home from "./pages/home/home";
-import Login from "./pages/login/login";
+import Home from "./components/pages/home/home";
+import Login from "./components/pages/login/login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {

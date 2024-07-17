@@ -1,11 +1,11 @@
 import React from "react" ;
 import styles from "./home.module.css"
-import Configuration from "../../components/configuration /configuration";
-import { configArrType } from "../../components/configuration /configuration";
-import liveIcon from "../../assets/liveIcon.svg";
-import playIcon from "../../assets/playIcon.svg";
-import vectorIcon from "../../assets/vectorIcon.svg";
-import engine_warningIcon from "../../assets/engine_workingIcon.svg";
+import Configuration from "../../configuration /configuration";
+import { configArrType } from "../../configuration /configuration";
+import liveIcon from "../../../assets/liveIcon.svg";
+import playIcon from "../../../assets/playIcon.svg";
+import vectorIcon from "../../../assets/vectorIcon.svg";
+import engine_warningIcon from "../../../assets/engine_workingIcon.svg";
 
 function Home() {
 

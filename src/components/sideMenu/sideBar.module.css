@@ -1,9 +1,15 @@
 .container {
-  width: 111px;
+  width: 133px;
   height: 100%;
   text-align: center;
   background-color: #ffffff;
+
+  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 .coulmnContainer {
-  margin-bottom: 55px;
+  margin-bottom: 72px;
+  margin-left: 9px;
 }

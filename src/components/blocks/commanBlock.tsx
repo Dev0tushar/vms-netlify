@@ -1,3 +1,4 @@
+import SideBarMenu from "../sideMenu/sideBar";
 import styles from "./commanBlock.module.css";
 
 function BlockData() {
@@ -20,6 +21,8 @@ function BlockData() {
     },
   ];
   return (
+    <div style={{display: "flex"}}>
+    <SideBarMenu />
     <div className={styles.container}>
       <div className={styles.titleNameIconOuterBox}>
         <div className={styles.titleNameIconBox}>
@@ -158,6 +161,7 @@ function BlockData() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ function Login() {
 <div className={styles.container}>
     <div className={styles.loginBox}>
         <div className={styles.loginDesc}>
-<h1 className={styles.loginHeader}>LoginIn</h1>
+<h1 className={styles.loginHeader}>LOG IN</h1>
          <p className ={styles.loginPara}>Enter your details and Log in</p>
         </div>
          
