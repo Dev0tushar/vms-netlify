@@ -1,7 +1,6 @@
 import React from "react" ;
 import styles from "./home.module.css"
-import Configuration from "../../configuration /configuration";
-import { configArrType } from "../../configuration /configuration";
+import Configuration, {configArrType} from "../../configuration /configuration";
 import liveIcon from "../../../assets/liveIcon.svg";
 import playIcon from "../../../assets/playIcon.svg";
 import vectorIcon from "../../../assets/vectorIcon.svg";
