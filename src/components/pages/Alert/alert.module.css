@@ -1,0 +1,103 @@
+body {
+  margin-top: 320px;
+  margin-left: auto;
+}
+
+.alertContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 250px;
+}
+.alertIcon {
+  width: 25%;
+  margin-top: 10px;
+  margin-left: -440px;
+}
+.alertContent {
+  margin-left: auto;
+}
+.alertHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.alertHeader h2 {
+  margin: 0;
+}
+
+.alertButtons button {
+  margin-left: 10px;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.filterButton {
+  background-color: white;
+  font-size: medium;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+.imgIcons {
+  width: 10%;
+  height: 5px;
+}
+.DownloadButton {
+  background-color: rgb(255, 115, 21);
+  font-size: 13px;
+  color: white;
+}
+.alertContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.alertTable {
+  flex: 2;
+  min-width: 300px;
+  font-family: sans-serif;
+}
+
+.alertTable {
+  border: none;
+  border-radius: 8px;
+}
+.emptyScreen {
+  padding: 20px;
+
+  background-color: #ffffff;
+  height: 250px;
+}
+.rdt_TableRow {
+  background-color: green;
+}
+
+.rdt_TableRow {
+  background-color: orange;
+}
+
+@media (max-width: 768px) {
+  .alertHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alertButtons {
+    margin-top: 10px;
+  }
+
+  .alertContent {
+    flex-direction: column;
+  }
+
+  .alertTable {
+    min-width: 100%;
+  }
+}

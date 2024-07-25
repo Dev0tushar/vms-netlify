@@ -1,168 +1,147 @@
-import SideBarMenu from "../sideMenu/sideBar";
-import styles from "./commanBlock.module.css";
+import React, { useState } from 'react';
+import FilterBox from '../filterBox/filterBox';
+import SideBarMenu from '../sideMenu/sideBar';
+import styles from './commanBlock.module.css';
+import Navbar from '../navbar/navbar';
+import liveIcon from '../../assets/liveDashboard-icon-png.png';
+import fourStepIcon from '../../assets/FourStep-dashboardIcon-png.png';
+import sixStepIcon from '../../assets/sixStep-dashboardIcon-png.png';
+import twoStepIcon from '../../assets/TwoStep-dashboardIcon-png.png';
 
 function BlockData() {
-  const blocks = [
-    {
-      id: "1",
-      title: "CAM 01",
-    },
-    {
-      id: "2",
-      title: "CAM 02",
-    },
-    {
-      id: "3",
-      title: "CAM 03",
-    },
-    {
-      id: "4",
-      title: "CAM 04",
-    },
+  const [activeIcon, setActiveIcon] = useState('fourStep'); // State to track active icon
+
+  const nvr1Items = [
+    { name: 'CAM 01', active: true },
+    { name: 'CAM 02' },
+    { name: 'CAM 03' },
+    { name: 'CAM 04' },
   ];
+
+  const nvr2Items = [
+    { name: 'CH 01' },
+    { name: 'CH 02' },
+    { name: 'CH 03', subItems: ['GRP 1'] },
+    { name: 'CH 04' },
+  ];
+
+  const blocks = [
+    { id: '1', title: 'CAM 01' },
+    { id: '2', title: 'CAM 02' },
+    { id: '3', title: 'CAM 03' },
+    { id: '4', title: 'CAM 04' },
+  ];
+
+  const handleIconClick = (icon) => {
+    setActiveIcon(icon);
+    // You can add logic here for additional actions based on the icon clicked
+  };
+
   return (
-    <div style={{display: "flex"}}>
-    <SideBarMenu />
-    <div className={styles.container}>
-      <div className={styles.titleNameIconOuterBox}>
-        <div className={styles.titleNameIconBox}>
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_2066_10)">
-              <path
-                d="M16 5.33329C18.4933 5.33329 20.836 6.30396 22.5987 8.06662C23.12 8.58796 23.12 9.43196 22.5987 9.95196C22.3387 10.212 21.9973 10.3426 21.656 10.3426C21.3147 10.3426 20.9733 10.212 20.7133 9.95196C19.4547 8.69329 17.78 7.99996 16 7.99996C14.22 7.99996 12.5453 8.69329 11.2867 9.95196C10.7653 10.4733 9.92267 10.4733 9.40133 9.95196C8.88 9.43196 8.88 8.58796 9.40133 8.06662C11.164 6.30396 13.5067 5.33329 16 5.33329ZM7.51467 6.18129C12.1947 1.50262 19.8067 1.50262 24.4867 6.18129C24.7467 6.44129 25.088 6.57196 25.4293 6.57196C25.7707 6.57196 26.112 6.44129 26.372 6.18129C26.8933 5.65996 26.8933 4.81729 26.372 4.29596C20.652 -1.42271 11.348 -1.42271 5.62933 4.29596C5.108 4.81729 5.108 5.65996 5.62933 6.18129C6.15067 6.70262 6.99333 6.70262 7.51467 6.18129ZM32 18.6666V26.6666C32 29.608 29.608 32 26.6667 32H5.33333C2.392 32 0 29.608 0 26.6666V18.6666C0 15.7253 2.392 13.3333 5.33333 13.3333H26.6667C29.608 13.3333 32 15.7253 32 18.6666ZM8 26.6666C8 25.9306 7.404 25.3333 6.66667 25.3333V18.6666C6.66667 17.9306 6.07067 17.3333 5.33333 17.3333C4.596 17.3333 4 17.9306 4 18.6666V26.6666C4 27.4026 4.596 28 5.33333 28H6.66667C7.404 28 8 27.4026 8 26.6666ZM12 18.6666C12 17.9306 11.404 17.3333 10.6667 17.3333C9.92933 17.3333 9.33333 17.9306 9.33333 18.6666V26.6666C9.33333 27.4026 9.92933 28 10.6667 28C11.404 28 12 27.4026 12 26.6666V18.6666ZM20.4213 17.4013C19.716 17.1666 18.9667 17.5453 18.7347 18.244L17.332 22.4493L15.9293 18.244C15.696 17.5453 14.9467 17.1666 14.2427 17.4013C13.5453 17.6346 13.1667 18.3893 13.4 19.088L16.0667 27.088C16.248 27.632 16.7573 28 17.3307 28C17.904 28 18.4133 27.6333 18.5947 27.088L21.2613 19.088C21.4947 18.3893 21.1173 17.6346 20.4187 17.4013H20.4213ZM25.3333 21.3333V20H26.6667C27.404 20 28 19.4026 28 18.6666C28 17.9306 27.404 17.3333 26.6667 17.3333H24.6667C23.564 17.3333 22.6667 18.2306 22.6667 19.3333V26C22.6667 27.1026 23.564 28 24.6667 28H26.6667C27.404 28 28 27.4026 28 26.6666C28 25.9306 27.404 25.3333 26.6667 25.3333H25.3333V24H26.6667C27.404 24 28 23.4026 28 22.6666C28 21.9306 27.404 21.3333 26.6667 21.3333H25.3333Z"
-                fill="#333333"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_2066_10">
-                <rect width="32" height="32" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+    <>
+      <Navbar />
+      <div style={{ display: 'flex' }}>
+        <SideBarMenu />
 
-          <div className={styles.charStyle}>Live</div>
-        </div>
-
-        <div className={styles.titleNameIconSecondBox}>
-          <div className={styles.tileIconBox}>
-            <svg
-              width="33"
-              height="33"
-              viewBox="0 0 33 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.2851 0.858276H3.52018C2.05248 0.858276 0.858398 2.05235 0.858398 3.52006V12.2849C0.858398 13.7526 2.05248 14.9467 3.52018 14.9467H12.2851C13.7528 14.9467 14.9468 13.7526 14.9468 12.2849V3.52006C14.9468 2.05235 13.7528 0.858276 12.2851 0.858276Z"
-                fill="#FF914D"
-              />
-              <path
-                d="M29.3778 0.858276H20.613C19.1452 0.858276 17.9512 2.05235 17.9512 3.52006V12.2849C17.9512 13.7526 19.1452 14.9467 20.613 14.9467H29.3778C30.8455 14.9467 32.0396 13.7526 32.0396 12.2849V3.52006C32.0396 2.05235 30.8455 0.858276 29.3778 0.858276Z"
-                fill="#FF914D"
-              />
-              <path
-                d="M12.2851 17.9509H3.52018C2.05248 17.9509 0.858398 19.145 0.858398 20.6127V29.3776C0.858398 30.8453 2.05248 32.0394 3.52018 32.0394H12.2851C13.7528 32.0394 14.9468 30.8453 14.9468 29.3776V20.6127C14.9468 19.145 13.7528 17.9509 12.2851 17.9509Z"
-                fill="#FF914D"
-              />
-              <path
-                d="M29.3778 17.9509H20.613C19.1452 17.9509 17.9512 19.145 17.9512 20.6127V29.3776C17.9512 30.8453 19.1452 32.0394 20.613 32.0394H29.3778C30.8455 32.0394 32.0396 30.8453 32.0396 29.3776V20.6127C32.0396 19.145 30.8455 17.9509 29.3778 17.9509Z"
-                fill="#FF914D"
-              />
-            </svg>
+        <div className={styles.container}>
+          <div style={{ position: 'fixed', left:'70px', top:'80px'}}>
+            <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
           </div>
-          <div className={styles.tileIconBox}>
-            <svg
-              width="32"
-              height="33"
-              viewBox="0 0 32 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_2066_107)">
-                <path
-                  d="M11.8301 23.4222H20.1735V32.0397H11.8301V23.4222Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M11.8301 0.858521H20.1735V9.47595H11.8301V0.858521Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M0.411133 12.2773H9.02857V20.6207H0.411133V12.2773Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M22.9746 12.2773H31.592V20.6207H22.9746V12.2773Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M11.8301 12.2773H20.1735V20.6207H11.8301V12.2773Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M24.284 0.858521H22.9746V9.47595H31.592V8.16659C31.592 4.12888 28.3217 0.858521 24.284 0.858521Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M22.9746 32.0397H24.284C28.3217 32.0397 31.592 28.7693 31.592 24.7316V23.4222H22.9746V32.0397Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M0.411133 24.7316C0.411133 28.7693 3.68149 32.0397 7.7192 32.0397H9.02857V23.4222H0.411133V24.7316Z"
-                  fill="#666666"
-                />
-                <path
-                  d="M0.411133 8.16659V9.47595H9.02857V0.858521H7.7192C3.68149 0.858521 0.411133 4.12888 0.411133 8.16659Z"
-                  fill="#666666"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_2066_107">
-                  <rect
-                    width="31.1811"
-                    height="31.1811"
-                    fill="white"
-                    transform="translate(0.410156 0.858398)"
+          <div style={
+            {
+              display:'block',
+              marginLeft:'300px',
+              marginTop:'0px',
+              width:'900px',
+              height:'700px',
+              padding:'20px',
+              position:'relative' ,
+              top: '-200px',
+              left: '20px'
+            }
+          }>
+            
+              <div style={{
+                display:'flex',
+                justifyContent:'space-between',
+                
+              }}><div style={{
+                display:'flex'
+              }}>
+                <img src={liveIcon} alt="" width="32" height="32" />
+                <div className={styles.charStyle}>Live</div>
+              </div>
+              <div className={styles.titleNameIconSecondBox}>
+                <div className={styles.tileIconBox}>
+                  <img
+                    src={fourStepIcon}
+                    alt=""
+                    width="33"
+                    height="33"
+                    onClick={() => handleIconClick('fourStep')}
                   />
-                </clipPath>
-              </defs>
-            </svg>
+                </div>
+                <div className={styles.tileIconBox}>
+                  <img
+                    src={sixStepIcon}
+                    alt=""
+                    width="33"
+                    height="33"
+                    onClick={() => handleIconClick('sixStep')}
+                  />
+                </div>
+                <div className={styles.tileIconBox}>
+                  <img
+                    src={twoStepIcon}
+                    alt=""
+                    width="33"
+                    height="33"
+                    onClick={() => handleIconClick('twoStep')}
+                  />
+                </div>
+              </div>
+
           </div>
-          <div className={styles.tileIconBox}>
-            <svg
-              width="33"
-              height="33"
-              viewBox="0 0 33 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M25.6458 17.748H7.45682C6.02175 17.748 4.8584 18.9114 4.8584 20.3465V25.5433C4.8584 26.9784 6.02175 28.1417 7.45682 28.1417H25.6458C27.0809 28.1417 28.2442 26.9784 28.2442 25.5433V20.3465C28.2442 18.9114 27.0809 17.748 25.6458 17.748Z"
-                fill="#666666"
-              />
-              <path
-                d="M25.6458 4.75598H7.45682C6.02175 4.75598 4.8584 5.91934 4.8584 7.35441V12.5513C4.8584 13.9863 6.02175 15.1497 7.45682 15.1497H25.6458C27.0809 15.1497 28.2442 13.9863 28.2442 12.5513V7.35441C28.2442 5.91934 27.0809 4.75598 25.6458 4.75598Z"
-                fill="#666666"
-              />
-            </svg>
+         <div>
+         {activeIcon === 'fourStep' && (
+              <div style={{ display:'grid' ,gridTemplateColumns:'400px 400px', rowGap:'20px', columnGap:'20px', margin:'20px'}}>
+                {blocks.map((block) => (
+                  <div className={styles.containerBlock} key={block.id}>
+                    <div className={styles.boxContent}>{block.title}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {activeIcon === 'sixStep' && (
+              <div style={{ display:'grid' ,gridTemplateColumns:'300px 300px 300px' , rowGap:'20px', columnGap:'20px', margin:'25px'}}>
+                {blocks.map((block) => (
+                  <div className={styles.containerBlock2} key={block.id}>
+                    <div className={styles.boxContent}>{block.title}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {activeIcon === 'twoStep' && (
+              <div style={{ display:'grid' ,gridTemplateColumns:'700px ', rowGap:'20px', columnGap:'20px', margin:'25px', height:'200px'}}>
+                {blocks.map((block) => (
+                  <div className={styles.containerBlock3} key={block.id}>
+                    <div className={styles.boxContent}>{block.title}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+         </div>
           </div>
-        </div>
+        </div> 
       </div>
-      <div className={styles.outerBlock}>
-        {blocks.map((block) => (
-          <div className={styles.containerBlock} key={block.id}>
-            <div className={styles.boxContent}>{block.title}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-    </div>
+    </>
   );
 }
+
 export default BlockData;
+
+
+
+

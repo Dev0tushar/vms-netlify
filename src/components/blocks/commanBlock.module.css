@@ -1,12 +1,39 @@
-.container {
-  background-color: #f5f5f5;
-  padding: 38px;
+body {
+  /* overflow: hidden; */
+  margin-top: -100px;
+  max-height: 100;
+  width: 90%;
+  background-color:  #F5F5F5;
+
 }
+
+.container {
+  /* background-color: #ecebeb; */
+  padding: 20px;
+  margin-top: -20px;
+  height: calc(100vh - 50px);
+  /* overflow-y: auto; */
+  height: 80%;
+  display: flex;
+  width: 100%;
+}
+
+._container_rmtc9_17 {
+  margin-top: 30px !important;
+}
+
 .outerBlock {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+  margin-left: 50px;
 }
+
+.outerBlock2 {
+  display: grid;
+  grid-template-columns: 400px;
+}
+
 .charStyle {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -16,13 +43,51 @@
 }
 
 .containerBlock {
-  width: 621px;
-  height: 376.06px;
+  justify-content: center;
+  /* Center align content horizontally */
+  align-items: center;
+  height: 220.06px;
+  background-color: #ffffff;
+  border-radius: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .containerBlock {
+    width: 100%;
+    margin-top: 50px;
+    height: auto;
+    /* Adjust other styles as needed */
+  }
+}
+
+.containerBlock2 {
+  width: 250px;
+  height: 180.06px;
   background-color: #ffffff;
   border-radius: 14px;
   display: flex;
   align-items: center;
 }
+
+.containerBlock3 {
+  /* width: 30%; Adjust width as per your design */
+  /* height: 150px; Adjust height as per your design */
+  background-color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Center align content horizontally */
+  align-items: center;
+  /* Center align content vertically */
+  margin-top: 20px;
+  /* Adjust margin top as needed */
+  padding: 20px;
+  /* Add padding as per your design */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add box shadow */
+}
+
 .boxContent {
   margin: 0 auto;
   color: #c0c0c0;
@@ -30,7 +95,9 @@
   font-weight: 500;
   font-family: Poppins;
 }
+
 .tileIconBox {
+
   background-color: #ffffff;
   width: 58.9px;
   height: 58.9px;
@@ -39,18 +106,23 @@
   display: flex;
   justify-content: center;
   margin-right: 21.65px;
-
 }
+
 .titleNameIconOuterBox {
   display: flex;
   margin-bottom: 36px;
   align-items: center;
+  margin-left: 60px;
 }
+
 .titleNameIconBox {
   display: flex;
   align-items: center;
 }
+
 .titleNameIconSecondBox {
   display: flex;
   margin-left: auto;
+
+
 }

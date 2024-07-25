@@ -1,0 +1,261 @@
+.container {
+  background-color: #ecebeb;
+  padding: 20px;
+  margin-top: -530px;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  display: flex;
+  width: 1200px;
+  /* position: relative; */
+}
+
+.outerBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* gap: 20px; */
+  margin-left: -200px;
+}
+
+.charStyle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: #333333;
+  margin-left: 10px;
+}
+
+.containerBlock {
+  width: 400px;
+  height: 220.06px;
+  background-color: #ffffff;
+  border-radius: 14px 14px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  opacity: 1;
+  margin-right: -00px;
+}
+
+.iconContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoPlayIcon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.boxContent {
+  color: #c0c0c0;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+}
+
+.tileIconBox {
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.titleNameIconOuterBox {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.yourImageClass {
+  width: 100%;
+  height: auto;
+  border-radius: 14px 14px 14px 14px;
+}
+
+.titleNameIconBox {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 25px;
+  margin-left: 100px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.titleNameIconSecondBox {
+  display: flex;
+  margin-left: auto;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .outerBlock {
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .charStyle,
+  .titleNameIconBox,
+  .boxContent {
+    font-size: 12px;
+  }
+
+  .containerBlock {
+    width: 300px;
+    height: 180px;
+  }
+
+  .videoPlayIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tileIconBox {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .outerBlock {
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  .charStyle,
+  .titleNameIconBox,
+  .boxContent {
+    font-size: 18px;
+  }
+
+  .containerBlock {
+    width: 450px;
+    height: 280px;
+  }
+
+  .videoPlayIcon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .tileIconBox {
+    width: 35px;
+    height: 35px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 20px;
+  }
+
+  .outerBlock {
+    margin-left: 150px;
+    gap: 20px;
+  }
+
+  .charStyle,
+  .titleNameIconBox,
+  .boxContent {
+    font-size: 25px;
+  }
+
+  .containerBlock {
+    width: 350px;
+    height: 220.06px;
+  }
+
+  .videoPlayIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tileIconBox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px;
+  }
+
+  .outerBlock {
+    margin-left: 150px;
+    gap: 20px;
+  }
+
+  .charStyle,
+  .titleNameIconBox,
+  .boxContent {
+    font-size: 25px;
+  }
+
+  .containerBlock {
+    width: 350px;
+    height: 220.06px;
+  }
+
+  .videoPlayIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tileIconBox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}

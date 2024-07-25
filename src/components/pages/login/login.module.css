@@ -1,21 +1,21 @@
-.container {
-    width: 100%;
+/* Base styles */
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.loginDesc{
-    display: flex ; 
+
+.loginDesc {
+    display: flex; 
     flex-direction: column;
-    gap: 0px ; 
+    gap: 0px;
 }
+
 .loginBox {
-    width: 38.625rem;
-    margin: 4.375rem auto;
-    border: 1px solid red;
-    padding: 6.25rem 3.125rem;
+    padding: 25px;
     box-sizing: border-box;
     background-color: #F5F5F5;
-    
-
 }
 
 .inputBox {
@@ -25,33 +25,29 @@
 
 .loginHeader {
     font-family: Poppins;
-    font-size: 2.838rem;
+    font-size: 1.838rem;
     font-weight: 600;
     line-height: 4.275rem;
     text-align: left;
     margin-bottom: 0;
-
 }
 
 .loginPara {
     font-family: Poppins;
-    font-size: 1.443rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.165rem;
     text-align: left;
     margin-top: 0;
-
 }
 
 .input {
-
     border: none;
     width: 32rem;
     height: 4.11rem;
-    top: 470.88px;
-    border-radius: 0.625rem 0px 0px 0px;
-    opacity: 0px;
-    background-color: #ffff;
+    border-radius: 10px;
+    opacity: 1;
+    background-color: #fff;
 }
 
 .saveForgetBox {
@@ -73,7 +69,7 @@ a {
     font-weight: 400;
     line-height: 1.541rem;
     text-align: right;
-    color: #181818
+    color: #181818;
 }
 
 .saveForgetBox>span {
@@ -82,72 +78,152 @@ a {
     font-weight: 400;
     line-height: 1.541rem;
     text-align: right;
-    color: #181818
+    color: #181818;
 }
 
 .checkbox {
-    color: #FF914D;
     width: 14px;
     height: 14px;
-    padding: 3.5px 2.33px 4.08px 2.33px;
-    opacity: 0px;
+    margin-right: 5px; /* Added for better spacing */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     outline: none;
-    border: none;
-    width: 14px;
-    height: 14px;
+    border: 1px solid #FF914D;
+    border-radius: 2px;
     background-color: #fff;
-
+    position: relative;
+}
+.checkbox:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #FF914D;
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    border-radius: 2px;
 }
 
 .loginBtn {
     width: 489.51px;
     height: 62.88px;
     gap: 0px;
-    opacity: 0px;
+    opacity: 1;
     background-color: #FF914D;
     border: none;
     border-radius: 10px;
-    color: #ffff;
+    color: #fff;
     font-family: Poppins;
     font-size: 1.146rem;
     font-weight: 600;
     line-height: 1.71rem;
     text-align: center;
 }
-.bottom{
+
+.bottom {
     display: flex;
     justify-content: center;
-    gap : 5px ; 
-
+    gap: 5px;
 }
 
-.dontHave{
+.dontHave {
     font-family: Poppins;
     font-size: 19.65px;
     font-weight: 500;
     line-height: 29.48px;
     text-align: center;
-    
 }
 
-.signLink{
+.signLink {
     font-family: Poppins;
     font-size: 19.65px;
     font-weight: 500;
     line-height: 29.48px;
     text-align: center;
-    color : #FF914D ; 
-    
+    color: #FF914D;
 }
 
-.lebel{
+.label {
     font-family: Poppins;
-font-size: 16.44px;
-font-weight: 500;
-line-height: 24.66px;
-text-align: left;
+    font-size: 16.44px;
+    font-weight: 500;
+    line-height: 24.66px;
+    text-align: left;
+}
 
+/* Media Queries */
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .loginBox {
+        width: 38.625rem;
+        margin: 4.375rem auto;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .loginBox {
+        width: 30rem;
+        margin: 3rem auto;
+    }
+    .input {
+        width: 28rem;
+    }
+    .loginBtn {
+        width: 28rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        width: 100%;
+    }
+    .loginBox {
+        width: 25rem;
+        margin: 2.5rem auto;
+    }
+    .input {
+        width: 24rem;
+    }
+    .loginBtn {
+        width: 18rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        width: 100%;
+    }
+    .loginBox {
+        width: 20rem;
+        margin: 2rem auto;
+    }
+    .input {
+        width: 18rem;
+    }
+    .loginBtn {
+        width: 18rem;
+    }
+    .loginHeader {
+        font-size: 1.5rem;
+        line-height: 3rem;
+    }
+    .loginPara {
+        font-size: 0.8rem;
+        line-height: 2rem;
+    }
+    a, .saveForgetBox>span {
+        font-size: 0.875rem;
+    }
+    .dontHave, .signLink {
+        font-size: 1rem;
+    }
+    .label {
+        font-size: 0.875rem;
+    }
 }

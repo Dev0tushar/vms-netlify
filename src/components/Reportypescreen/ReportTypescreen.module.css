@@ -1,0 +1,149 @@
+/* .container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  border: 2px solid blue;
+  background-color: 
+  #FFFFFF;
+  padding: 10px;
+}
+
+.reportType {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.deviceStatus,
+.modelStatus,
+.alertReport,
+.otherReport {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .reportType {
+    padding: 5px;
+  }
+
+  .content {
+    gap: 10px;
+  }
+
+  .deviceStatus,
+  .modelStatus,
+  .alertReport,
+  .otherReport {
+    padding: 5px;
+  }
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: #ffffff;
+  width: 270px;
+}
+
+.reportType {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.radioContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.radioContainer input {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionHeader {
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.emptyScreen {
+  padding: 20px;
+ 
+  
+  background-color: #ffffff;
+  height: 300px; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .reportType {
+    padding: 10px;
+  }
+
+  .dropdown select {
+    padding: 6px;
+  }
+
+  .radioContainer {
+    gap: 6px;
+  }
+
+  .sectionHeader {
+    padding: 10px;
+  }
+    .emptyScreen {
+    padding: 10px;
+  }
+}
+
+
