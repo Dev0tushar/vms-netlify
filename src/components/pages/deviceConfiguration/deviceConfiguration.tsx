@@ -140,7 +140,8 @@ const DeviceTable: React.FC = () => {
           <div>
             <div className={styles.topContent}>
               {" "}
-              <img src={camera} alt="" className={filterIcon} /> Device Configurartion
+              <img src={camera} alt="" className={filterIcon} /> Device
+              Configurartion
             </div>{" "}
             <br />
             <Link to="/AddDevice-Screen" className={styles.linkButton}>

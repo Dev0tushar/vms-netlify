@@ -203,7 +203,7 @@ const AiConfiguration: React.FC = () => {
               <option value="LPR">LPR</option>
             </select>
           </div>
-          <div className={styles.formgroup}>
+          <div className={styles.buttongroup}>
             <button onClick={handleAddUser} className={styles.btn}>
               ADD
             </button>

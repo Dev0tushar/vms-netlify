@@ -86,13 +86,16 @@
 
 .columnContainer {
   margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer; /* Add pointer cursor to indicate clickability */
 }
 
 .image {
   width: 45px;
   height: 45px;
-  transition: transform 0.3s;
-  object-fit: contain; /* Ensure images fit within the dimensions */
+  transition: filter 0.3s, transform 0.3s;
+  object-fit: contain;
 }
 
 .image:hover {
@@ -100,6 +103,11 @@
   filter: brightness(0.8);
 }
 
+.active {
+  color: #FF914D;
+}
+
+/* Media queries */
 @media (max-width: 1200px) {
   .container {
     width: 70px;

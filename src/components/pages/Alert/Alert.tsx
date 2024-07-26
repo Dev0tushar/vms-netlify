@@ -78,38 +78,43 @@ const AlertTable: React.FC = () => {
   return (
     <>
       <SideBarMenu />
-      <div className={styles.alertContainer}>
-        {/* <img src={Alert} alt="" /> */}
-        <div className={styles.alertHeader}>
+     
+      <div className={styles.MainContainer}>
+         {/* <AlertSidebar /> */}
+        <div className={styles.alertContainer}>
+          {/* <img src={Alert} alt="" /> */}
+
+          <div className={styles.alertHeader}>
+            <div className={styles.alertContent}>
+              <h2>
+                <img src={Alert} alt="" className={styles.alertIcon} /> Alert
+              </h2>
+            </div>
+            <div className={styles.alertButtons}>
+              <button className={styles.filterButton}>
+                {" "}
+                <img src={FiterIcon} alt="" className={styles.imgIcons} />
+                FILTER BY
+              </button>
+              <button className={styles.DownloadButton}>
+                {" "}
+                <img src={DownloadIcon} alt="" className={styles.imgIcons} />
+                DOWNLOAD
+              </button>
+            </div>
+          </div>
+          
           <div className={styles.alertContent}>
-            <h2>
-              <img src={Alert} alt="" className={styles.alertIcon} /> Alert
-            </h2>
-          </div>
-          <div className={styles.alertButtons}>
-            <button className={styles.filterButton}>
-              {" "}
-              <img src={FiterIcon} alt="" className={styles.imgIcons} />
-              FILTER BY
-            </button>
-            <button className={styles.DownloadButton}>
-              {" "}
-              <img src={DownloadIcon} alt="" className={styles.imgIcons} />
-              DOWNLOAD
-            </button>
-          </div>
-        </div>
-        <div className={styles.alertContent}>
           <AlertSidebar />
-          <div className={styles.alertTable}>
-            <DataTable
-              selectableRows
-              columns={columns}
-              data={data}
-              pagination
-              
-            />
-            <div className={styles.emptyScreen}></div>
+            <div className={styles.alertTable}>
+              <DataTable
+                selectableRows
+                columns={columns}
+                data={data}
+                pagination
+              />
+              <div className={styles.emptyScreen}></div>
+            </div>
           </div>
         </div>
       </div>

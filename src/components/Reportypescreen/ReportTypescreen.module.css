@@ -1,63 +1,3 @@
-/* .container {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  border: 2px solid blue;
-  background-color: 
-  #FFFFFF;
-  padding: 10px;
-}
-
-.reportType {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.dropdown {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.deviceStatus,
-.modelStatus,
-.alertReport,
-.otherReport {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    margin: 10px;
-    padding: 5px;
-  }
-  
-  .reportType {
-    padding: 5px;
-  }
-
-  .content {
-    gap: 10px;
-  }
-
-  .deviceStatus,
-  .modelStatus,
-  .alertReport,
-  .otherReport {
-    padding: 5px;
-  }
-} */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -114,10 +54,9 @@
 }
 .emptyScreen {
   padding: 20px;
- 
-  
+
   background-color: #ffffff;
-  height: 300px; 
+  height: 300px;
 }
 
 @media (max-width: 768px) {
@@ -125,7 +64,7 @@
     margin: 10px;
     padding: 10px;
   }
-  
+
   .reportType {
     padding: 10px;
   }
@@ -141,9 +80,7 @@
   .sectionHeader {
     padding: 10px;
   }
-    .emptyScreen {
+  .emptyScreen {
     padding: 10px;
   }
 }
-
-
