@@ -6,7 +6,7 @@ import playBack from "../../assets/playback-sidebar-png.png";
 import report from "../../assets/report-sidebar-png.png";
 import alert from "../../assets/alert-sidebar-png.png";
 import device from "../../assets/Device-sidebar-png.png";
-import Ai from "../../assets/Ai-sidebar-png.png";
+import Ai from "../../assets/aiConfiguration.png";
 
 function SideBarMenu() {
   return (

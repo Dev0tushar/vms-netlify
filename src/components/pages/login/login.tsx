@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./login.module.css";
+import { Link } from "react-router-dom";
 
 function Login() {
     return (
@@ -34,8 +35,9 @@ function Login() {
 
                 <div className={styles.bottom}>
                     <span className={styles.dontHave}>Don't have account?</span>
+                    <Link to="/SignUpForm-screen">
                     <span className={styles.signLink}>Sign Up</span>
-
+                    </Link>
                 </div>
             </div>
         </div>
