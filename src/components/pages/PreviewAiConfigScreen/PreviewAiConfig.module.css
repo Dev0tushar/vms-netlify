@@ -1,7 +1,7 @@
 .container {
     position: absolute;
     width: 270px;
-    height: 650px;
+    height: 525px;
     top: 110px;
     left: 110px;
     display: flex;
@@ -39,14 +39,7 @@
     width: 100%;
     height: auto;
   }
-  
-  /* .emptyScreen {
-    flex-grow: 1;
-    width: 50%;
-
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
-  } */
+ 
   
   @media (max-width: 1024px) {
     .container {

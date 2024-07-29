@@ -7,7 +7,7 @@ const EditForm: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.formWrapper}>
         <div className={styles.formHeader}>
-          <h2>Add Device</h2>
+          <h2>Edit</h2>
           <button className={styles.closeButton}>
             <img src={closeIcon} alt="Close" />
           </button>
@@ -41,46 +41,39 @@ const EditForm: React.FC = () => {
 
 export default EditForm;
 
+
+
+
 // import React from "react";
 // import styles from "./EditScreen.module.css";
 // import closeIcon from "../../../assets/CrossIcon.png";
 
-// const FormComponent: React.FC = () => {
+// const EditForm: React.FC = () => {
 //   return (
 //     <div className={styles.container}>
+//       <div className={styles.headerWrapper}>
+//         <h2 className={styles.editTitle}>Edit</h2>
+//         <button className={styles.closeButton}>
+//           <img src={closeIcon} alt="Close" />
+//         </button>
+//       </div>
 //       <div className={styles.formWrapper}>
-//         <div className={styles.formHeader}>
-//           <h2 className={styles.formTitle}>Form Title</h2>
-//           <button className={styles.closeButton}>
-//             <img src={closeIcon} alt="Close" />
-//           </button>
-//         </div>
 //         <form className={styles.form}>
 //           <div className={styles.formGroup}>
-//             <label htmlFor="input1">Input 1</label>
-//             <input
-//               type="text"
-//               id="input1"
-//               name="input1"
-//               placeholder="Enter value"
-//             />
+//             <label htmlFor="name">Group</label>
+//             <input type="text" id="name" name="name" placeholder="Parking" />
 //           </div>
 //           <div className={styles.formGroup}>
-//             <label htmlFor="input2">Input 2</label>
-//             <input
-//               type="text"
-//               id="input2"
-//               name="input2"
-//               placeholder="Enter value"
-//             />
+//             <label htmlFor="igrp">Camera</label>
+//             <input type="text" id="igrp" name="igrp" placeholder="Cam1" />
 //           </div>
 //           <div className={styles.formGroup}>
-//             <label htmlFor="input3">Input 3</label>
+//             <label htmlFor="ipDomain">Ai Model</label>
 //             <input
 //               type="text"
-//               id="input3"
-//               name="input3"
-//               placeholder="Enter value"
+//               id="ipDomain"
+//               name="ipDomain"
+//               placeholder="LPR"
 //             />
 //           </div>
 //           <button type="submit" className={styles.updateButton}>
@@ -92,4 +85,5 @@ export default EditForm;
 //   );
 // };
 
-// export default FormComponent;
+// export default EditForm;
+

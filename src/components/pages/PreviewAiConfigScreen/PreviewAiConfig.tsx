@@ -13,7 +13,7 @@ const PreviewScreen: React.FC = () => {
           className={styles.image}
         />
       </div>
-      <div className={styles.emptyScreen}></div>
+      {/* <div className={styles.emptyScreen}></div> */}
     </div>
   );
 };
