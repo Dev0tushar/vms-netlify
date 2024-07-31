@@ -60,7 +60,7 @@
 
 
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./sideBar.module.css";
 import liveView from "../../assets/liveview-sidebar-png.png";
 import playBack from "../../assets/playback-sidebar-png.png";
@@ -85,7 +85,6 @@ const images: Image[] = [
 ];
 
 const SideBarMenu: React.FC = () => {
-  const location = useLocation();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
