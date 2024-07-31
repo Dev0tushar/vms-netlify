@@ -1,4 +1,4 @@
-body {
+/* body {
   overflow-x: hidden; 
   overflow-y: auto;   
 }
@@ -120,93 +120,50 @@ body {
     }
   }
   
+ */
 
-/* .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 40vw;
-  margin-bottom: 100px;
-}
 
-.headerWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.editTitle {
-  margin: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: gray;
-  font-size: 1.5rem;
-}
-
-.closeButton {
-  background: none;
-  border: none;
-  width: 4vw;
-  height: 4vh;
-  font-size: 1rem;
-  cursor: pointer;
-  color: gray;
-  transition: color 0.3s;
-}
-
-.closeButton:hover {
-  color: black;
+ body {
+  overflow-x: hidden; 
+  overflow-y: auto;   
 }
 
 .formWrapper {
-  background-color: #e5e5e5;
-  padding: 20px;
+  background-color: #F5F5F5; /* Updated background color */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px;
   box-sizing: border-box;
+  position: relative;
 }
 
-.form {
-  box-sizing: border-box;
-}
-
-.formGroup {
-  margin-bottom: 15px;
+.headerText {
+  font-size: 1.5rem; /* Reduced size of the header text */
+  margin: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: gray;
 }
 
-.formGroup label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.closeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.formGroup input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.closeButton:hover img {
+  transform: scale(1.1);
 }
 
+.closeIcon {
+  width: 20px; /* Reduced width */
+  height: 20px; /* Reduced height */
+  transition: transform 0.3s;
+}
 .updateButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  padding: 10px;
-  background-color: #ff7f00;
+  background-color: #FF914D; /* Added background color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -219,28 +176,40 @@ body {
 .updateButton:hover {
   background-color: #e56e00;
 }
+  
 
 @media (max-width: 768px) {
+  .closeIcon {
+    width: 18px; /* Further reduced width for smaller screens */
+    height: 18px; /* Further reduced height for smaller screens */
+  }
+
   .formWrapper {
     padding: 15px;
+    background-color: #F5F5F5;
+  }
+
+  .headerText {
+    font-size: 1.25rem; /* Further reduced size for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
+  .closeIcon {
+    width: 16px; /* Further reduced width for smallest screens */
+    height: 16px; /* Further reduced height for smallest screens */
+  }
+
   .formWrapper {
     padding: 10px;
   }
 
-  .updateButton {
+  .btn {
     font-size: 14px;
     padding: 8px;
   }
 
-  .editTitle {
-    font-size: 0.875rem; 
+  .headerText {
+    font-size: 1rem; /* Further reduced size for smallest screens */
   }
-
-  .closeButton {
-    font-size: 14px; 
-  }
-} */
+}
