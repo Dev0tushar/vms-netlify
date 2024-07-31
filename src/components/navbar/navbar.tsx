@@ -9,14 +9,21 @@ function Navbar() {
   return (
     <div className={styles.navbar_cont}>
       <div className={styles.companyDesc}>
-        <div style={{
-          display:'flex',
-          alignItems:'center'
-        }}>
-        <img src={companyIcon} alt="companyIcon" />
-        <Link to="/">
-          <span className={styles.companyName}>DATATUTE</span>
-        </Link>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <img src={companyIcon} alt="companyIcon" />
+          <div  >
+            <Link to="/" style={{
+            display: "flex",
+           textDecoration:"none"
+          }}>
+              <span className={styles.companyName}>DATATUTE</span>
+            </Link>
+          </div>
         </div>
         <div className={styles.deviceOnlineBox}>
           <span className={styles.deviceOnlineHeader}>Device Online</span>
@@ -28,7 +35,6 @@ function Navbar() {
           <div className={styles.userName}>Abhishek Mehta</div>
           <div className={styles.userCont}>
             <Link to="/login">
-             
               <img src={userImage} alt="" />
             </Link>
           </div>

@@ -102,11 +102,14 @@ h1 {
   }
 } */
 
+
+
 .pageContainer {
   padding: 20px;
-  margin-bottom: 300px;
-  margin-top: 200px;
+  /* margin-bottom: 300px; */
+  margin-top: 100px;
   display: flex;
+  margin-left: 50px;
 }
 
 .header {
@@ -132,7 +135,7 @@ h1 {
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
-  margin-left: 100px;
+  margin-left: 10px;
 }
 
 .container {

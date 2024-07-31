@@ -90,7 +90,9 @@ const ChartsComponent: React.FC = () => {
     <>
       <SideBarMenu />
       <div className={styles.pageContainer}>
+        <div className={styles.ReportContent}>
         <ReportContent />
+        </div>
         <div className={styles.contentArea}>
           <div>
             <div className={styles.header}>

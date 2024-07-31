@@ -923,6 +923,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import AiIcon from "../../../assets/ai2-sidebar-png-output.png";
+import PreviewScreen from "../PreviewAiConfigScreen/PreviewAiConfig";
 
 interface CameraData {
   no: number;
@@ -1063,7 +1064,7 @@ const AiConfiguration: React.FC = () => {
       <SideBarMenu />
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.previewScreen}`}>
-          {/* <PreviewScreen /> */}
+          <PreviewScreen/>
         </div>
         <div className={`${styles.mainContentWrapper}`}>
           <div className={`${styles.container} container`}>

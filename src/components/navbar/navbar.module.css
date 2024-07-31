@@ -5,7 +5,7 @@
   height: 80px;
   justify-content: space-between;
   align-items: center;
-  background-color:#F5F5F5; 
+  background-color: white; 
   padding: 10px 20px;
   position: fixed; 
   top: 0;
@@ -30,6 +30,11 @@
   font-size: 28px; 
   text-decoration: none; 
   color: black;
+  background-color: white;
+}
+.Link {
+  text-decoration: none;
+
 }
 
 .deviceOnlineBox {
