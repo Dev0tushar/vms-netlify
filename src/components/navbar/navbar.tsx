@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import styles from "./navbar.module.css";
 import companyIcon from "../../assets/companyIcon.svg";
 

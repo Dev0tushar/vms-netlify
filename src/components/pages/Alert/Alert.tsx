@@ -127,7 +127,7 @@
 // export default AlertTable;
 
 
-import React from "react";
+// import React from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import AlertSidebar from "../../AlertSideBar/AlertSideBar";
 import styles from "./alert.module.css";

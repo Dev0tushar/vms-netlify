@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import styles from "./AddDeviceScreen.module.css";
 import plusIcon from "../../../assets/PlusIcon-addDevice-button.png";
 
@@ -147,4 +147,3 @@ const AddDeviceForm: React.FC = () => {
 };
 
 export default AddDeviceForm;
-

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import styles from "./ReportTypescreen.module.css";
 
 const ReportContent: React.FC = () => {
