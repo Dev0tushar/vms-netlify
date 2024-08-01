@@ -57,7 +57,7 @@
 
 // export default Home;
 
-// import React from "react";
+import { Link } from "react-router-dom";
 import liveIcon from "../../../assets/liveIcon.svg";
 import playIcon from "../../../assets/playIcon.svg";
 import vectorIcon from "../../../assets/vectorIcon.svg";
@@ -69,18 +69,22 @@ function Home() {
     {
       icon: liveIcon,
       header: "Live View",
+      link: "/liveview",
     },
     {
       icon: playIcon,
       header: "Play Back",
+      link: "/playback",
     },
     {
       icon: vectorIcon,
       header: "Report",
+      link: "/reportChart-Screen",
     },
     {
       icon: engine_warningIcon,
       header: "Alert",
+      link: "/alert",
     },
   ];
 
@@ -88,14 +92,17 @@ function Home() {
     {
       icon: liveIcon,
       header: "Device",
+      link: "/device-config",
     },
     {
       icon: playIcon,
       header: "AI",
+      link: "/ai-config",
     },
     {
       icon: vectorIcon,
       header: "User",
+      link: "/user",
     },
   ];
 
@@ -105,8 +112,13 @@ function Home() {
         <h1 className={styles.h1}>OPERATION</h1>
         {operation_arr.map((item, index) => (
           <div key={index} className={styles.item}>
-            <img src={item.icon} alt={item.header} />
-            <span>{item.header}</span>
+            <Link
+              to={item.link}
+              style={{ display: "contents", color: "black" }}
+            >
+              <img src={item.icon} alt={item.header} />
+              <span>{item.header}</span>
+            </Link>
           </div>
         ))}
       </div>
@@ -114,8 +126,13 @@ function Home() {
         <h1 className={styles.h1Configuration}>CONFIGURATION</h1>
         {config_arr.map((item, index) => (
           <div key={index} className={styles.item}>
-            <img src={item.icon} alt={item.header} />
-            <span>{item.header}</span>
+            <Link
+              to={item.link}
+              style={{ display: "contents", color: "black" }}
+            >
+              <img src={item.icon} alt={item.header} />
+              <span>{item.header}</span>
+            </Link>
           </div>
         ))}
       </div>

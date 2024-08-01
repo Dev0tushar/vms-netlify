@@ -1,9 +1,7 @@
 import "./App.css";
 import BlockData from "./components/blocks/commanBlock";
 import Navbar from "./components/navbar/navbar";
-// import AIConfiguration from "./components/pages/aiConfiguration/aiConfiguration";
-// import SideBarMenu from "./components/sideMenu/sideBar";
-// import Navbar from "./components/navbar/navbar";
+
 import Home from "./components/pages/home/home";
 import Login from "./components/pages/login/login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -30,7 +28,7 @@ function App() {
 
           <Route path="/liveview" element={<BlockData />} />
           <Route path="/playback" element={<PlayBackScreen />} />
-          <Route path="//reportChart-Screen" element={<ChartsComponent />} />
+          <Route path="/reportChart-Screen" element={<ChartsComponent />} />
           <Route path="/alert" element={<AlertTable />} />
 
           <Route path="/device-config" element={<DeviceConfiguration />} />
