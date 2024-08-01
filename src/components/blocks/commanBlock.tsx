@@ -173,7 +173,7 @@ import { useState } from "react";
 import FilterBox from "../filterBox/filterBox";
 import SideBarMenu from "../sideMenu/sideBar";
 import styles from "./commanBlock.module.css";
-import Navbar from "../navbar/navbar";
+import Navbar from '../navbar/navbar'
 import liveIcon from "../../assets/liveDashboard-icon-png.png";
 import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";

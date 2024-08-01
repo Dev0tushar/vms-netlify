@@ -589,9 +589,9 @@
 
 //   return (
 //     <>
-    
+
 //       <SideBarMenu />
-      
+
 //       <div
 //         style={{
 //           backgroundColor: "#F5F5F5",
@@ -679,7 +679,6 @@
 // };
 
 // export default AiConfiguration;
-
 
 // import  { useState } from "react";
 // import DataTable, { TableColumn } from "react-data-table-component";
@@ -914,8 +913,7 @@
 
 // export default AiConfiguration;
 
-
-import  { useState } from "react";
+import { useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import styles from "./aiConfiguration.module.css";
 import SideBarMenu from "../../sideMenu/sideBar";
@@ -1064,7 +1062,7 @@ const AiConfiguration: React.FC = () => {
       <SideBarMenu />
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.previewScreen}`}>
-          <PreviewScreen/>
+          <PreviewScreen />
         </div>
         <div className={`${styles.mainContentWrapper}`}>
           <div className={`${styles.container} container`}>

@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -77,4 +77,77 @@
   .nvrlistitem {
     margin: 5px 0;
   }
+} */
+
+.container {
+  display: flex;
+  flex-direction: column; /* Default to column layout */
+  border-radius: 8px;
+  padding: 15px;
+  margin-left: 2%;
+  margin-top: 5%;
+  width: 13vw;
+  height: fit-content;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.ioIcon {
+  display: none;
+  margin-left: 20px;
+}
+
+.panel {
+  width: 600px;
+}
+
+.nvr {
+  margin-bottom: 20px;
+}
+
+/* Default styling for NVR titles and list items */
+.nvrtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  cursor: pointer; /* Add cursor pointer for clickable titles */
+  display: flex;
+  align-items: center;
+}
+
+.nvrlist {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 0.8rem;
+  color: black;
+  display: none; /* Hide list by default */
+}
+
+.nvrlist.show {
+  display: block; /* Show list when dropdown is open */
+}
+
+.nvrlistitem {
+  margin: 10px 0;
+  position: relative;
+  font-size: 0.8rem;
+}
+
+.nvrlistitem::before {
+  content: "•";
+  position: absolute;
+  left: -20px;
+  top: 0;
+  color: black;
+}
+
+.nvrsublist {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 0.8rem;
+}
+
+.nvrsublistitem {
+  color: black;
+  font-size: 0.8rem;
 }
