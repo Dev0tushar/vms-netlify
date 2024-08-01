@@ -126,7 +126,6 @@
 
 // export default AlertTable;
 
-
 // // // import React from "react";
 // // import DataTable, { TableColumn } from "react-data-table-component";
 // // import AlertSidebar from "../../AlertSideBar/AlertSideBar";
@@ -208,7 +207,7 @@
 // //       <div className={styles.alertSidebarContainer}>
 // //         <AlertSidebar/>
 // //       <div className={styles.mainContainer}>
-       
+
 // //         <div className={styles.alertContainer}>
 // //           <div className={styles.alertHeader}>
 // //             <h2>
@@ -242,8 +241,6 @@
 // // };
 
 // // export default AlertTable;
-
-
 
 // src/AlertTable.tsx
 import React from "react";
@@ -337,11 +334,12 @@ const AlertTable: React.FC = () => {
             </div>
             <div className={styles.alertButtons}>
               <button className={styles.filterButton}>
-                <img src={FiterIcon} alt="" className={styles.imgIcons} />
+                <img src={FiterIcon} alt="" className={styles.imgIcons} style={{minHeight:"17px", minWidth:"17px"}}/>
+                
                 FILTER BY
               </button>
               <button className={styles.DownloadButton}>
-                <img src={DownloadIcon} alt="" className={styles.imgIcons} />
+                <img src={DownloadIcon} alt="" className={styles.imgIcons} style={{minHeight:"17px", minWidth:"17px"}} />
                 DOWNLOAD
               </button>
             </div>

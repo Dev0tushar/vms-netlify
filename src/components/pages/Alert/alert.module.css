@@ -100,10 +100,10 @@ body {
 .imgIcons {
 font-size: 10px;
 }
-img{
+/* img{
   min-height: 20px;
   min-width: 30px;
-}
+} */
 
 .DownloadButton {
   background-color: rgb(255, 115, 21);

@@ -1,103 +1,6 @@
 /* body {
   margin-right: auto;
-}
-.alertContainer {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 250px;
-  margin-left: 40px;
-  margin-bottom: 550px;
-}
-
-.alertHeader {
-  width: 100%;
-  text-align: center;
-}
-
-.alertText {
-  margin: 10px 0;
-  text-align: left;
-  font-size: 14px;
-}
-
-.alertImages {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.smallImage {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.largeImage {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.downloadButton {
-  background-color: #ff9800;
-  color: white;
-  border: none;
-  padding: 10px ;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.downloadButton:hover {
-  background-color: #e68900;
-}
-
-.DownloadImg {
-  min-width: 17.98px;
-  min-height: 16px;
-
-}
-.downloadButtonImg{
-   background-color: #ff9800; 
-  color: white;
-  border: none;
-  padding: 10px ; 
-   border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px; 
-   min-width: 17.98px;
-  min-height: 16px; 
-   /* gap: 0px;
-  opacity: 0;  */
-/* }
-@media (max-width: 767px) {
-  .alertContainer {
-    max-width: 100%;
-    margin: 10px;
-  }
-
-  .smallImage,
-  .largeImage {
-    max-width: 100%;
-  }
-} */ 
-
-
-
-
-body {
-  margin-right: auto;
-}
+} */
 
 .alertContainer {
   background-color: white;
@@ -113,15 +16,21 @@ body {
   margin-bottom: 550px;
 }
 
+h2{
+  /* display: flex;
+  position: relative;
+  margin-right: auto; */
+}
 .alertHeader {
   width: 100%;
   text-align: center;
+  
 }
 
 .alertText {
   margin: 10px 0;
   text-align: left;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .alertImages {
@@ -130,6 +39,7 @@ body {
   align-items: center;
   gap: 10px;
   margin: 10px 0;
+ 
 }
 
 .smallImage {
@@ -159,7 +69,7 @@ body {
 }
 
 .downloadButton {
-  @extend .downloadSharedStyles;
+  /* @extend .downloadSharedStyles; */
   padding: 10px 20px;
   margin-top: 10px;
   display: flex;
@@ -172,6 +82,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 15px;
 }
 
 .downloadButton:hover {
@@ -179,8 +90,8 @@ body {
 }
 
 .DownloadImg {
-  min-width: 17.98px;
-  min-height: 16px;
+  min-width: 5.98px;
+  min-height: 5px;
   margin-right: 10px;
 }
 
@@ -188,6 +99,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 15px;
 }
 
 /* Responsiveness */
@@ -213,10 +125,3 @@ body {
     margin-right: 5px;
   }
 }
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@
 // import twoStepIcon from "../../assets/TwoStep-dashboardIcon-png.png";
 
 // function BlockData() {
-//   const [activeIcon, setActiveIcon] = useState("fourStep"); 
+//   const [activeIcon, setActiveIcon] = useState("fourStep");
 
 //   const nvr1Items = [
 //     { name: "CAM 01", active: true },
@@ -169,7 +169,6 @@
 
 // export default BlockData;
 
-
 import { useState } from "react";
 import FilterBox from "../filterBox/filterBox";
 import SideBarMenu from "../sideMenu/sideBar";
@@ -181,7 +180,7 @@ import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
 import twoStepIcon from "../../assets/TwoStep-dashboardIcon-png.png";
 
 function BlockData() {
-  const [activeIcon, setActiveIcon] = useState("fourStep"); 
+  const [activeIcon, setActiveIcon] = useState("fourStep");
 
   const nvr1Items = [
     { name: "CAM 01", active: true },
@@ -206,7 +205,6 @@ function BlockData() {
 
   const handleIconClick = (icon: string) => {
     setActiveIcon(icon);
-    // You can add logic here for additional actions based on the icon clicked
   };
 
   return (
@@ -216,7 +214,7 @@ function BlockData() {
         <SideBarMenu />
 
         <div className={styles.container}>
-          <div style={{ position: "fixed", left: "70px", top: "80px" }}>
+          <div style={{ position: "fixed", left: "100px", top: "130px" }}>
             <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
           </div>
           <div
@@ -228,7 +226,7 @@ function BlockData() {
               height: "700px",
               padding: "20px",
               position: "relative",
-              top: "200px",
+              top: "150px",
               left: "20px",
             }}
           >

@@ -1,6 +1,3 @@
-
-
-
 // import React from "react";
 import styles from "./AlertSideBar.module.css";
 import DownloadIcon from "../../assets/dpwnloadbutton-icon.png";
@@ -32,10 +29,13 @@ const AlertContent: React.FC = () => {
       </div>
       <button className={styles.downloadButton}>
         <div className={styles.downloadButtonImg}>
-        <img src={DownloadIcon} className={styles.DownloadImg} alt="Download" />
-        Download Media
+          <img
+            src={DownloadIcon}
+            className={styles.DownloadImg}
+            alt="Download"
+          />
+          Download Media
         </div>
-      
       </button>
     </div>
   );

@@ -1,4 +1,4 @@
-.container {
+/* .container {
     position: absolute;
     width: 270px;
     height: 525px;
@@ -18,7 +18,7 @@
   
   .previewText {
     font-size: 24px;
-    /* font-weight: bold; */
+
     font-weight: 500;
     margin-bottom: 20px;
     text-align: center;
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 10px;  */
+  
   }
   
   .image {
@@ -87,6 +87,113 @@
       height: auto;
       top: 2%;
       left: 2%;
+      padding: 2px;
+    }
+  
+    .previewText {
+      font-size: 16px;
+    }
+  
+    .imageContainer {
+      width: 100%;
+      height: auto;
+      margin-top: 5px;
+    }
+  
+    .emptyScreen {
+      margin-top: 10px;
+    }
+  }
+   */
+
+   .container {
+    position: relative;
+    width: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 110px; 
+    margin-left: 100px;
+    
+  }
+  
+  .previewBox {
+    width: 270px;
+    height: 500px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+ 
+  }
+  
+  .previewText {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Poppins";
+  }
+  
+  .imageContainer {
+    width: 250px;
+    max-height: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 1024px) {
+    .previewBox {
+      width: 80%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .previewText {
+      font-size: 20px;
+    }
+  
+    .imageContainer {
+      width: 80%;
+      height: auto;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .previewBox {
+      width: 90%;
+      height: auto;
+      padding: 5px;
+    }
+  
+    .previewText {
+      font-size: 18px;
+    }
+  
+    .imageContainer {
+      width: 90%;
+      height: auto;
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .previewBox {
+      width: 95%;
+      height: auto;
       padding: 2px;
     }
   
