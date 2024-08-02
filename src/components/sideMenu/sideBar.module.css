@@ -1,17 +1,21 @@
 
-
+.mainContainer{
+  display: flex;
+  width: 100vh;
+}
 .container {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-  width: 80px;
+  width: 100px;
   height: fit-content;
   background-color: white;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 90px;
   transition: transform 0.3s ease-in-out;
+  height: 80vh;
 }
 
 .columnContainer {

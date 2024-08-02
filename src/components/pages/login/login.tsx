@@ -48,6 +48,7 @@
 
 import  { useState } from 'react';
 import styles from './login.module.css';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -90,7 +91,11 @@ const LoginForm = () => {
             <a href="/">Forget Password?</a>
           </div>
           <button type="submit" className={styles.loginButton}>LOG IN</button>
-          <p>Don’t have an account? <a href="/">Sign Up</a></p>
+          <p>Don’t have an account? 
+            <Link to="/SignUpForm-screen" >
+            <a href="/">Sign Up</a>
+            </Link>
+            </p>
         </form>
       </div>
     );

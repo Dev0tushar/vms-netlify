@@ -370,7 +370,6 @@
 
 // export default DeviceTable;
 
-
 // import React from "react";
 import DataTable from "react-data-table-component";
 import styles from "./deviceConfiguration.module.css";
@@ -380,7 +379,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
 import filterIcon from "../../../assets/filterbutton-icon.png";
 import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 interface Device {
   id: number;
@@ -526,12 +525,12 @@ const customStyles = {
 const DeviceTable: React.FC = () => {
   return (
     // <div className="container-fluid" style={{ backgroundColor: "#F5F5F5" }}>
-    <div className="container-fluid" >
+    <div className={styles.deviceMainContainer}>
       <div className="row">
-        <div className="col-md-2 col-3" >
+        <div className="col-md-2 col-3">
           <SideBarMenu />
         </div>
-        <div className="col-md-10 col-9">
+        <div className="col-md-10 col-9 ">
           <div className={styles.deviceTableContainer}>
             <div className={styles.mainContainer}>
               <div className={styles.buttonContainer}>
@@ -546,7 +545,9 @@ const DeviceTable: React.FC = () => {
                   </Link>
                   <button className={styles.dltButton}>DELETE</button>
                 </div>
-                <button className={`${styles.topButton} ${styles.filterButton}`}>
+                <button
+                  className={`${styles.topButton} ${styles.filterButton}`}
+                >
                   <img
                     src={filterIcon}
                     alt=""

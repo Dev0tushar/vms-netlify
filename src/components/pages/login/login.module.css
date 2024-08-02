@@ -226,17 +226,16 @@ a {
 
 
 
-body {
+/* body {
     font-family: 'Arial', sans-serif;
-    /* margin: 0; */
-    /* margin-top: 8%; */
+ 
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     background-color: #f0f0f0;
-}
+} */
 
 .loginContainer {
     margin-top: 30%;

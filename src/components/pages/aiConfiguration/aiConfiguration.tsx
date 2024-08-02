@@ -1121,16 +1121,15 @@ const AiConfiguration: React.FC = () => {
                 pagination
                 highlightOnHover
               />
+              <hr className={styles.hrLine} />
               <div className="row">
-                <div
-                  className={`${styles.bottomButtons} col-12 d-flex justify-content-end`}
-                >
+                <div className={`${styles.bottomButtons} col-12 d-flex `}>
                   <Link to="/Edit-Screen" className={styles.linkButton}>
                     <button className={`${styles.editbutton} btn btn-dark`}>
                       Edit
                     </button>
                   </Link>
-                  <button className={`${styles.deletebutton} btn btn-warning`}>
+                  <button className={`${styles.deletebutton} btn border rounded`}>
                     Delete
                   </button>
                 </div>

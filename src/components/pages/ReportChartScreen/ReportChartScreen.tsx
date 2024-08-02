@@ -1,6 +1,3 @@
-
-
-
 // import React from "react";
 import { Bar, Line, Pie } from "react-chartjs-2";
 import {
@@ -91,12 +88,16 @@ const ChartsComponent: React.FC = () => {
       <SideBarMenu />
       <div className={styles.pageContainer}>
         <div className={styles.ReportContent}>
-        <ReportContent />
+          <ReportContent />
         </div>
         <div className={styles.contentArea}>
           <div>
             <div className={styles.header}>
-              <img src={ReportIcon} alt="Report" className={styles.reportIcon} />
+              <img
+                src={ReportIcon}
+                alt="Report"
+                className={styles.reportIcon}
+              />
               <h1>Report</h1>
             </div>
             <div className={styles.container}>

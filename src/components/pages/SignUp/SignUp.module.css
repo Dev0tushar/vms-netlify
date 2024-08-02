@@ -20,9 +20,9 @@
 body {
   background-color: var(--bg-color);
   font-family: var(--font-family);
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   min-height: 100vh;
 }
 

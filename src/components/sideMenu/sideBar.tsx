@@ -75,6 +75,7 @@ const SideBarMenu: React.FC = () => {
       <div className={styles.hamburger} onClick={toggleMenu}>
         {isOpen ? "✖" : "☰"}
       </div>
+      <div className={styles.mainContainer}>
       <div className={`${styles.container} ${isOpen ? styles.open : ""}`}>
         <div className={styles.columnContainer}>
           <Link to="/liveview">
@@ -112,6 +113,7 @@ const SideBarMenu: React.FC = () => {
           </Link>
           <p>AI</p>
         </div>
+      </div>
       </div>
     </>
   );

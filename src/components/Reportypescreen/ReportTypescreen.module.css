@@ -63,8 +63,13 @@
   .container {
     margin: 10px;
     padding: 10px;
+    width: 75vw;
+    height: 60vh;
   }
-
+  .emptyScreen {
+    width: 0;
+    height: 0;
+  }
   .reportType {
     padding: 10px;
   }
@@ -82,5 +87,11 @@
   }
   .emptyScreen {
     padding: 10px;
+  }
+}
+@media (max-width: 430px) {
+  .emptyScreen {
+    width: 0;
+    height: 0;
   }
 }
