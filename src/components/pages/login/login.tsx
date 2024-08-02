@@ -79,7 +79,7 @@ const LoginForm = () => {
                 className={styles.showPassword} 
                 onClick={togglePasswordVisibility}
               >
-                👁️
+                
               </button>
             </div>
           </div>
