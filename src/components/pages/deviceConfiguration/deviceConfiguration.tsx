@@ -370,7 +370,6 @@
 
 // export default DeviceTable;
 
-// import React from "react";
 import DataTable from "react-data-table-component";
 import styles from "./deviceConfiguration.module.css";
 import camera from "../../../assets/Camera-png.png";
@@ -489,18 +488,18 @@ const columns = [
   {
     name: "Action",
     cell: () => (
-      <div className={styles.actionButtons}>
-        <button className={`${styles.actionButton} ${styles.editButton}`}>
+      <div>
+        <button className={styles.btnedit}>
           <FiEdit2 />
         </button>
-        <button className={`${styles.actionButton} ${styles.deleteButton}`}>
+        <button className={styles.btndelete}>
           <AiOutlineDelete />
         </button>
       </div>
     ),
     ignoreRowClick: true,
-    allowOverflow: true,
-    button: true,
+    $allowOverflow: true,
+    $button: true,
   },
 ];
 
@@ -524,10 +523,9 @@ const customStyles = {
 
 const DeviceTable: React.FC = () => {
   return (
-    // <div className="container-fluid" style={{ backgroundColor: "#F5F5F5" }}>
-    <div className={styles.deviceMainContainer}>
+    <div className="container-fluid" style={{ backgroundColor: "#F5F5F5" }}>
       <div className="row">
-        <div className="col-md-2 col-3">
+        <div className="col-md-2 col-5" >
           <SideBarMenu />
         </div>
         <div className="col-md-10 col-9 ">
@@ -536,8 +534,12 @@ const DeviceTable: React.FC = () => {
               <div className={styles.buttonContainer}>
                 <div>
                   <div className={styles.topContent}>
-                    <img src={camera} alt="" className={filterIcon} /> Device
-                    Configuration
+                    <img
+                      src={camera}
+                      alt=""
+                      className={styles.filterButtonIcon}
+                    />{" "}
+                    Device Configuration
                   </div>
                   <br />
                   <Link to="/AddDevice-Screen" className={styles.linkButton}>
@@ -545,16 +547,18 @@ const DeviceTable: React.FC = () => {
                   </Link>
                   <button className={styles.dltButton}>DELETE</button>
                 </div>
-                <button
-                  className={`${styles.topButton} ${styles.filterButton}`}
-                >
-                  <img
-                    src={filterIcon}
-                    alt=""
-                    className={styles.filterButtonIcon}
-                  />{" "}
-                  FILTER BY
-                </button>
+                <div className={styles.filtercontent}>
+                  <button
+                    className={`${styles.topButton} ${styles.filterButton}`}
+                  >
+                    <img
+                      src={filterIcon}
+                      alt=""
+                      className={styles.filterButtonIcon}
+                    />{" "}
+                    FILTER BY
+                  </button>
+                </div>
               </div>
               <div className={styles.tableContainer}>
                 <DataTable

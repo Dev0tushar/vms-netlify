@@ -159,17 +159,7 @@ img {
   }
 } */
 
-
-
-
-
-
-
-
-/* body {
-  background-color: #F5F5F5;
-} */
- .deviceMainContainer{
+/* .deviceMainContainer{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,7 +174,7 @@ img {
   font-family: "Poppins";
   width: 100vw;
   height: 100vh;
-  /* width: 1150px; */
+ 
   margin-right: 550px;
 }
 
@@ -346,5 +336,154 @@ img {
 
   .deviceTableContainer {
     padding: 5px;
+  }
+} */
+
+.deviceTableContainer {
+  padding: 120px;
+  font-family: "Poppins";
+  /* width: 100vw; */
+  /* height: 100vh; */
+  margin-left: -200px;
+  overflow-y: auto;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.topContent {
+  font-weight: bold;
+  font-family: "Poppins";
+  font-size: 30px;
+}
+
+.topButton {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dltButton {
+  margin-right: 10px;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+.topButton:hover {
+  background-color: #ff914d;
+}
+
+.filterButton {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  margin-top: 70px;
+}
+
+.filterIcon {
+  width: 5.33px;
+  height: 7px;
+  top: 2px;
+  left: 1.33px;
+  gap: 0px;
+  border: 1.66px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.tableContainer {
+  border-radius: 8px;
+  overflow-x: auto;
+  width: 85vw;
+}
+
+.filterButton:hover {
+  background-color: #f4f8fa;
+}
+
+.filterButton .filterButtonIcon {
+  width: 1vw;
+  height: 5vh;
+}
+
+.statusOnline {
+  color: rgb(138, 140, 138);
+}
+
+.statusOffline {
+  color: rgb(97, 95, 95);
+}
+
+.btnedit {
+  color: #666666;
+  border: none;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 5px;
+  background-color: white;
+}
+.btnedit:hover {
+  background-color: #f5f5f5;
+}
+.btndelete {
+  color: #666666;
+  border: none;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 5px;
+  background-color: white;
+}
+
+.btndelete:hover {
+  background-color: #f5f5f5;
+}
+@media (max-width: 768px) {
+  .deviceTableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .topButton {
+    padding: 5px 10px;
+  }
+
+  .buttonContainer {
+    min-height: auto;
+    min-width: auto;
+    /* flex-direction: column; */
+    align-items: flex-start;
+  }
+  .topcontant .filterButtonIcon {
+    height: auto;
+    width: auto;
+  }
+}
+@media (max-width: 480px) {
+  .topContent  {
+    min-width: auto;
+    min-height: auto;
+    font-size: 21px;
+  }
+  .deviceTableContainer{
+   margin-left: 40px;
   }
 }

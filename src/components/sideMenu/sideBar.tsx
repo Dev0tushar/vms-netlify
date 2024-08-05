@@ -60,7 +60,7 @@ import Live from "../../assets/liveDashboard-icon-png.png";
 import playback from "../../assets/PlayBack-Icon.png";
 import Report from "../../assets/ReportIcon.png";
 import Alert from "../../assets/alertdashboard-icon.png";
-import Device from "../../assets/alertdashboard-icon.png";
+import Device from "../../assets/AddDevice-sidebar(2).png";
 import Ai from "../../assets/ai2-sidebar-png-output.png";
 
 const SideBarMenu: React.FC = () => {
@@ -76,44 +76,44 @@ const SideBarMenu: React.FC = () => {
         {isOpen ? "✖" : "☰"}
       </div>
       <div className={styles.mainContainer}>
-      <div className={`${styles.container} ${isOpen ? styles.open : ""}`}>
-        <div className={styles.columnContainer}>
-          <Link to="/liveview">
-            <img src={Live} className={styles.image} alt="Live View" />
-          </Link>
-          <p>Live view</p>
+        <div className={`${styles.container} ${isOpen ? styles.open : ""}`}>
+          <div className={styles.columnContainer}>
+            <Link to="/liveview">
+              <img src={Live} className={styles.image} alt="Live View" />
+            </Link>
+            <p>Live view</p>
+          </div>
+          <div className={styles.columnContainer}>
+            <Link to="/Playback">
+              <img src={playback} className={styles.image} alt="Play Back" />
+            </Link>
+            <p>Playback</p>
+          </div>
+          <div className={styles.columnContainer}>
+            <Link to="/reportChart-Screen">
+              <img src={Report} className={styles.image} alt="Report" />
+            </Link>
+            <p> Report</p>
+          </div>
+          <div className={styles.columnContainer}>
+            <Link to="/alert">
+              <img src={Alert} className={styles.image} alt="Alert" />
+            </Link>
+            <p>Alert</p>
+          </div>
+          <div className={styles.columnContainer}>
+            <Link to="/device-config">
+              <img src={Device} className={styles.image} alt="Device" />
+            </Link>
+            <p>Device</p>
+          </div>
+          <div className={styles.columnContainer}>
+            <Link to="/ai-config">
+              <img src={Ai} className={styles.image} alt="AI" />
+            </Link>
+            <p>AI</p>
+          </div>
         </div>
-        <div className={styles.columnContainer}>
-          <Link to="/Playback">
-            <img src={playback} className={styles.image} alt="Play Back" />
-          </Link>
-          <p>Playback</p>
-        </div>
-        <div className={styles.columnContainer}>
-          <Link to="/reportChart-Screen">
-            <img src={Report} className={styles.image} alt="Report" />
-          </Link>
-          <p> Report</p>
-        </div>
-        <div className={styles.columnContainer}>
-          <Link to="/alert">
-            <img src={Alert} className={styles.image} alt="Alert" />
-          </Link>
-          <p>Alert</p>
-        </div>
-        <div className={styles.columnContainer}>
-          <Link to="/device-config">
-            <img src={Device} className={styles.image} alt="Device" />
-          </Link>
-          <p>Device</p>
-        </div>
-        <div className={styles.columnContainer}>
-          <Link to="/ai-config">
-            <img src={Ai} className={styles.image} alt="AI" />
-          </Link>
-          <p>AI</p>
-        </div>
-      </div>
       </div>
     </>
   );

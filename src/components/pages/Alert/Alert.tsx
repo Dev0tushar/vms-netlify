@@ -242,15 +242,16 @@
 
 // // export default AlertTable;
 
-// src/AlertTable.tsx
+
 import React from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import AlertSidebar from "../../AlertSideBar/AlertSideBar";
 import styles from "./alert.module.css";
 import SideBarMenu from "../../sideMenu/sideBar";
 import Alert from "../../../assets/alertdashboard-icon.png";
-import FiterIcon from "../../../assets/filterbutton-icon.png";
+import FilterIcon from "../../../assets/filterbutton-icon.png";
 import DownloadIcon from "../../../assets/dpwnloadbutton-icon.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Alert {
   id: number;
@@ -322,35 +323,48 @@ const AlertTable: React.FC = () => {
     <>
       <SideBarMenu />
       <div className={styles.layoutContainer}>
-        <div className={styles.sidebar}>
-          <AlertSidebar />
-        </div>
-        <div className={styles.mainContent}>
-          <div className={styles.alertHeader}>
-            <div className={styles.alertContent}>
-              <h2>
-                <img src={Alert} alt="" className={styles.alertIcon} /> Alert
-              </h2>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 col-md-3">
+              <AlertSidebar />
             </div>
-            <div className={styles.alertButtons}>
-              <button className={styles.filterButton}>
-                <img src={FiterIcon} alt="" className={styles.imgIcons} style={{minHeight:"17px", minWidth:"17px"}}/>
-                
-                FILTER BY
-              </button>
-              <button className={styles.DownloadButton}>
-                <img src={DownloadIcon} alt="" className={styles.imgIcons} style={{minHeight:"17px", minWidth:"17px"}} />
-                DOWNLOAD
-              </button>
+            <div className="col-12 col-md-9">
+              <div className={styles.alertHeader}>
+                <div className={styles.alertContent}>
+                  <h2>
+                    <img src={Alert} alt="Alert" className={styles.alertIcon} /> Alert
+                  </h2>
+                </div>
+                <div className={styles.alertButtons}>
+                  <button className={styles.filterButton}>
+                    <img
+                      src={FilterIcon}
+                      alt="Filter"
+                      className={styles.imgIcons}
+                      style={{ minHeight: "17px", minWidth: "17px" }}
+                    />
+                    FILTER BY
+                  </button>
+                  <button className={styles.downloadButton}>
+                    <img
+                      src={DownloadIcon}
+                      alt="Download"
+                      className={styles.imgIcons}
+                      style={{ minHeight: "17px", minWidth: "17px" }}
+                    />
+                    DOWNLOAD
+                  </button>
+                </div>
+              </div>
+              <div className={styles.alertTable}>
+                <DataTable
+                  selectableRows
+                  columns={columns}
+                  data={data}
+                  pagination
+                />
+              </div>
             </div>
-          </div>
-          <div className={styles.alertTable}>
-            <DataTable
-              selectableRows
-              columns={columns}
-              data={data}
-              pagination
-            />
           </div>
         </div>
       </div>

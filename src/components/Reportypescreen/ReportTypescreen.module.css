@@ -16,13 +16,21 @@
   margin-bottom: 20px;
   background-color: #f9f9f9;
 }
-
+h2{
+  font-size: 1.5rem;
+  font-size: "Poppins";
+}
 .dropdown {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
+.radiocontainer{
+  display: flex;
+  align-items: center;
+  gap: 8px; /* This will add space between the input and the label */
+  margin-bottom: 10px;
+}
 .dropdown select {
   padding: 8px;
   border: 1px solid #ccc;

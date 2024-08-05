@@ -10,17 +10,17 @@ const ReportContent: React.FC = () => {
           <select>
             <option value="weekly">Weekly</option>
           </select>
-          <div>
+          <div className={styles.radiocontainer}>
             <input
               type="radio"
               id="onePeriod"
               name="period"
               value="onePeriod"
-              checked
+              
             />
             <label htmlFor="onePeriod">One Period</label>
           </div>
-          <div>
+          <div className={styles.radiocontainer}>
             <input
               type="radio"
               id="multiplePeriod"

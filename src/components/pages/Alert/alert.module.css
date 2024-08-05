@@ -32,188 +32,6 @@
 
 
 
-/* src/alert.module.css */
-body {
-  /* margin: 0;
-  padding: 0; */
-  background-color: #f5f5f5;
-  /* box-sizing: border-box;  */
-}
-
-
-.layoutContainer {
-  display: flex;
-  flex-direction: row;
-  /* min-height: 100vh;  */
-}
-
-.sidebar {
-  /* width: 250px;  */
-  /* background-color: #fff; */
-  /* border-right: 1px solid #ddd;  */
-  /* padding: 20px; */
-  /* margin-left: 400px; */
-  margin-top: 100px;
-  /* display: flex; */
-}
-
-.mainContent {
-  /* flex: 1;
-  padding: 20px;
- padding-top: 100px; */
- /* display: flex; */
- 
- /* flex-grow: 1; */
- justify-content: flex-end;
- margin-left: 10px;
- /* margin-right: 400px; */
- margin-top: 150px; 
-}
-
-.alertHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.alertIcon {
-  width: 25px; 
-}
-
-.alertButtons button {
-  margin-left: 10px;
-  border: none;
-  width: 150px;
-  height: 40px;
-  border-radius: 8px;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 13px;
-}
-
-.filterButton {
-  background-color: white;
-  font-weight: bold;
-}
-
-.imgIcons {
-font-size: 10px;
-}
-/* img{
-  min-height: 20px;
-  min-width: 30px;
-} */
-
-.DownloadButton {
-  background-color: rgb(255, 115, 21);
-  color: white;
-}
-
-.alertTable {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 20px; 
-  width: 65vw;
-}
-
-
-
-@media (max-width: 768px) {
-  .alertHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .alertButtons {
-    margin-top: 10px;
-  }
-
-  .alertTable {
-    min-width: 100%;
-  }
-}
-
-
-
-.alertHeader h2 {
-  margin: 0;
-}
-
-.alertButtons button {
-  margin-left: 10px;
-  border: none;
-  width: 150px;
-  height: 40px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.filterButton {
-  background-color: white;
-  font-size: medium;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-weight: bold;
-}
-.imgIcons {
-  width: 10%;
-  height: 5px;
-}
-.DownloadButton {
-  background-color: rgb(255, 115, 21);
-  font-size: 13px;
-  color: white;
-}
-.alertContent {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.alertTable {
-  flex: 2;
-  min-width: 300px;
-  font-family: sans-serif;
-}
-
-.alertTable {
-  border: none;
-  border-radius: 8px;
-}
-.emptyScreen {
-  padding: 20px;
-
-  background-color: #ffffff;
-  height: 250px;
-}
-.rdt_TableRow {
-  background-color: green;
-}
-
-.rdt_TableRow {
-  background-color: orange;
-}
-
-@media (max-width: 768px) {
-  .alertHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .alertButtons {
-    margin-top: 10px;
-  }
-
-  .alertContent {
-    flex-direction: column;
-  }
-
-  .alertTable {
-    min-width: 100%;
-  }
-}  
-
 
 
 
@@ -414,3 +232,141 @@ font-size: 10px;
     max-height: none; 
   }
 } */
+.layoutContainer {
+  background-color: #f5f5f5;
+  /* padding: 20px; */
+  margin-top: 100px;
+  display: flex;
+  margin-left: 70px;
+}
+
+.alertHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.alertIcon {
+  width: 25px;
+}
+
+.alertButtons button {
+  margin-left: 10px;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.filterButton {
+  background-color: white;
+  font-weight: bold;
+}
+
+.imgIcons {
+  font-size: 10px;
+}
+
+.downloadButton {
+  background-color: rgb(255, 115, 21);
+  color: white;
+}
+.alertButtons{
+  display: flex;
+  
+}
+.alertTable {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+
+
+
+.alertHeader h2 {
+  margin: 0;
+}
+
+.alertButtons button {
+  margin-left: 10px;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filterButton {
+  background-color: white;
+  font-size: medium;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.imgIcons {
+  width: 10%;
+  height: 5px;
+}
+
+.downloadButton {
+  background-color: rgb(255, 115, 21);
+  font-size: 13px;
+  color: white;
+}
+
+.alertContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.alertTable {
+  font-family: sans-serif;
+  border: none;
+  border-radius: 8px;
+}
+
+.emptyScreen {
+  padding: 20px;
+  background-color: #ffffff;
+  height: 250px;
+}
+
+.rdt_TableRow {
+  background-color: green;
+}
+
+.rdt_TableRow {
+  background-color: orange;
+}
+
+@media (max-width: 768px) {
+  .alertHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alertButtons {
+    margin-top: 10px;
+  }
+
+  .alertContent {
+    flex-direction: column;
+  }
+  .alertTable {
+    width: 100%;
+  }
+}
+@media (max-width: 390px){
+  .alertButtons {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 10px; /* Space between stacked buttons */
+  }
+}
