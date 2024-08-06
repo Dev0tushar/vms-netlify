@@ -46,6 +46,7 @@
 
 
 
+import React from "react";
 import styles from "./AlertSideBar.module.css";
 import DownloadIcon from "../../assets/dpwnloadbutton-icon.png";
 
@@ -71,7 +72,7 @@ const AlertContent: React.FC = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-12 d-flex justify-content-center">
+        <div className="col-12 d-flex flex-column align-items-center">
           <div className={styles.alertImages}>
             <img
               src="https://faceter.cam/wp-content/uploads/2021/02/1-1.jpg"

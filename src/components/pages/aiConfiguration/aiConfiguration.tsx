@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import styles from "./aiConfiguration.module.css";
@@ -9,6 +7,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import AiIcon from "../../../assets/ai2-sidebar-png-output.png";
 import PreviewScreen from "../PreviewAiConfigScreen/PreviewAiConfig";
+import DownloadIcon from "../../../assets/PlusIcon-addDevice-button.png";
 
 interface CameraData {
   no: number;
@@ -151,8 +150,8 @@ const AiConfiguration: React.FC = () => {
         <div className={`${styles.previewScreen}`}>
           <PreviewScreen />
         </div>
-        <div className={`${styles.mainContentWrapper}`}>
-          <div className={`${styles.container} container`}>
+        <div className={`${styles.mainContentWrapper} `}>
+          <div className={`${styles.container} container `}>
             <div className={`${styles.aiHeaderContent} row`}>
               <h1 className="col-12">
                 <img src={AiIcon} alt="AI Icon" />
@@ -195,9 +194,16 @@ const AiConfiguration: React.FC = () => {
                 </select>
               </div>
               <div className="col-md-3 d-flex align-items-center">
-                <button onClick={handleAddUser} className={`${styles.btn}`}>
-                  ADD
-                </button>
+                <div className={styles.TopButton}>
+                  <button onClick={handleAddUser} className={`${styles.btn}`}>
+                    <img
+                      src={DownloadIcon}
+                      alt=""
+                      className={styles.DownloadIconButton}
+                    />
+                    ADD
+                  </button>
+                </div>
               </div>
             </div>
             <div className={styles.tableContainer}>
@@ -209,14 +215,16 @@ const AiConfiguration: React.FC = () => {
                 highlightOnHover
               />
               <hr className={styles.hrLine} />
-              <div className="row">
-                <div className={`${styles.bottomButtons} col-12 d-flex `}>
+              <div className="row ">
+                <div className={`${styles.bottomButtons} col-12 d-flex mb-3`}>
                   <Link to="/Edit-Screen" className={styles.linkButton}>
                     <button className={`${styles.editbutton} btn btn-dark`}>
                       Edit
                     </button>
                   </Link>
-                  <button className={`${styles.deletebutton} btn border rounded`}>
+                  <button
+                    className={`${styles.deletebutton} btn border rounded`}
+                  >
                     Delete
                   </button>
                 </div>

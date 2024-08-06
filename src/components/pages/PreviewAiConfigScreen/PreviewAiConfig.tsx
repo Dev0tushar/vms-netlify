@@ -28,7 +28,7 @@ import styles from "./PreviewAiConfig.module.css";
 const PreviewScreen: React.FC = () => {
   return (
     <div className={`${styles.container} container-fluid d-flex justify-content-center `} style={{marginLeft:"80px"}}>
-      <div className={styles.MainContainer}></div>
+     
       <div className={styles.previewBox}>
         <div className={styles.previewText}>Preview</div>
         <div className={styles.imageContainer}>

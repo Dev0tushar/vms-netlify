@@ -328,7 +328,7 @@ const AlertTable: React.FC = () => {
             <div className="col-12 col-md-3">
               <AlertSidebar />
             </div>
-            <div className="col-12 col-md-9">
+            <div className="col-12 col-md-9 mt-4">
               <div className={styles.alertHeader}>
                 <div className={styles.alertContent}>
                   <h2>

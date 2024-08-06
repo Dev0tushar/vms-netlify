@@ -338,14 +338,22 @@ img {
     padding: 5px;
   }
 } */
+body::-webkit-scrollbar{
+  display: none;
+}
+
+
+
 
 .deviceTableContainer {
-  padding: 120px;
+  padding: 50px;
+  margin-top: 80px;
   font-family: "Poppins";
   /* width: 100vw; */
   /* height: 100vh; */
-  margin-left: -200px;
+  margin-left: -150px;
   overflow-y: auto;
+  display: flex;
 }
 
 img {
@@ -380,9 +388,10 @@ img {
 .dltButton {
   margin-right: 10px;
   padding: 10px 20px;
-
+  border-color: #ff914d;
   border-radius: 5px;
   cursor: pointer;
+  color: #ff914d;
 }
 .topButton:hover {
   background-color: #ff914d;
@@ -392,7 +401,9 @@ img {
   background-color: white;
   color: black;
   font-weight: bold;
+  font-weight: 100px;
   margin-top: 70px;
+  /* display: flex; */
 }
 
 .filterIcon {
@@ -409,8 +420,13 @@ img {
   border-radius: 8px;
   overflow-x: auto;
   width: 85vw;
+  overflow: auto; /* Ensure the table container can scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
 }
-
+.tableContainer::-webkit-scrollbar {
+  display: none; 
+}
 .filterButton:hover {
   background-color: #f4f8fa;
 }
@@ -455,6 +471,8 @@ img {
 .btndelete:hover {
   background-color: #f5f5f5;
 }
+
+
 @media (max-width: 768px) {
   .deviceTableContainer {
     display: flex;
@@ -465,7 +483,9 @@ img {
   .topButton {
     padding: 5px 10px;
   }
-
+  .dltButton{
+    padding: 5px 10px;
+  }
   .buttonContainer {
     min-height: auto;
     min-width: auto;
@@ -478,12 +498,26 @@ img {
   }
 }
 @media (max-width: 480px) {
-  .topContent  {
+  .topContent {
     min-width: auto;
     min-height: auto;
     font-size: 21px;
+    margin-top: 20px;
   }
-  .deviceTableContainer{
-   margin-left: 40px;
+  .deviceTableContainer {
+    margin-left: auto;
+    width: 100vw;
+  }
+   .dltButton{
+    padding: 5px 10px;
+    margin-top: 15px;
+  }
+  .filtercontent{
+    padding: 5px 10px;
+    margin-top: 15px;
+    font-size: 0.750rem;
+  }
+  .filterButtonIcon {
+    width: 10px;
   }
 }

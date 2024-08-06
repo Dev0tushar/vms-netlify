@@ -120,55 +120,42 @@
   }
 }
  */
- .alertContainer {
+ /* Main container width reduced */
+.alertContainer {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  margin: 20px;
+  margin: 20px auto; /* Center align with auto margins */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin-right: 40px;
+  max-width: 250px; /* Reduced width */
+  margin-left: auto;
+  
 }
 
 .alertHeader {
-  text-align: center;
+ display: flex;
+ margin-right: auto;
 }
 
 .alertText {
   margin: 10px 0;
   text-align: left;
-  font-size: 0.875rem; 
+  font-size: 0.700rem; /* Adjusted for better readability */
 }
 
 .alertImages {
   display: flex;
-  flex-wrap: wrap; 
+  flex-direction: column; /* Ensure images are in a column */
   gap: 10px;
-  justify-content: center;
+  align-items: center; /* Center images horizontally */
 }
 
 .smallImage,
 .largeImage {
-  width: 100%; 
-  max-width: 200px; 
+  width: 100%;
+  max-width: 300px; /* Max width for images */
   height: auto;
   border-radius: 10px;
-}
-
-
-@media (min-width: 768px) {
-  .smallImage,
-  .largeImage {
-    width: 48%; 
-  }
-}
-
-
-@media (min-width: 1200px) {
-  .smallImage,
-  .largeImage {
-    max-width: 45%; 
-  }
 }
 
 .downloadButton {
@@ -189,8 +176,8 @@
 }
 
 .DownloadImg {
-  width: 16px; 
-  height: 14px; 
+  width: 16px; /* Adjusted size */
+  height: 14px; /* Adjusted size */
   margin-right: 5px;
 }
 
@@ -198,4 +185,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .alertContainer {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .alertText {
+    font-size: 0.75rem; 
+  }
+
+  .downloadButton {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .DownloadImg {
+    width: 14px; 
+    height: 12px; 
+  }
 }

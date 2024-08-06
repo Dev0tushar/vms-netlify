@@ -379,6 +379,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import filterIcon from "../../../assets/filterbutton-icon.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import '../../../global.css'
 
 interface Device {
   id: number;
@@ -525,7 +526,7 @@ const DeviceTable: React.FC = () => {
   return (
     <div className="container-fluid" style={{ backgroundColor: "#F5F5F5" }}>
       <div className="row">
-        <div className="col-md-2 col-5" >
+        <div className="col-md-2 col-5">
           <SideBarMenu />
         </div>
         <div className="col-md-10 col-9 ">
@@ -545,9 +546,9 @@ const DeviceTable: React.FC = () => {
                   <Link to="/AddDevice-Screen" className={styles.linkButton}>
                     <button className={styles.topButton}>ADD</button>
                   </Link>
-                  <button className={styles.dltButton}>DELETE</button>
+                  <button className={`${styles.dltButton}`}>DELETE</button>
                 </div>
-                <div className={styles.filtercontent}>
+                <div className={`${styles.filtercontent} `}>
                   <button
                     className={`${styles.topButton} ${styles.filterButton}`}
                   >
@@ -562,6 +563,8 @@ const DeviceTable: React.FC = () => {
               </div>
               <div className={styles.tableContainer}>
                 <DataTable
+               
+                  
                   columns={columns}
                   data={data}
                   defaultSortFieldId={1}
