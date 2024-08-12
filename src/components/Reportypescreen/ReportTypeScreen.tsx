@@ -16,7 +16,6 @@ const ReportContent: React.FC = () => {
               id="onePeriod"
               name="period"
               value="onePeriod"
-              
             />
             <label htmlFor="onePeriod">One Period</label>
           </div>

@@ -7,12 +7,12 @@
 
 } */
 
-.container {
-  /* background-color: #ecebeb; */
+/* .container {
+
   padding: 20px;
   margin-top: -20px;
   height: calc(100vh - 50px);
-  /* overflow-y: auto; */
+
   height: 80%;
   display: flex;
   width: 100%;
@@ -44,7 +44,7 @@
 
 .containerBlock {
   justify-content: center;
-  /* Center align content horizontally */
+ 
   align-items: center;
   height: 220.06px;
   background-color: #ffffff;
@@ -56,7 +56,7 @@
     width: 100%;
     margin-top: 50px;
     height: auto;
-    /* Adjust other styles as needed */
+ 
   }
 }
 
@@ -70,22 +70,21 @@
 }
 
 .containerBlock3 {
-  /* width: 30%; Adjust width as per your design */
-  /* height: 150px; Adjust height as per your design */
+
   background-color: #ffffff;
   border-radius: 14px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* Center align content horizontally */
+
   align-items: center;
-  /* Center align content vertically */
+ 
   margin-top: 20px;
-  /* Adjust margin top as needed */
+
   padding: 20px;
-  /* Add padding as per your design */
+
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  /* Optional: Add box shadow */
+
 }
 
 .boxContent {
@@ -125,4 +124,146 @@
   margin-left: auto;
 
 
+} */
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding-left: 100px; /* Adjust according to sidebar width */
+  padding-right: 16px; /* Adjust according to navbar height */
+}
+
+.flexRowContainer {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+}
+
+.filterBoxContainer {
+  flex: 1 1 25%; /* Takes 25% of the container on larger screens */
+  max-width: 25%; /* Prevents overflow */
+  padding: 10px;
+}
+
+.iconAndBlocksContainer {
+  flex: 1 1 75%; /* Takes 75% of the container on larger screens */
+  max-width: 75%; /* Prevents overflow */
+  padding: 10px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.iconGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.iconWrapper,
+.iconGroup img {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.icon {
+  margin-right: 8px; /* Adds some space between the icon and the text */
+}
+
+.iconWrapper:hover,
+.iconGroup img:hover {
+  transform: scale(1.1);
+}
+
+.blocksContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  height: 80vh;
+}
+
+.block {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.singleBlockContainer {
+  grid-template-columns: 1fr;
+}
+
+.cameracontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Design for Tablets and Small Screens */
+@media (max-width: 768px) {
+  .flexRowContainer {
+    flex-direction: column;
+  }
+
+  .filterBoxContainer,
+  .iconAndBlocksContainer {
+    max-width: 100%; /* Full width on small screens */
+    flex: 1 1 100%;
+  }
+
+  .iconGroup img {
+    width: 30px; /* Adjust icon size on small screens */
+    height: 30px;
+  }
+}
+
+/* Responsive Design for Small Screens (320px - 490px) */
+@media (max-width: 490px) {
+  .maincontainer {
+    padding-left: 50px; /* Adjust padding for small screens */
+    padding-right: 10px;
+  }
+
+  .flexRowContainer {
+    margin-top: 50px;
+  }
+
+  .iconGroup img {
+    width: 25px; /* Further adjust icon size */
+    height: 25px;
+    display: none;
+  }
+
+  .blocksContainer {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    gap: 10px; /* Reduce gap between blocks */
+    height: auto; /* Adjust height to fit content */
+  }
+
+  .block {
+    padding: 8px; /* Reduce padding inside blocks */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+    
+  }
+
+  .iconWrapper {
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: flex-start; /* Align items to start on small screens */
+  }
+
+  .iconWrapper h1 {
+    font-size: 16px; /* Reduce font size */
+  }
 }

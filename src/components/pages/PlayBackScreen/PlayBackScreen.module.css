@@ -1,267 +1,4 @@
-/* .container {
-
-  padding: 20px;
-  margin-top: 100px;
-  height: calc(100vh - 50px);
-  overflow-y: auto;
-  display: flex;
-  width: 1200px;
-  position: relative;
-}
-
-.outerBlock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  margin-left: 200px;
-}
-
-.charStyle {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-  color: #333333;
-  margin-left: 10px;
-}
-
-.containerBlock {
-  width: 400px;
-  height: 220.06px;
-  background-color: #ffffff;
-  border-radius: 14px 14px 14px 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  opacity: 1;
-  margin-right: -00px;
-}
-
-.iconContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.videoPlayIcon {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-}
-
-.boxContent {
-  color: #c0c0c0;
-  font-family: "Poppins";
-
-  font-weight: 500;
-  text-align: center;
-  position: absolute;
-  bottom: 10px;
-  margin-left: 250px;
-}
-
-.tileIconBox {
-  background-color: #ffffff;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.titleNameIconOuterBox {
-  display: flex;
-  margin-bottom: 20px;
-  align-items: center;
-  margin-left: 120px;
-  
-}
-
-.yourImageClass {
-  width: 100%;
-  height: auto;
-  border-radius: 14px 14px 14px 14px;
-}
-
-.titleNameIconBox {
-  display: flex;
-  align-items: center;
-  font-family: "Poppins";
-  font-weight: 600;
-  font-size: 25px;
-  margin-left: 70px;
-  position: relative;
-  margin-top: 10px;
-}
-
-.titleNameIconSecondBox {
-  display: flex;
-  margin-left: auto;
-  margin-right: 50px;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .outerBlock {
-    margin-left: 0;
-    gap: 10px;
-  }
-
-  .charStyle,
-  .titleNameIconBox,
-  .boxContent {
-    font-size: 12px;
-  }
-
-  .containerBlock {
-    width: 300px;
-    height: 180px;
-  }
-
-  .videoPlayIcon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .tileIconBox {
-    width: 30px;
-    height: 30px;
-  }
-
-  .icon {
-    width: 15px;
-    height: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-
-  .outerBlock {
-    margin-left: 0;
-    gap: 15px;
-  }
-
-  .charStyle,
-  .titleNameIconBox,
-  .boxContent {
-    font-size: 18px;
-  }
-
-  .containerBlock {
-    width: 450px;
-    height: 280px;
-  }
-
-  .videoPlayIcon {
-    width: 25px;
-    height: 25px;
-  }
-
-  .tileIconBox {
-    width: 35px;
-    height: 35px;
-  }
-
-  .icon {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    padding: 20px;
-  }
-
-  .outerBlock {
-    margin-left: 150px;
-    gap: 20px;
-  }
-
-  .charStyle,
-  .titleNameIconBox,
-  .boxContent {
-    font-size: 25px;
-  }
-
-  .containerBlock {
-    width: 350px;
-    height: 220.06px;
-  }
-
-  .videoPlayIcon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .tileIconBox {
-    width: 40px;
-    height: 40px;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 20px;
-  }
-
-  .outerBlock {
-    margin-left: 150px;
-    gap: 20px;
-  }
-
-  .charStyle,
-  .titleNameIconBox,
-  .boxContent {
-    font-size: 25px;
-  }
-
-  .containerBlock {
-    width: 350px;
-    height: 220.06px;
-  }
-
-  .videoPlayIcon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .tileIconBox {
-    width: 40px;
-    height: 40px;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-} */
+/* 
 
 .maincontainer {
   padding-top: 120px;
@@ -330,13 +67,13 @@
   justify-content: center;
 }
 
-/* Example CSS for large blocks */
+
 .blocksContainer.largeBlocks {
   margin: 0 12rem;
   margin-bottom: 30px;
 }
 
-/* Media Queries for Responsive Grid Container Width */
+
 @media (max-width: 1200px) {
   .gridContainer {
     width: 80vw;
@@ -365,5 +102,227 @@
   .gridContainer {
     width: 100vw;
     grid-template-columns: 1fr;
+  }
+} */
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding-left: 100px; /* Adjust according to sidebar width */
+  padding-right: 16px; /* Adjust according to navbar height */
+}
+
+.flexRowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+}
+
+.filterBoxContainer {
+  flex: 1 1 25%; /* Takes 25% of the container on larger screens */
+  max-width: 25%; /* Prevents overflow */
+  padding: 10px;
+}
+
+.iconAndBlocksContainer {
+  flex: 1 1 75%; /* Takes 75% of the container on larger screens */
+  max-width: 75%; /* Prevents overflow */
+  padding: 10px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.iconGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.iconWrapper,
+.iconGroup img {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.Playicon {
+  margin-right: 8px;
+  border-radius: 5px;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.iconWrapper:hover,
+.iconGroup img:hover {
+  transform: scale(1.1);
+}
+
+.blocksContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  height: 80vh;
+}
+
+.block {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.singleBlockContainer {
+  grid-template-columns: 1fr;
+}
+
+.cameracontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blockContent {
+  position: relative; /* Required for absolute positioning of the title */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  height: 50vh; /* Ensure the container has height for vertical alignment */
+  padding: 10px; /* Optional: Add padding as needed */
+}
+
+.playIcon {
+  display: block; /* Ensures the image is displayed as a block element */
+}
+
+.blockTitle {
+  position: absolute; /* Positioning the title at the bottom */
+  bottom: 10px; /* Adjust this value to control distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the title horizontally */
+  /* Optional: Add additional styling for the title */
+}
+
+/* Responsive Design for Tablets and Small Screens */
+@media (max-width: 768px) {
+  .flexRowContainer {
+    flex-direction: column;
+  }
+
+  .filterBoxContainer,
+  .iconAndBlocksContainer {
+    max-width: 100%; /* Full width on small screens */
+    flex: 1 1 100%;
+  }
+
+  .Playicon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .iconGroup img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Responsive Design for Small Screens (320px - 490px) */
+@media (max-width: 490px) {
+  .maincontainer {
+    padding-left: 50px; /* Adjust padding for small screens */
+    padding-right: 10px;
+  }
+
+  .flexRowContainer {
+    margin-top: 50px;
+  }
+
+  .playIcon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Adjust the block content layout */
+  .blockContent {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Align items to the start of the container */
+    flex-direction: row; /* Ensure image and text are in a row */
+  }
+
+  /* Adjust the block title size */
+  .blockTitle {
+    font-size: 10px;
+    margin-left: 0px; /* Add space between image and text */
+  }
+
+  .blockContent .playIcon {
+    width: 10vw;
+    height: 1vh;
+  }
+  .Playicon img {
+    width: 25px; /* Further adjust icon size */
+    height: 25px;
+  }
+
+  .iconGroup img {
+    width: 25px; /* Further adjust icon size */
+    height: 25px;
+    display: none;
+  }
+
+  .blocksContainer {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    gap: 10px; /* Reduce gap between blocks */
+    height: auto; /* Adjust height to fit content */
+  }
+
+  .block {
+    height: 20vh;
+    padding: 8px; /* Reduce padding inside blocks */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+  }
+
+  .iconWrapper {
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: flex-start; /* Align items to start on small screens */
+  }
+
+  .iconWrapper h1 {
+    font-size: 16px; /* Reduce font size */
+  }
+  .Playicon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Align the image and text in a row */
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Ensure they stay in a row */
+  }
+
+  /* Adjust text size */
+  .iconWrapper h1 {
+    font-size: 16px;
+    margin-left: 10px; /* Add space between image and text */
   }
 }

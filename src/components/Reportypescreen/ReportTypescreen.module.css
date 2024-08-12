@@ -28,7 +28,7 @@ h2{
 .radiocontainer{
   display: flex;
   align-items: center;
-  gap: 8px; /* This will add space between the input and the label */
+  gap: 8px; 
   margin-bottom: 10px;
 }
 .dropdown select {
@@ -72,11 +72,10 @@ h2{
     margin: 10px;
     padding: 10px;
     width: 75vw;
-    height: 60vh;
+    height: 75vh;
   }
   .emptyScreen {
-    width: 0;
-    height: 0;
+    display: none;
   }
   .reportType {
     padding: 10px;
@@ -99,7 +98,13 @@ h2{
 }
 @media (max-width: 430px) {
   .emptyScreen {
-    width: 0;
-    height: 0;
+    display: none;
+  }
+  .container {
+    margin: 10px;
+    padding: 10px;
+    width: 75vw;
+    height: 75vh;
+ 
   }
 }

@@ -1,9 +1,134 @@
-.pageContainer {
+/* .pageContainer {
   padding: 20px;
-  /* margin-bottom: 300px; */
+ 
   margin-top: 100px;
   display: flex;
   margin-left: 80px;
+  background-color: #F5F5F5;
+  font-family: "Poppins";
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.reportIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+h1 {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52.5px;
+}
+
+.contentArea {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chartBox {
+  flex:  1 1 48%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  min-width: 300px;
+ 
+}
+
+.boxHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.boxHeader h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  color: #333;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+}
+
+.downloadIcon {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.pieChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65%;
+}
+
+@media (max-width: 1200px) {
+  .chartBox {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .boxHeader h3 {
+    font-size: 1.5rem;
+  }
+
+  .chartBox {
+    max-width: 100%;
+  }
+  .downloadIcon {
+    width: 20px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .boxHeader h3 {
+    font-size: 1.2rem;
+  }
+
+  .downloadIcon {
+    width: 20px;
+  }
+} */
+
+.pageContainer {
+  padding: 20px;
+  margin-top: 100px;
+  display: flex;
+  margin-left: 80px;
+  background-color: #f5f5f5;
+  font-family: "Poppins";
 }
 
 .header {
@@ -91,17 +216,31 @@ h1 {
   .pageContainer {
     flex-direction: column;
     justify-content: flex-start;
+    padding: 15px;
+    margin-left: 0;
   }
+
+  .contentArea {
+    justify-content: center;
+    margin-left: 0;
+  }
+  .ReportContent {
+    display: flex;
+    justify-content: center;
+  }
+  .chartBox {
+    /* flex: 1 1 100%; */
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
   .boxHeader h3 {
     font-size: 1.5rem;
   }
 
-  .chartBox {
-    max-width: 100%;
-  }
   .downloadIcon {
     width: 20px;
-    height: 10px;
+    height: 20px;
   }
 }
 
@@ -109,12 +248,73 @@ h1 {
   .header h1 {
     font-size: 1.5rem;
   }
+  .header{
+  
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .boxHeader h3 {
+    font-size: 1.2rem;
+  }
+
+  .downloadIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .chartBox {
+    padding: 15px;
+    min-width: 250px;
+    flex: 1 1 100%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+  .ReportContent{
+    margin-top: 50px;
+  }
+  .header{
+  
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .header h1 {
+    font-size: 1.3rem;
+  }
 
   .boxHeader h3 {
     font-size: 1.2rem;
   }
 
   .downloadIcon {
-    width: 20px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .chartBox {
+    padding: 15px;
+    min-width: 100px;
+    flex: 1 1 100%;
+    margin-bottom: 15px; /* Added margin-bottom for spacing between boxes */
+  }
+
+  .container {
+    padding: 10px;
+    gap: 15px; /* Adjusted gap for better spacing on small screens */
+  }
+
+  .pageContainer {
+    padding: 10px;
+    margin-top: 50px; /* Adjusted margin for better alignment on small screens */
+    margin-left: 0;
+    background-color: #F5F5F5;
+  }
+
+  .contentArea {
+    margin-left: 0;
+    justify-content: center; /* Centering content for better appearance on small screens */
   }
 }

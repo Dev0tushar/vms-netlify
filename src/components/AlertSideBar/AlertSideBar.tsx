@@ -95,6 +95,7 @@ const AlertContent: React.FC = () => {
                 src={DownloadIcon}
                 className={`img-fluid ${styles.DownloadImg}`}
                 alt="Download"
+                style={{ minHeight: "17px", minWidth: "17px", marginRight:"5px" }}
               />
               Download Media
             </div>

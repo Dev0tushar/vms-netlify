@@ -242,7 +242,6 @@
 
 // // export default AlertTable;
 
-
 import React from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import AlertSidebar from "../../AlertSideBar/AlertSideBar";
@@ -251,7 +250,7 @@ import SideBarMenu from "../../sideMenu/sideBar";
 import Alert from "../../../assets/alertdashboard-icon.png";
 import FilterIcon from "../../../assets/filterbutton-icon.png";
 import DownloadIcon from "../../../assets/dpwnloadbutton-icon.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 interface Alert {
   id: number;
@@ -325,14 +324,15 @@ const AlertTable: React.FC = () => {
       <div className={styles.layoutContainer}>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-md-3">
+            <div className={`${styles.alertSidebarContainer} col-12 col-md-3 p-3`}>
               <AlertSidebar />
             </div>
             <div className="col-12 col-md-9 mt-4">
               <div className={styles.alertHeader}>
                 <div className={styles.alertContent}>
                   <h2>
-                    <img src={Alert} alt="Alert" className={styles.alertIcon} /> Alert
+                    <img src={Alert} alt="Alert" className={styles.alertIcon} />{" "}
+                    Alert
                   </h2>
                 </div>
                 <div className={styles.alertButtons}>
@@ -341,7 +341,11 @@ const AlertTable: React.FC = () => {
                       src={FilterIcon}
                       alt="Filter"
                       className={styles.imgIcons}
-                      style={{ minHeight: "17px", minWidth: "17px" }}
+                      style={{
+                        minHeight: "13px",
+                        minWidth: "13px",
+                        marginRight: "5px",
+                      }}
                     />
                     FILTER BY
                   </button>
@@ -350,7 +354,11 @@ const AlertTable: React.FC = () => {
                       src={DownloadIcon}
                       alt="Download"
                       className={styles.imgIcons}
-                      style={{ minHeight: "17px", minWidth: "17px" }}
+                      style={{
+                        minHeight: "13px",
+                        minWidth: "13px",
+                        marginRight: "5px",
+                      }}
                     />
                     DOWNLOAD
                   </button>

@@ -98,7 +98,7 @@ const ChartsComponent: React.FC = () => {
                 alt="Report"
                 className={styles.reportIcon}
               />
-              <h1>Report</h1>
+              <h1 style={{marginTop:"10px"}}>Report</h1>
             </div>
             <div className={styles.container}>
               <div className={styles.chartBox}>
@@ -109,6 +109,7 @@ const ChartsComponent: React.FC = () => {
                       src={DownloadIcon}
                       alt="Download"
                       className={styles.downloadIcon}
+                      style={{minWidth:"15px", minHeight:"15px"}}
                     />
                     <h3>Download</h3>
                   </div>
@@ -123,6 +124,7 @@ const ChartsComponent: React.FC = () => {
                       src={DownloadIcon}
                       alt="Download"
                       className={styles.downloadIcon}
+                      style={{minWidth:"15px", minHeight:"15px"}}
                     />
                     <h3>Download</h3>
                   </div>
@@ -139,6 +141,7 @@ const ChartsComponent: React.FC = () => {
                       src={DownloadIcon}
                       alt="Download"
                       className={styles.downloadIcon}
+                      style={{minWidth:"15px", minHeight:"15px"}}
                     />
                     <h3>Download</h3>
                   </div>
@@ -153,6 +156,7 @@ const ChartsComponent: React.FC = () => {
                       src={DownloadIcon}
                       alt="Download"
                       className={styles.downloadIcon}
+                      style={{minWidth:"15px", minHeight:"15px"}}
                     />
                     <h3>Download</h3>
                   </div>
@@ -168,3 +172,4 @@ const ChartsComponent: React.FC = () => {
 };
 
 export default ChartsComponent;
+
