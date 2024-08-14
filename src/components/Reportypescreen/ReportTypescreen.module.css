@@ -31,6 +31,9 @@ h2{
   gap: 8px; 
   margin-bottom: 10px;
 }
+label{
+margin-top: 5px;
+}
 .dropdown select {
   padding: 8px;
   border: 1px solid #ccc;
@@ -64,7 +67,7 @@ h2{
   padding: 20px;
 
   background-color: #ffffff;
-  height: 210px;
+  height: 220px;
 }
 
 @media (max-width: 768px) {

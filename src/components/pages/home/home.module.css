@@ -105,32 +105,30 @@
   }
 } */
 
-.home-container {
-  /* margin-top: 30px; */
-  margin-left: 40px;
-  background-color: #F5F5F5;
+/* .homeContainer {
+  min-height: 100vh;
+  padding: 20px; 
+  background-color: #f5f5f5;
 }
 
-.section {
-  margin-bottom: 40px;
+.contentContainer {
+  margin-left: 20px; 
+  margin-top: -100px; 
 }
 
-.box {
+.h1,
+.h1Configuration {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.boxContainer {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
-  background-color: #F5F5F5;
-}
-
-.box h1 {
-  width: 100%;
-  margin-top: 120px; 
-  margin-left: 30px;
-}
-.h1Configuration{
-    width: 100%;
-  margin-top: 20px !important;
+  gap: 20px; 
+  justify-content: flex-start; 
 }
 
 .item {
@@ -138,120 +136,203 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 250px;
-  height: 200px;
-  padding: 0px;
-  box-sizing: border-box;
-  border-radius: 20px;
   background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  height: 200px;
   margin-bottom: 30px;
+  flex-grow: 1; 
+  max-width: 275px; 
 }
 
 .item img {
   width: 50px;
   height: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .item span {
-  font-family: Poppins;
-  font-size: 30px;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
   font-weight: 500;
   color: #333333;
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-  .home-container {
-    margin-top: 100px;
-    margin-left: 15px;
+
+@media (max-width: 992px) {
+  .boxContainer {
+    flex-direction: column; 
   }
-  .box {
-    flex-direction: column;
-    align-items: center;
+}
+
+@media (max-width: 576px) {
+  
+  .h1,
+  .h1Configuration {
+    font-size: 20px;
   }
-  .h1{
-    margin-top: 3px;
-  }
+
   .item {
-    width: 70%;
-    height: auto;
+    height: 40vh;
+    width: auto;
   }
 
   .item img {
     width: 40px;
     height: 40px;
+  }
+
+  .item span {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .item {
+    padding: 10px;
+    height: 200px;
+  }
+
+  .item img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .item span {
+    font-size: 18px;
+  }
+} */
+
+.homeContainer {
+  min-height: 100vh; 
+  padding: 20px; 
+  background-color: #f5f5f5;
+}
+
+.contentContainer {
+  margin-left: 20px; 
+  margin-top: -100px; 
+}
+
+.h1,
+.h1Configuration {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.boxContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: flex-start;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  height: 200px;
+  margin-bottom: 30px; 
+  flex-grow: 1; 
+  max-width: 275px; 
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.item span {
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+}
+
+@media (max-width: 992px) {
+  .boxContainer {
+    flex-direction: row;
+  }
+
+  .item {
+    width: calc(50% - 10px); 
     margin-bottom: 20px;
   }
-
-  .item span {
-    font-size: 20px;
-    font-weight: 400;
-  }
 }
-/* Media Query for screens between 768px and 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .home-container {
-    margin-top: 150px;
-    margin-left: 20px;
-  }
-  
-  .box {
-     display: flex;
-     justify-content: space-around;
-     margin-left: 25px;
-  }
 
-  .box h1 {
-    margin-top: 180px; 
-  }
-
+@media (max-width: 576px) {
+  .h1,
   .h1Configuration {
-    margin-top: 10px !important;
+    font-size: 20px;
   }
 
   .item {
-    width: 200px;
-    height: 180px;
-    padding: 8px;
-    margin-bottom: 25px;
+    height: 40vh;
+    width: auto;
   }
 
   .item img {
     width: 40px;
     height: 40px;
-    margin-bottom: 30px;
   }
 
   .item span {
-    font-size: 24px;
-    font-weight: 450;
+    font-size: 18px;
   }
 }
 
-
-/* Media Query for extra small screens */
-@media (max-width: 480px) {
-  .home-container {
-    margin-left: 10px;
-  }
-  .box h1 {
-    margin-top: 180px;
-  }
-
+@media (min-width: 768px) and (max-width: 992px) {
   .item {
-    width: 200px;
-    height: 150px;
+    padding: 10px;
+    height: 200px;
   }
 
   .item img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 10px;
+    width: 45px;
+    height: 45px;
   }
 
   .item span {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+/* Media Queries */
+@media (min-width: 320px) and (max-width: 550px) {
+  .contentContainer {
+    margin-left: 0; /* Remove left margin on small screens */
+    margin-top: 0; /* Remove top margin to ensure proper alignment */
+  }
+
+  .boxContainer {
+    flex-direction: column; /* Stack boxes in a column layout */
+    align-items: center; /* Center align items in the column */
+  }
+
+  .item {
+    width: 100%; /* Make items take full width in column layout */
+    max-width: none; /* Remove maximum width restriction */
+    margin-bottom: 15px; /* Adjust margin for spacing between items */
+  }
+
+  .h1,
+  .h1Configuration {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  .item img {
+    width: 40px; /* Adjust icon size for smaller screens */
+    height: 40px;
+  }
+
+  .item span {
+    font-size: 16px; /* Adjust text size for smaller screens */
   }
 }

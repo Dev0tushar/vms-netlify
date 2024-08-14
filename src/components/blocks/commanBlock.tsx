@@ -1,5 +1,3 @@
-
-
 // import { useState } from "react";
 // import FilterBox from "../filterBox/filterBox";
 // import SideBarMenu from "../sideMenu/sideBar";
@@ -171,6 +169,11 @@
 // export default BlockData;
 
 
+
+
+
+
+
 import { useState, useEffect } from "react";
 import FilterBox from "../filterBox/filterBox";
 import SideBarMenu from "../sideMenu/sideBar";
@@ -185,18 +188,19 @@ function CommonBlock() {
   const [columnSize, setColumnSize] = useState("medium");
 
   const nvr1Items = [
-         { name: "CAM 01", active: true },
-         { name: "CAM 02" },
-         { name: "CAM 03" },
-         { name: "CAM 04" },
-       ];
-    
-       const nvr2Items = [
-         { name: "CH 01" },
-         { name: "CH 02" },
-         { name: "CH 03", subItems: ["GRP 1"] },
-         { name: "CH 04" },
-       ];
+    { name: "CAM 01", active: true },
+    { name: "CAM 02" },
+    { name: "CAM 03" },
+    { name: "CAM 04" },
+  ];
+
+  const nvr2Items = [
+    { name: "CH 01" },
+    { name: "CH 02" },
+    { name: "CH 03", subItems: ["GRP 1"] },
+    { name: "CH 04" },
+  ];
+
   const blocks = [
     { id: "1", title: "CAM 01" },
     { id: "2", title: "CAM 02" },
@@ -204,13 +208,11 @@ function CommonBlock() {
     { id: "4", title: "CAM 04" },
   ];
 
-  // Handle icon clicks
   const handleIconClick = (columnsCount: number, size: string) => {
     setColumns(columnsCount);
     setColumnSize(size);
   };
 
-  // Adjust column width based on size
   const getColumnWidth = () => {
     switch (columnSize) {
       case "small":
@@ -218,14 +220,12 @@ function CommonBlock() {
       case "medium":
         return "100%";
       case "large":
-        // return "70%";
-        return "";
+        return "100%";
       default:
         return "50%";
     }
   };
 
-  // Handle screen resize
   const handleResize = () => {
     if (window.innerWidth < 768) {
       setColumns(1);
@@ -243,17 +243,24 @@ function CommonBlock() {
   }, []);
 
   return (
-    <div className={styles.maincontainer}>
+    <div className={`container-fluid ${styles.maincontainer}`}>
       <SideBarMenu />
-      <div className={styles.flexRowContainer}>
-        <div className={styles.filterBoxContainer}>
-          <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items}/>
+      <div className={`row ${styles.flexRowContainer}`}>
+        <div className={`col-12 col-md-4 ${styles.filterBoxContainer}`}>
+          <FilterBox
+          
+            nvr1Items={nvr1Items}
+            nvr2Items={nvr2Items}
+           
+          />
         </div>
-        <div className={styles.iconAndBlocksContainer}>
-          <div className={styles.iconContainer}>
+        <div className={`  ${styles.iconAndBlocksContainer}`}>
+          <div
+            className={`d-flex justify-content-between ${styles.iconContainer}`}
+          >
             <div className={styles.iconWrapper}>
-              <img src={Live} alt="Live" className={styles.icon} />
-              <h1 style={{marginTop:"10px"}}>Live</h1>
+              <img src={Live} alt="Live" className={styles.Liveicon} />
+              <h1 style={{ marginTop: "10px" }}>Live</h1>
             </div>
             <div className={styles.iconGroup}>
               <img
@@ -285,10 +292,13 @@ function CommonBlock() {
             {blocks.map((block) => (
               <div
                 className={styles.block}
-                style={{ width: getColumnWidth() , height:"40vh"}}
+                style={{ width: getColumnWidth(), height: "35vh" }}
                 key={block.id}
               >
-                <div>{block.title}</div>
+                
+                 
+                  <div className={styles.blockTitle}>{block.title}</div>
+              
               </div>
             ))}
           </div>

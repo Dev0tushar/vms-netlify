@@ -136,6 +136,18 @@
 
 // export default FilterBox;
 
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import styles from "./filterBox.module.css";
 import { BsChevronDown } from "react-icons/bs";
@@ -207,7 +219,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <div className={styles.panel}>
         {showCalendar && (
           <div className={styles.dropdownContainer}>

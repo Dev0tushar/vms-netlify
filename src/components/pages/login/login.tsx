@@ -1,22 +1,20 @@
-
-
 // import  { useState } from 'react';
 // import styles from './login.module.css';
 // import { Link } from 'react-router-dom';
 
 // const LoginForm = () => {
 //     const [showPassword, setShowPassword] = useState(false);
-  
+
 //     const togglePasswordVisibility = () => {
 //       setShowPassword(!showPassword);
 //     };
-  
+
 //     return (
 //       <div className={styles.loginContainer}>
 //         <form className={styles.loginForm}>
 //           <h2>LOG IN</h2>
 //           <h3>Enter Your details and Log in</h3>
-          
+
 //           <div className={styles.inputGroup}>
 //             <label>Username or Email</label>
 //             <input type="text" placeholder="demo@gmail.com" />
@@ -24,16 +22,16 @@
 //           <div className={styles.inputGroup}>
 //             <label>Password</label>
 //             <div className={styles.passwordWrapper}>
-//               <input 
-//                 type={showPassword ? 'text' : 'password'} 
-//                 placeholder="****" 
+//               <input
+//                 type={showPassword ? 'text' : 'password'}
+//                 placeholder="****"
 //               />
-//               <button 
-//                 type="button" 
-//                 className={styles.showPassword} 
+//               <button
+//                 type="button"
+//                 className={styles.showPassword}
 //                 onClick={togglePasswordVisibility}
 //               >
-                
+
 //               </button>
 //             </div>
 //           </div>
@@ -45,7 +43,7 @@
 //             <a href="/">Forget Password?</a>
 //           </div>
 //           <button type="submit" className={styles.loginButton}>LOG IN</button>
-//           <p>Don’t have an account? 
+//           <p>Don’t have an account?
 //             <Link to="/SignUpForm-screen" >
 //             <a href="/">Sign Up</a>
 //             </Link>
@@ -54,31 +52,68 @@
 //       </div>
 //     );
 //   };
-  
+
 //   export default LoginForm;
 
 
-import styles from './login.module.css';
-import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
+import { useEffect, useState } from "react";
+import styles from "./login.module.css";
+import { Link } from "react-router-dom";
+import { fetchData } from "../../../api/DataApi";
+
+const LoginForm: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const getdata = async () => {
+      setLoading(true);
+      try {
+        const apiData = await fetchData();
+        console.log("Fetched API Data:", apiData); // Log the API data to the console
+        setData(apiData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getdata();
+  }, []);
+
   return (
     <div className={`d-flex justify-content-center align-items-center vh-100`}>
-      <form className={`form-group ${styles.loginContainer} ${styles.loginForm}`}> <br />
+      <form
+        className={`form-group ${styles.loginContainer} ${styles.loginForm}`}
+      >
+        <br />
         <h2>LOG IN</h2>
-        <h3 style={{fontSize:"medium", marginRight:"auto"}}>Enter Your details and Log in</h3> <br />
-        
+        <h3 style={{ fontSize: "medium", marginRight: "auto" }}>
+          Enter Your details and Log in
+        </h3>
+        <br />
         <div className={`form-group ${styles.inputGroup}`}>
           <label>Username or Email</label>
-          <input type="text" className="form-control" placeholder="demo@gmail.com" />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="demo@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className={`form-group ${styles.inputGroup}`}>
           <label>Password</label>
           <div className={styles.passwordWrapper}>
-            <input 
-              type="password" 
-              className="form-control" 
-              placeholder="****" 
+            <input
+              type="password"
+              className="form-control"
+              placeholder="****"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
         </div>
@@ -89,12 +124,16 @@ const LoginForm = () => {
           </label>
           <a href="/">Forget Password?</a>
         </div>
-        <button type="submit" className={styles.loginButton}>LOG IN</button>
-        <p>Don’t have an account? 
+        <button type="submit" className={styles.loginButton}>
+          LOG IN
+        </button>
+        <p>
+          Don’t have an account?
           <Link to="/SignUpForm-screen">
             <a href="/">Sign Up</a>
           </Link>
-        </p> <br />
+        </p>
+        <br />
       </form>
     </div>
   );

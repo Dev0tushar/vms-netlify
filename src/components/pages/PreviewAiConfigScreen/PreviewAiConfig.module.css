@@ -112,13 +112,13 @@
   padding: 20px;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top:75px;
   margin-left: 100px;
 }
 
 .previewBox {
   width: 270px;
-  height: 550px;
+  height: 508px;
   border: 1px solid #ddd;
   background-color: white;
   border-radius: 8px;
@@ -178,6 +178,7 @@
     width: 70vw;
     height: 55vh;
     padding: 5px;
+    margin-right: auto;
   }
 
   .previewText {
@@ -196,8 +197,12 @@
     width: 95%;
     height: auto;
     padding: 2px;
+  
   }
-
+.container{
+  /* margin-top: -10px; */
+ margin-right: 50px;
+}
   .previewText {
     font-size: 16px;
   }

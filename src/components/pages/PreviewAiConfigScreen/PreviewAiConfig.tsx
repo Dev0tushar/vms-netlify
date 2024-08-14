@@ -21,7 +21,6 @@
 // export default PreviewScreen;
 
 
-// import React from "react";
 import styles from "./PreviewAiConfig.module.css";
 
 

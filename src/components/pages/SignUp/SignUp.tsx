@@ -154,6 +154,10 @@
 // };
 
 // export default SignUpForm;
+
+
+
+
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./SignUp.module.css";

@@ -370,6 +370,10 @@
 
 // export default DeviceTable;
 
+
+
+
+
 import DataTable from "react-data-table-component";
 import styles from "./deviceConfiguration.module.css";
 import camera from "../../../assets/Camera-png.png";
@@ -524,7 +528,7 @@ const customStyles = {
 
 const DeviceTable: React.FC = () => {
   return (
-    <div className="container-fluid" style={{ backgroundColor: "#F5F5F5" }}>
+    <div className={`${styles.TopMainContainer}container-fluid`} style={{ backgroundColor: "#F5F5F5" }}>
       <div className="row">
         <div className="col-md-2 col-5">
           <SideBarMenu />
@@ -539,6 +543,7 @@ const DeviceTable: React.FC = () => {
                       src={camera}
                       alt=""
                       className={styles.filterButtonIcon}
+                      
                     />{" "}
                     Device Configuration
                   </div>
@@ -555,7 +560,8 @@ const DeviceTable: React.FC = () => {
                     <img
                       src={filterIcon}
                       alt=""
-                      className={styles.filterButtonIcon}
+                      className={`${styles.filterButtonIcon} w-10 h-10` }
+                      // style={{minHeight:"10px", minWidth:"15px"}}
                     />{" "}
                     FILTER BY
                   </button>

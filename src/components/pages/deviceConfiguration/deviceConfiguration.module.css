@@ -338,19 +338,39 @@ img {
     padding: 5px;
   }
 } */
+
+
+
 body::-webkit-scrollbar{
   display: none;
 }
 
+/* In your global.css or deviceConfiguration.module.css */
+ body {
+  height: 100%;
+  margin: 0;
+  background-color: #F5F5F5; /* Ensure this matches your desired background color */
+}
+
+.TopMainContainer {
+  min-height: 100vh; /* Make sure the container takes up at least the full viewport height */
+  background-color: inherit; /* Inherit background color from body */
+  display: flex;
+  flex-direction: column;
+}
+
+.deviceTableContainer {
+  flex-grow: 1; /* Make sure it grows to take up remaining space */
+  overflow-y: auto;
+}
 
 
 
 .deviceTableContainer {
   padding: 50px;
-  margin-top: 80px;
+  margin-top: 50px;
   font-family: "Poppins";
-  /* width: 100vw; */
-  /* height: 100vh; */
+
   margin-left: -150px;
   overflow-y: auto;
   display: flex;
@@ -403,7 +423,7 @@ img {
   font-weight: bold;
   font-weight: 100px;
   margin-top: 70px;
-  /* display: flex; */
+  
 }
 
 .filterIcon {
@@ -420,8 +440,8 @@ img {
   border-radius: 8px;
   overflow-x: auto;
   width: 85vw;
-  overflow: auto; /* Ensure the table container can scroll */
-  scrollbar-width: none; /* Firefox */
+  overflow: auto; 
+  scrollbar-width: none; 
   -ms-overflow-style: none;
 }
 .tableContainer::-webkit-scrollbar {
@@ -472,12 +492,21 @@ img {
   background-color: #f5f5f5;
 }
 
+@media (max-width:1024px){
+  .deviceTableContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow-y: hidden;
+  }
+}
 
 @media (max-width: 768px) {
   .deviceTableContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .topButton {
@@ -489,7 +518,7 @@ img {
   .buttonContainer {
     min-height: auto;
     min-width: auto;
-    /* flex-direction: column; */
+  
     align-items: flex-start;
   }
   .topcontant .filterButtonIcon {
@@ -503,10 +532,13 @@ img {
     min-height: auto;
     font-size: 21px;
     margin-top: 20px;
+ 
   }
+  
   .deviceTableContainer {
     margin-left: auto;
     width: 100vw;
+    overflow: hidden;
   }
    .dltButton{
     padding: 5px 10px;
@@ -518,6 +550,6 @@ img {
     font-size: 0.750rem;
   }
   .filterButtonIcon {
-    width: 10px;
+    /* width: 10px; */
   }
 }

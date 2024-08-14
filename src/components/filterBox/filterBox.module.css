@@ -157,10 +157,12 @@
   flex-direction: column;
   border-radius: 8px;
   padding: 15px;
-  width: 15vw;
+  width: 25vw;
   height: fit-content;
   background-color: white;
   font-family: "Poppins", sans-serif;
+  margin-top: 25px;
+  margin-left: 100px;
 }
 
 .ioIcon {
@@ -176,8 +178,8 @@
 
 .additionalContent {
   width: 100%;
-  max-width: 13vw;
-  border: 1px solid #FF0000;
+  /* max-width: 13vw; */
+  border: 1px solid #ff0000;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -188,7 +190,7 @@
   padding: 5px;
   margin: 0 5px;
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border: none;
 }
 
@@ -199,9 +201,9 @@
   color: white;
   border-radius: 5px;
   border: none;
-  background-color: #FF914D;
+  background-color: #ff914d;
 }
-.dropdownHeading{
+.dropdownHeading {
   cursor: pointer;
 }
 .nvrtitle {
@@ -256,6 +258,7 @@
     padding: auto;
     border-radius: 10px;
     margin-top: 20px;
+    margin-right: 100px;
   }
 
   .panel {
@@ -268,12 +271,14 @@
     padding: 10px;
     border-radius: 10px;
     background-color: beige;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .nvrlist {
     background-color: beige;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .nvrsublistitem {
@@ -284,7 +289,7 @@
 
 @media (min-width: 769px) {
   .container {
-    width: 15vw;
+    width: 20vw;
   }
 
   .nvrtitle {
@@ -306,7 +311,7 @@
     padding: 10px; /* Adjust padding for better fit */
     border-radius: 8px;
     margin-top: 50px;
-
+    right: 100px;
   }
 
   .panel {
@@ -314,13 +319,13 @@
     max-width: none; /* Remove max-width to allow full width on small screens */
     display: flex;
     flex-direction: column;
-    
+    display: block;
   }
 
   .additionalContent {
     width: 100%; /* Make additional content full width on small screens */
     max-width: none; /* Remove max-width */
-    border: 1px solid #FF0000;
+    border: 1px solid #ff0000;
     padding: 8px; /* Adjust padding for smaller screens */
     border-radius: 8px;
     margin-bottom: 15px; /* Reduce margin for better fit */
@@ -344,12 +349,14 @@
     padding: 8px; /* Adjust padding */
     border-radius: 8px;
     background-color: beige;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .nvrlist {
     background-color: beige;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .nvrsublistitem {

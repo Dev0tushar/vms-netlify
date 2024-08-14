@@ -331,7 +331,7 @@ const AlertTable: React.FC = () => {
               <div className={styles.alertHeader}>
                 <div className={styles.alertContent}>
                   <h2>
-                    <img src={Alert} alt="Alert" className={styles.alertIcon} />{" "}
+                    <img src={Alert} alt="Alert" className={styles.alertIcon} style={{marginTop:"-5px"}}/>{" "}
                     Alert
                   </h2>
                 </div>

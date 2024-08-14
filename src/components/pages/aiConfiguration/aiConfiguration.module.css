@@ -1,7 +1,7 @@
-.wrapper {
+/* .wrapper {
   display: flex;
   flex-direction: row;
-  /* height: 200vh; */
+ 
   background-color: #f5f5f5;
   width: 95vw;
   overflow-y: auto;
@@ -9,13 +9,13 @@
 
 .previewScreen {
   display: flex;
-  margin-right: auto;
+  margin-right: 1rem;
   flex: 1;
 }
 
 .mainContentWrapper {
   flex: 2;
-  /* padding: 50px; */
+ 
   overflow-x: hidden;
   background-color: #f5f5f5;
   margin-top: 100px;
@@ -46,7 +46,7 @@ img {
 
 .formcontrol {
   width: 100%;
-  /* padding: 8px; */
+
   margin-bottom: 10px;
   border: none;
   border-radius: 5px;
@@ -84,11 +84,11 @@ img {
   background-color: white;
   margin-top: 20px;
   width: 60vw;
-  /* overflow-x: auto;  */
+
 }
 
 .tableContainer::-webkit-scrollbar {
-  display: none; /* Hides scrollbar in WebKit browsers */
+  display: none;
 }
 
 .table {
@@ -133,13 +133,7 @@ img {
 }
 
 .btnedit {
-  /* color: #666666;
-  background-color: #e4e4e4;
-  border: none;
-  border-radius: 8px;
-  width: 30px;
-  height: 30px;
-  font-size: 20px; */
+
   color: #666666;
   border: none;
   border-radius: 8px;
@@ -192,7 +186,7 @@ img {
   }
 
   .previewScreen {
-    /* order: 2; */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,5 +260,126 @@ img {
     margin-top: 10px;
     width: 30vw;
     height: 6vh;
+  }
+} */
+
+
+
+
+
+
+.backgroundWrapper {
+  background-color: #F5F5F5; /* Your desired background color */
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers the full height of the viewport */
+  display: flex;
+  flex-direction: row; /* Align sidebar and content side by side */
+  align-items: flex-start;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box;
+  position: relative; /* Ensure it stays in place */
+  overflow: hidden;
+  
+}
+
+.dataTableContainer {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  margin-top: 80px;
+  /* background-color: white; */
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  flex-grow: 1; /* Ensures it takes up available space */
+  margin-left: 20px; /* Space between sidebar and table */
+  max-width: calc(100% - 300px); /* Prevents overflowing the screen */
+  
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.headerText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.topInputs {
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.dataTableCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Ensure table is scrollable */
+}
+.TopButton {
+ width: 30vw;
+ height: 7vh;
+ background-color: 
+ #FF914D;
+ color: white;
+}
+.footerButtons {
+  margin-top: 15px;
+}
+.TopButton:hover{
+  background-color: #fc843a;
+  color: white;
+}
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+.offline {
+  color: red;
+  font-weight: bold;
+}
+.btn-black {
+  background-color: black;
+  color: white; /* Text color white set karne ke liye */
+  border-color: black;
+  border: 2px solid gainsboro;  /* Border color bhi black set karne ke liye */
+}
+
+.linkButton {
+  border: 2px solid gainsboro; /* Border color and width */
+  border-radius: 5px; /* Rounded corners */
+  /* padding: 10px 20px; Padding inside the button */
+  background-color: 
+  #333333; /* Background color of the button */
+  color: white; 
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor type on hover */
+  margin-left: auto;
+  /* transition: border-color 0.3s ease; Smooth transition for border color */
+}
+
+.linkButton button{
+  color: white;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .backgroundWrapper {
+    flex-direction: column; /* Stack the sidebar on top of the content */
+    align-items: center;
+  }
+
+  .dataTableContainer {
+    margin-left: 0; /* Remove margin when stacked */
+    max-width: 100%;
+    width: 100%; /* Ensure it fills the screen */
+  }
+
+  .topInputs {
+    flex-direction: column; /* Stack input fields */
+    gap: 5px;
   }
 }
