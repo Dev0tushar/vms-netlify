@@ -328,6 +328,7 @@ img {
 }
 .footerButtons {
   margin-top: 15px;
+  gap: 5px;
 }
 .TopButton:hover{
   background-color: #fc843a;
@@ -365,6 +366,7 @@ img {
 .linkButton button{
   color: white;
 }
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .backgroundWrapper {
