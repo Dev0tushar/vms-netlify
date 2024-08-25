@@ -1,1061 +1,280 @@
-/* 
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loginDesc {
-    display: flex; 
-    flex-direction: column;
-    gap: 0px;
-}
-
-.loginBox {
-    padding: 25px;
-    box-sizing: border-box;
-    background-color: #F5F5F5;
-}
-
-.inputBox {
-    display: flex;
-    flex-direction: column;
-}
-
-.loginHeader {
-    font-family: Poppins;
-    font-size: 1.838rem;
-    font-weight: 600;
-    line-height: 4.275rem;
-    text-align: left;
-    margin-bottom: 0;
-}
-
-.loginPara {
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 2.165rem;
-    text-align: left;
-    margin-top: 0;
-}
-
-.input {
-    border: none;
-    width: 32rem;
-    height: 4.11rem;
-    border-radius: 10px;
-    opacity: 1;
-    background-color: #fff;
-}
-
-.saveForgetBox {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.875rem;
-    align-items: center;
-}
-
-.saveForgetBox>div {
-    display: flex;
-    align-items: center;
-}
-
-a {
-    text-decoration: none;
-    font-family: Poppins;
-    font-size: 1.028rem;
-    font-weight: 400;
-    line-height: 1.541rem;
-    text-align: right;
-    color: #181818;
-}
-
-.saveForgetBox>span {
-    font-family: Poppins;
-    font-size: 1.028rem;
-    font-weight: 400;
-    line-height: 1.541rem;
-    text-align: right;
-    color: #181818;
-}
-
-.checkbox {
-    width: 14px;
-    height: 14px;
-    margin-right: 5px; 
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    outline: none;
-    border: 1px solid #FF914D;
-    border-radius: 2px;
-    background-color: #fff;
-    position: relative;
-}
-.checkbox:checked::before {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #FF914D;
-    position: absolute;
-    top: 1.5px;
-    left: 1.5px;
-    border-radius: 2px;
-}
-
-.loginBtn {
-    width: 489.51px;
-    height: 62.88px;
-    gap: 0px;
-    opacity: 1;
-    background-color: #FF914D;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    font-family: Poppins;
-    font-size: 1.146rem;
-    font-weight: 600;
-    line-height: 1.71rem;
-    text-align: center;
-}
-
-.bottom {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.dontHave {
-    font-family: Poppins;
-    font-size: 19.65px;
-    font-weight: 500;
-    line-height: 29.48px;
-    text-align: center;
-}
-
-.signLink {
-    font-family: Poppins;
-    font-size: 19.65px;
-    font-weight: 500;
-    line-height: 29.48px;
-    text-align: center;
-    color: #FF914D;
-}
-
-.label {
-    font-family: Poppins;
-    font-size: 16.44px;
-    font-weight: 500;
-    line-height: 24.66px;
-    text-align: left;
-}
-
-
-@media (min-width: 1200px) {
-    .loginBox {
-        width: 38.625rem;
-        margin: 4.375rem auto;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1199.98px) {
-    .loginBox {
-        width: 30rem;
-        margin: 3rem auto;
-    }
-    .input {
-        width: 28rem;
-    }
-    .loginBtn {
-        width: 28rem;
-    }
-}
-
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .container {
-        width: 100%;
-    }
-    .loginBox {
-        width: 25rem;
-        margin: 2.5rem auto;
-    }
-    .input {
-        width: 24rem;
-    }
-    .loginBtn {
-        width: 18rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .container {
-        width: 100%;
-    }
-    .loginBox {
-        width: 20rem;
-        margin: 2rem auto;
-    }
-    .input {
-        width: 18rem;
-    }
-    .loginBtn {
-        width: 18rem;
-    }
-    .loginHeader {
-        font-size: 1.5rem;
-        line-height: 3rem;
-    }
-    .loginPara {
-        font-size: 0.8rem;
-        line-height: 2rem;
-    }
-    a, .saveForgetBox>span {
-        font-size: 0.875rem;
-    }
-    .dontHave, .signLink {
-        font-size: 1rem;
-    }
-    .label {
-        font-size: 0.875rem;
-    }
-} */
-
-
-
-/* body {
-    font-family: 'Arial', sans-serif;
- 
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #f0f0f0;
-} */
-
-/* .loginContainer {
-    margin-top: 30%;
-    background: white;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 600px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.loginForm {
-    width: 100%;
-}
-
-.loginForm h2 {
-    margin-top: 0;
-    font-size: 40px;
-    font-weight: 600;
-    font-family: Poppins;
-}
-
-.loginForm h3 {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 400;
-    color: #666666;
-    font-family: Poppins;
-}
-
-.inputGroup {
-    margin-bottom: 20px;
-}
-
-.inputGroup label {
-    display: block;
-    font-family: Poppins;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.inputGroup input,
-.passwordWrapper input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.passwordWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-family: Poppins;
-}
-
-.passwordWrapper .showPassword {
-    position: absolute;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.options a {
-    text-decoration: none;
-}
-
-.loginButton {
-    width: 100%;
-    padding: 10px;
-    margin-top: 40px;
-    background-color: #ff7f50;
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-family: Poppins;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.loginButton:hover {
-    background-color: #ff7043;
-}
-
-.loginForm p {
-    text-align: center;
-    margin-top: 20px;
-    font-family: Poppins;
-}
-
-.loginForm p a {
-    color: #ff7f50;
-    text-decoration: none;
-    font-family: Poppins;
-}
-
-.loginForm p a:hover {
-    text-decoration: underline;
-}
-
-
-@media (max-width: 1024px) {
-    .loginContainer {
-        margin-top: 40%;
-        padding: 20px;
-        width: 500px;
-    }
-    .loginForm h2 {
-        font-size: 36px;
-    }
-    .loginForm h3 {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .loginContainer {
-        padding: 20px;
-        width: 450px;
-    }
-    .loginForm h2 {
-        font-size: 32px;
-    }
-    .loginForm h3 {
-        font-size: 16px;
-    }
-    .loginButton {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
-
-@media (max-width: 600px) {
-    .loginContainer {
-        padding: 15px;
-        width: 100%;
-        max-width: 400px; 
-        margin-left: 10px;
-        margin-top: 150px; 
-    }
-    .loginForm h2 {
-        font-size: 28px;
-    }
-    .loginForm h3 {
-        font-size: 14px;
-    }
-    .inputGroup input {
-        width: 100%;
-    }
-    .loginButton {
-        font-size: 12px;
-        padding: 6px;
-    }
-} */
-
-
-/* .loginContainer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
-  }
-  
-  .loginForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  margin-top: 100px;
-  }
-  
-  h2 {
-    margin-bottom: 10px;
-    color: #333;
-    margin-right: auto;
-  }
-  
-  h3 {
-    margin-bottom: 20px;
-    color: #666;
-    display: flex;
-    font-size: 5px;
-  }
-  
-  .inputGroup {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .passwordWrapper {
-    position: relative;
-  }
-  
-  .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .options label {
-    display: flex;
-    align-items: center;
-  }
-  
-  .options input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  .options a {
-    color: #666;
-    text-decoration: none;
-  }
-  
-  .options a:hover {
-    text-decoration: underline;
-  }
-  
-  .loginButton {
-    background-color: #FF914D;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .loginButton:hover {
-    background-color: #f57d33;
-  }
-  
-  p {
-    margin-top: 20px;
-    color: #666;
-  }
-  
-  p a {
-    color: #FF914D;
-    text-decoration: none;
-  }
-  
-  p a:hover {
-    text-decoration: underline;
-  }
-  
-  
-  @media (max-width: 768px) {
-    .loginContainer {
-      padding: 15px;
-    }
-  
-    .loginForm {
-      max-width: 300px;
-    }
-  
-    h2 {
-      font-size: 24px;
-    }
-  
-    h3 {
-      font-size: 18px;
-    }
-  
-    .form-control {
-      padding: 8px;
-    }
-  
-    .loginButton {
-      padding: 8px 16px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .loginContainer {
-      padding: 10px;
-    }
-  
-    .loginForm {
-      max-width: 100%;
-    }
-  
-    h2 {
-      font-size: 20px;
-    }
-  
-    h3 {
-      font-size: 16px;
-    }
-  
-    .form-control {
-      padding: 6px;
-    }
-  
-    .loginButton {
-      padding: 6px 12px;
-    }
-  
-    .options {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .options label {
-      margin-bottom: 10px;
-    }
-  }
-  
-  @media (max-width: 375px) {
-    .loginContainer {
-      padding: 8px;
-    }
-  
-    h2 {
-      font-size: 18px;
-    }
-  
-    h3 {
-      font-size: 14px;
-    }
-  
-    .form-control {
-      padding: 5px;
-    }
-  
-    .loginButton {
-      padding: 5px 10px;
-    }
-  }
-   */
-
-
-   
-/* .loginContainer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
-}
-
-.loginForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-}
-
-h2 {
-    margin-bottom: 10px;
-    color: #333;
-    margin-right: auto;
-}
-
-h3 {
-    margin-bottom: 20px;
-    color: #666;
-    display: flex;
-    font-size: 5px;
-}
-
-.inputGroup {
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.passwordWrapper {
-    position: relative;
-}
-
-.options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.options label {
-    display: flex;
-    align-items: center;
-}
-
-.options input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-.options a {
-    color: #666;
-    text-decoration: none;
-}
-
-.options a:hover {
-    text-decoration: underline;
-}
-
-.loginButton {
-    background-color: #FF914D;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.loginButton:hover {
-    background-color: #f57d33;
-}
-
-p {
-    margin-top: 20px;
-    color: #666;
-}
-
-p a {
-    color: #FF914D;
-    text-decoration: none;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
-
-
-@media (max-width: 768px) {
-    .loginContainer {
-        padding: 15px;
-    }
-
-    .loginForm {
-        max-width: 300px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    .form-control {
-        padding: 8px;
-    }
-
-    .loginButton {
-        padding: 8px 16px;
-    }
-}
-
-
-@media (max-width: 575px) {
-    .loginContainer {
-        padding: 8px;
-        max-width: 100%;
-    }
-
-    .loginForm {
-        max-width: 300px;
-        margin-top: 100px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 14px;
-    }
-
-    .form-control {
-        padding: 5px;
-        font-size: 14px;
-    }
-
-    .loginButton {
-        padding: 6px 12px;
-        font-size: 14px;
-    }
-
-    .options {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 15px;
-    }
-
-    .options label {
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    p a {
-        font-size: 14px;
-    }
-}
-
-
-@media (max-width: 375px) {
-    .loginContainer {
-        padding: 5px;
-    }
-
-    h2 {
-        font-size: 16px;
-    }
-
-    h3 {
-        font-size: 12px;
-    }
-
-    .form-control {
-        padding: 4px;
-        font-size: 12px;
-    }
-
-    .loginButton {
-        padding: 4px 8px;
-        font-size: 12px;
-    }
-
-    .options {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .options label {
-        margin-bottom: 8px;
-        font-size: 12px;
-    }
-
-    p {
-        font-size: 12px;
-    }
-
-    p a {
-        font-size: 12px;
-    }
-} */
-
 /* Base styles for login form */
 .loginContainer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
 }
 
 .loginForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  justify-content: center;
 }
 
 h2 {
-    margin-bottom: 10px;
-    color: #333;
-    margin-right: auto;
+  margin-bottom: 10px;
+  color: #333;
+  margin-right: auto;
 }
 
 h3 {
-    margin-bottom: 20px;
-    color: #666;
-    display: flex;
-    font-size: 5px;
+  margin-bottom: 20px;
+  color: #666;
+  display: flex;
+  font-size: 5px;
 }
 
 .inputGroup {
-    margin-bottom: 15px;
-    width: 100%;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .passwordWrapper {
-    position: relative;
+  position: relative;
 }
 
 .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .options label {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .options input[type="checkbox"] {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .options a {
-    color: #666;
-    text-decoration: none;
+  color: #666;
+  text-decoration: none;
 }
 
 .options a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .loginButton {
-    background-color: #FF914D;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+  background-color: #ff914d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
 }
 
 .loginButton:hover {
-    background-color: #f57d33;
+  background-color: #f57d33;
 }
 
 p {
-    margin-top: 20px;
-    color: #666;
+  margin-top: 20px;
+  color: #666;
 }
 
-p a {
-    color: #FF914D;
-    text-decoration: none;
+ a {
+  color: #ff914d;
+  text-decoration: none;
 }
 
 p a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Media Queries for responsiveness */
 
 /* For screens between 576px and 768px */
 @media (max-width: 768px) {
-    .loginContainer {
-        padding: 15px;
-    }
+  .loginContainer {
+    padding: 15px;
+  }
 
-    .loginForm {
-        max-width: 300px;
-    }
+  .loginForm {
+    max-width: 400px;
+    max-height: 430px;
+    margin-top: 90px;
+  }
 
-    h2 {
-        font-size: 24px;
-    }
+  h2 {
+    font-size: 24px;
+  }
 
-    h3 {
-        font-size: 18px;
-    }
+  h3 {
+    font-size: 18px;
+  }
 
-    .form-control {
-        padding: 8px;
-    }
+  .form-control {
+    padding: 8px;
+  }
 
-    .loginButton {
-        padding: 8px 16px;
-    }
+  .loginButton {
+    padding: 8px 16px;
+  }
 }
 
 /* For screens between 320px and 575px */
 @media (max-width: 575px) {
-    .loginContainer {
-        padding: 8px;
-        max-width: 100%;
-    }
+  .loginContainer {
+    padding: 8px;
+    max-width: 100%;
+    
+  }
+/* 
+  .loginForm {
+    max-width: 375px;
+    margin-top: 120px;
+  }
 
-    .loginForm {
-        max-width: 375px;
-        margin-top: 120px;
-    }
+  h2 {
+    font-size: 18px;
+  }
 
-    h2 {
-        font-size: 18px;
-    }
+  h3 {
+    font-size: 14px;
+  }
 
-    h3 {
-        font-size: 14px;
-    }
+  .form-control {
+    padding: 5px;
+    font-size: 14px;
+  }
 
-    .form-control {
-        padding: 5px;
-        font-size: 14px;
-    }
+  .loginButton {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
 
-    .loginButton {
-        padding: 6px 12px;
-        font-size: 14px;
-    }
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
 
-    .options {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 15px;
-    }
+  .options label {
+    margin-bottom: 10px;
+  }
 
-    .options label {
-        margin-bottom: 10px;
-    }
+  p {
+    font-size: 14px;
+  }
 
-    p {
-        font-size: 14px;
-    }
+  p a {
+    font-size: 14px;
+  } */
+  .loginForm {
+    max-width: 280px;
+    max-height: 400px;
+    margin-top: 100px;
+    
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 1px;
+  }
 
-    p a {
-        font-size: 14px;
-    }
+  h3 {
+    font-size: 12px;
+  }
+
+  .form-control {
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .loginButton {
+    /* padding: 4px 8px; */
+    font-size: 12px;
+  }
+
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .options label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  p a {
+    font-size: 12px;
+  }
 }
 
 /* Additional tight responsiveness for screens between 320px and 375px */
 @media (max-width: 375px) {
-    .loginContainer {
-        padding: 5px;
-    }
-.loginForm{
-    max-width: 300px;
-    margin-top: 85px;
-}
-    h2 {
-        font-size: 16px;
-    }
+  .loginContainer {
+    /* padding: 5px; */
+  }
+  .loginForm {
+    max-width: 280px;
+    max-height: 400px;
+    margin-top: 150px;
+    
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 1px;
+  }
 
-    h3 {
-        font-size: 12px;
-    }
+  h3 {
+    font-size: 12px;
+  }
 
-    .form-control {
-        padding: 4px;
-        font-size: 12px;
-    }
+  .form-control {
+    padding: 4px;
+    font-size: 12px;
+  }
 
-    .loginButton {
-        padding: 4px 8px;
-        font-size: 12px;
-    }
+  .loginButton {
+    /* padding: 4px 8px; */
+    font-size: 12px;
+  }
 
-    .options {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .options label {
-        margin-bottom: 8px;
-        font-size: 12px;
-    }
+  .options label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
 
-    p {
-        font-size: 12px;
-    }
+  p {
+    font-size: 12px;
+  }
 
-    p a {
-        font-size: 12px;
-    }
+  p a {
+    font-size: 12px;
+  }
 }

@@ -270,13 +270,15 @@
     font-size: 1rem;
     padding: 10px;
     border-radius: 10px;
-    background-color: beige;
+    background-color: 
+    #F5F5F5;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .nvrlist {
-    background-color: beige;
+    background-color: 
+    #F5F5F5;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
@@ -311,7 +313,8 @@
     padding: 10px; /* Adjust padding for better fit */
     border-radius: 8px;
     margin-top: 50px;
-    right: 100px;
+    /* right: 100px; */
+    margin-left: auto;
   }
 
   .panel {
@@ -348,13 +351,15 @@
     font-size: 0.9rem; /* Adjust font size */
     padding: 8px; /* Adjust padding */
     border-radius: 8px;
-    background-color: beige;
+    background-color: 
+    #F5F5F5;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .nvrlist {
-    background-color: beige;
+    background-color: 
+    #F5F5F5;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }

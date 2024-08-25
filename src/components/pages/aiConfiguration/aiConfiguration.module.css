@@ -263,13 +263,8 @@ img {
   }
 } */
 
-
-
-
-
-
 .backgroundWrapper {
-  background-color: #F5F5F5; /* Your desired background color */
+  background-color: #f5f5f5; /* Your desired background color */
   width: 100%;
   min-height: 100vh; /* Ensure it covers the full height of the viewport */
   display: flex;
@@ -279,7 +274,6 @@ img {
   box-sizing: border-box;
   position: relative; /* Ensure it stays in place */
   overflow: hidden;
-  
 }
 
 .dataTableContainer {
@@ -293,7 +287,6 @@ img {
   flex-grow: 1; /* Ensures it takes up available space */
   margin-left: 20px; /* Space between sidebar and table */
   max-width: calc(100% - 300px); /* Prevents overflowing the screen */
-  
 }
 
 .icon {
@@ -311,6 +304,7 @@ img {
   width: 100%;
   gap: 10px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .dataTableCard {
@@ -320,17 +314,16 @@ img {
   overflow-x: auto; /* Ensure table is scrollable */
 }
 .TopButton {
- width: 30vw;
- height: 7vh;
- background-color: 
- #FF914D;
- color: white;
+  width: 30vw;
+  height: 7vh;
+  background-color: #ff914d;
+  color: white;
 }
 .footerButtons {
   margin-top: 15px;
   gap: 5px;
 }
-.TopButton:hover{
+.TopButton:hover {
   background-color: #fc843a;
   color: white;
 }
@@ -347,26 +340,39 @@ img {
   background-color: black;
   color: white; /* Text color white set karne ke liye */
   border-color: black;
-  border: 2px solid gainsboro;  /* Border color bhi black set karne ke liye */
+  border: 2px solid gainsboro; /* Border color bhi black set karne ke liye */
 }
 
 .linkButton {
   border: 2px solid gainsboro; /* Border color and width */
   border-radius: 5px; /* Rounded corners */
   /* padding: 10px 20px; Padding inside the button */
-  background-color: 
-  #333333; /* Background color of the button */
-  color: white; 
+  background-color: #333333; /* Background color of the button */
+  color: white;
   font-size: 16px; /* Font size */
   cursor: pointer; /* Cursor type on hover */
   margin-left: auto;
   /* transition: border-color 0.3s ease; Smooth transition for border color */
 }
 
-.linkButton button{
+.linkButton button {
   color: white;
 }
-
+.dltbutton {
+  border-radius: 4px;
+  border-color: gray;
+  border-width: thin;
+}
+@media (max-width: 1440px) {
+  .topInputs input {
+    height: 100%;
+    min-height: 5vh;
+  }
+  .topInputs .TopButton {
+    height: 100%;
+    min-height: 5vh;
+  }
+}
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .backgroundWrapper {
@@ -378,6 +384,7 @@ img {
     margin-left: 0; /* Remove margin when stacked */
     max-width: 100%;
     width: 100%; /* Ensure it fills the screen */
+    margin: auto;
   }
 
   .topInputs {

@@ -203,6 +203,8 @@
   }
 } */
 
+
+
 .homeContainer {
   min-height: 100vh; 
   padding: 20px; 
@@ -213,7 +215,10 @@
   margin-left: 20px; 
   margin-top: -100px; 
 }
-
+.secondcontentContainer{
+  margin-left: 50px;
+  margin-top: 300px;
+}
 .h1,
 .h1Configuration {
   font-size: 24px;
@@ -304,35 +309,39 @@
   }
 }
 
-/* Media Queries */
+
 @media (min-width: 320px) and (max-width: 550px) {
+ 
   .contentContainer {
-    margin-left: 0; /* Remove left margin on small screens */
-    margin-top: 0; /* Remove top margin to ensure proper alignment */
+    margin-left: 0px !important; 
+    margin-top: 0; 
+ 
   }
 
   .boxContainer {
-    flex-direction: column; /* Stack boxes in a column layout */
-    align-items: center; /* Center align items in the column */
+    flex-direction: column; 
+    align-items: center;
   }
 
   .item {
-    width: 100%; /* Make items take full width in column layout */
-    max-width: none; /* Remove maximum width restriction */
-    margin-bottom: 15px; /* Adjust margin for spacing between items */
+    width: 100%; 
+    max-width: none; 
+    margin-bottom: 15px;
+ 
+    
   }
 
   .h1,
   .h1Configuration {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 18px;
   }
 
   .item img {
-    width: 40px; /* Adjust icon size for smaller screens */
+    width: 40px; 
     height: 40px;
   }
 
   .item span {
-    font-size: 16px; /* Adjust text size for smaller screens */
+    font-size: 16px;
   }
 }

@@ -154,10 +154,15 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   max-width: 400px; /* Maximum width for the form */
- margin-top: 60px;
+ margin-top: -2px;
   width: 100%; /* Full width for smaller screens */
+
+  /* max-width: 300px; */
+  /* max-height: 500px; */
+  /* margin-top: -140px; */
+  font-size: 10px;
 }
 
 /* Header styling */
@@ -211,7 +216,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 50%;
   padding: 10px;
   background-color: #ff7f00;
   color: white;
@@ -255,6 +260,7 @@
   }
   .formWrapper {
     padding: 15px;
+    margin-top: -67px;
   }
 }
 
@@ -293,13 +299,30 @@
 @media (max-width: 390px) {
   .formWrapper {
     padding: 10px;
+    max-width: 300px;
+    max-height: 500px;
+    margin-top: -133px;
+    font-size: 10px;
   }
-
+.form{
+  margin-top: -10px;
+}
   .formHeader h2 {
     font-size: 1rem;
   }
-
+  .closeButton img {
+    width: 15px;
+    height: 15px;
+  }
   .addButton {
     font-size: 14px;
+    width: 70%;
+   
+  }
+  label{
+    font-size: 0.700rem;
+  }
+  input{
+    height: 25px;
   }
 }

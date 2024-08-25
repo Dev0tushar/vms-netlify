@@ -526,7 +526,7 @@ const DeviceTable: React.FC = () => {
   return (
     <div
       className={`${styles.TopMainContainer}container-fluid`}
-      style={{ backgroundColor: "#F5F5F5" }}
+      style={{ backgroundColor: "#F5F5F5",overflow:"hidden" }}
     >
       <div className="row">
         <div className="col-md-2 col-5">
@@ -537,12 +537,12 @@ const DeviceTable: React.FC = () => {
             <div className={styles.mainContainer}>
               <div className={styles.buttonContainer}>
                 <div>
-                  <div className={styles.topContent}>
+                  <div className={styles.topContent} style={{display:"flex",gap:"10px"}} >
                     <img
                       src={camera}
                       alt=""
                       className={styles.filterButtonIcon}
-                    />{" "}
+                    />
                     Device Configuration
                   </div>
                   <br />
@@ -553,13 +553,13 @@ const DeviceTable: React.FC = () => {
                 </div>
                 <div className={`${styles.filtercontent} `}>
                   <button
-                    className={`${styles.topButton} ${styles.filterButton}`}
+                    className={`${styles.topButton} ${styles.filterButton} `}
                   >
                     <img
                       src={filterIcon}
                       alt=""
-                      className={`${styles.filterButtonIcon} w-10 h-10`}
-                      // style={{minHeight:"10px", minWidth:"15px"}}
+                      className={`${styles.filterButtonIcon}`}
+                      style={{maxWidth:"18px !important",height:"100%",maxHeight:"18px !important"}}
                     />{" "}
                     FILTER BY
                   </button>

@@ -128,7 +128,8 @@
   margin: 20px auto; /* Center align with auto margins */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 250px; /* Reduced width */
-  margin-left: auto;
+  /* margin-left: auto; */
+  margin-right: inherit;
   
 }
 

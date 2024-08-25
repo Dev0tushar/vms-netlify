@@ -1,102 +1,158 @@
-// import  { useState } from 'react';
-// import styles from './login.module.css';
-// import { Link } from 'react-router-dom';
 
-// const LoginForm = () => {
-//     const [showPassword, setShowPassword] = useState(false);
 
-//     const togglePasswordVisibility = () => {
-//       setShowPassword(!showPassword);
-//     };
+// import { useState } from "react";
+// import { useAuth } from "../../../context/AuthContext";
+// import { loginUser } from "../../../api/DataApi";
+// import styles from "./login.module.css";
+// import { Link, useNavigate } from "react-router-dom";
 
-//     return (
-//       <div className={styles.loginContainer}>
-//         <form className={styles.loginForm}>
-//           <h2>LOG IN</h2>
-//           <h3>Enter Your details and Log in</h3>
+// const LoginForm: React.FC = () => {
+//   const [email, setEmail] = useState<string>("");
+//   const [password, setPassword] = useState<string>("");
+//   const [formErrors, setFormErrors] = useState<any>({});
+//   const { login } = useAuth();
+//   const navigate = useNavigate();
 
-//           <div className={styles.inputGroup}>
-//             <label>Username or Email</label>
-//             <input type="text" placeholder="demo@gmail.com" />
-//           </div>
-//           <div className={styles.inputGroup}>
-//             <label>Password</label>
-//             <div className={styles.passwordWrapper}>
-//               <input
-//                 type={showPassword ? 'text' : 'password'}
-//                 placeholder="****"
-//               />
-//               <button
-//                 type="button"
-//                 className={styles.showPassword}
-//                 onClick={togglePasswordVisibility}
-//               >
-
-//               </button>
-//             </div>
-//           </div>
-//           <div className={styles.options}>
-//             <label>
-//                <input  type="checkbox" />
-//               Save password
-//             </label>
-//             <a href="/">Forget Password?</a>
-//           </div>
-//           <button type="submit" className={styles.loginButton}>LOG IN</button>
-//           <p>Don’t have an account?
-//             <Link to="/SignUpForm-screen" >
-//             <a href="/">Sign Up</a>
-//             </Link>
-//             </p>
-//         </form>
-//       </div>
-//     );
+//   const validate = () => {
+//     const errors: any = {};
+//     if (!email) errors.email = "Email is required";
+//     else if (!/\S+@\S+\.\S+/.test(email)) errors.email = "Email is invalid";
+//     if (!password) errors.password = "Password is required";
+//     setFormErrors(errors);
+//     return Object.keys(errors).length === 0;
 //   };
 
-//   export default LoginForm;
+//   // const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+//   //   e.preventDefault();
+//   //   if (validate()) {
+//   //     try {
+//   //       const userData = await loginUser(email, password);
+//   //       if (userData.userId){
+//   //         login(userData);
+//   //         console.log("User logged in successfully", userData);
+//   //       } else {
+//   //         console.log("Login failed: No userId returned");
 
+//   //       }
 
+//   //     } catch (error) {
+//   //       console.error("Login failed", error);
+//   //     }
+//   //   }
+//   // };
 
-import { useEffect, useState } from "react";
+//   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     if (validate()) {
+//       try {
+//         const userData = await loginUser(email, password);
+//         login(userData); // Store the logged-in user data in context
+//         console.log("User logged in successfully", userData);
+//         navigate("/"); // Redirect to the homepage after successful login
+//       } catch (error) {
+//         console.error("Login failed", error);
+//       }
+//     }
+//   };
+
+//   return (
+//     <div className={`d-flex justify-content-center align-items-center vh-100`}>
+//       <form className={`form-group ${styles.loginContainer}`} onSubmit={handleLogin}>
+//         <h2>LOG IN</h2>
+//         <h3 style={{ fontSize: "medium", marginRight: "auto" }}>
+//           Enter Your details and Log in
+//         </h3>
+
+//         <div className={`form-group ${styles.inputGroup}`}>
+//           <label>Username or Email</label>
+//           <input
+//             type="text"
+//             className={`form-control ${formErrors.email ? "is-invalid" : ""}`}
+//             placeholder="demo@gmail.com"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//           {formErrors.email && <div className="invalid-feedback">{formErrors.email}</div>}
+//         </div>
+
+//         <div className={`form-group ${styles.inputGroup}`}>
+//           <label>Password</label>
+//           <div className={styles.passwordWrapper}>
+//             <input
+//               type="password"
+//               className={`form-control ${formErrors.password ? "is-invalid" : ""}`}
+//               placeholder="****"
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//             />
+//             {formErrors.password && <div className="invalid-feedback">{formErrors.password}</div>}
+//           </div>
+//         </div>
+
+//         <button type="submit" className={styles.loginButton}>
+//           LOG IN
+//         </button>
+//         <p>
+//           Don’t have an account?
+//           <Link to="/SignUpForm-screen">Sign Up</Link>
+//         </p>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default LoginForm;
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
+import { loginUser } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
-import { fetchData } from "../../../api/DataApi";
 
 const LoginForm: React.FC = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [formErrors, setFormErrors] = useState({
+    email: "",
+    password: "",
+  });
 
-  useEffect(() => {
-    const getdata = async () => {
-      setLoading(true);
+  const validate = () => {
+    const errors: any = {};
+    if (!email) errors.email = "Email is required";
+    if (!password) errors.password = "Password is required";
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validate()) {
       try {
-        const apiData = await fetchData();
-        console.log("Fetched API Data:", apiData); // Log the API data to the console
-        setData(apiData);
+        const response = await loginUser({ email, password });
+        console.log("User logged in successfully", response);
+        navigate("/");
+        // Save token, redirect to dashboard, etc.
       } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
+        console.error("Login failed:", error);
       }
-    };
-    getdata();
-  }, []);
+    }
+  };
 
   return (
     <div className={`d-flex justify-content-center align-items-center vh-100`}>
       <form
         className={`form-group ${styles.loginContainer} ${styles.loginForm}`}
+        onSubmit={handleSubmit}
       >
-        <br />
         <h2>LOG IN</h2>
         <h3 style={{ fontSize: "medium", marginRight: "auto" }}>
           Enter Your details and Log in
         </h3>
-        <br />
+
         <div className={`form-group ${styles.inputGroup}`}>
-          <label>Username or Email</label>
+          <label>Email</label>
           <input
             type="text"
             className="form-control"
@@ -104,6 +160,9 @@ const LoginForm: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          {formErrors.email && (
+            <span className={styles.error}>{formErrors.email}</span>
+          )}
         </div>
         <div className={`form-group ${styles.inputGroup}`}>
           <label>Password</label>
@@ -116,24 +175,20 @@ const LoginForm: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          {formErrors.password && (
+            <span className={styles.error}>{formErrors.password}</span>
+          )}
         </div>
-        <div className={`form-group ${styles.options}`}>
-          <label>
-            <input type="checkbox" />
-            Save password
-          </label>
-          <a href="/">Forget Password?</a>
-        </div>
-        <button type="submit" className={styles.loginButton}>
-          LOG IN
+
+        <button
+          type="submit"
+          className={`btn btn-primary ${styles.loginButton}`}
+        >
+          Log in
         </button>
-        <p>
-          Don’t have an account?
-          <Link to="/SignUpForm-screen">
-            <a href="/">Sign Up</a>
-          </Link>
-        </p>
-        <br />
+        <h3 className={styles.registerLink} style={{ fontSize: "medium" }}>
+          Don't have an account? <Link to="/SignUpForm-screen">Sign up</Link>
+        </h3>
       </form>
     </div>
   );

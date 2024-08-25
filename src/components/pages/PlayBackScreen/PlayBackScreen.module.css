@@ -89,10 +89,13 @@
 .maincontainer {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   width: 100%;
   background-color: #F5F5F5;
+  margin-top: 20px;
+  overflow: hidden;
+
 }
 
 .flexRowContainer {
@@ -117,7 +120,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .iconWrapper {

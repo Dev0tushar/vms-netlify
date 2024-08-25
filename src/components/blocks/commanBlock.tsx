@@ -172,8 +172,6 @@
 
 
 
-
-
 import { useState, useEffect } from "react";
 import FilterBox from "../filterBox/filterBox";
 import SideBarMenu from "../sideMenu/sideBar";
@@ -247,12 +245,7 @@ function CommonBlock() {
       <SideBarMenu />
       <div className={`row ${styles.flexRowContainer}`}>
         <div className={`col-12 col-md-4 ${styles.filterBoxContainer}`}>
-          <FilterBox
-          
-            nvr1Items={nvr1Items}
-            nvr2Items={nvr2Items}
-           
-          />
+          <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
         </div>
         <div className={`  ${styles.iconAndBlocksContainer}`}>
           <div
@@ -279,7 +272,7 @@ function CommonBlock() {
                 src={twoStepIcon}
                 alt="Two Step"
                 className={styles.icon}
-                onClick={() => handleIconClick(1, "large")}
+                onClick={() => handleIconClick(2, "medium")}
               />
             </div>
           </div>
@@ -295,10 +288,7 @@ function CommonBlock() {
                 style={{ width: getColumnWidth(), height: "35vh" }}
                 key={block.id}
               >
-                
-                 
-                  <div className={styles.blockTitle}>{block.title}</div>
-              
+                <div className={styles.blockTitle}>{block.title}</div>
               </div>
             ))}
           </div>

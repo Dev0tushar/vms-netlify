@@ -1,5 +1,3 @@
-
-
 import { useState, ChangeEvent, FormEvent } from "react";
 import styles from "./AddDeviceScreen.module.css";
 import plusIcon from "../../../assets/PlusIcon-addDevice-button.png";
@@ -18,9 +16,9 @@ type FormData = {
 const initialFormData: FormData = {
   name: "",
   igrp: "",
-  ipDomain: "192.168.1.1",
-  port: "554",
-  id: "admin",
+  ipDomain: "",
+  port: "",
+  id: "",
   password: "",
 };
 
@@ -103,6 +101,7 @@ const AddDeviceForm: React.FC = () => {
                 type="text"
                 id="ipDomain"
                 name="ipDomain"
+                placeholder="192.168.1.1"
                 value={formData.ipDomain}
                 onChange={handleChange}
                 className="form-control"
@@ -117,6 +116,7 @@ const AddDeviceForm: React.FC = () => {
                 type="text"
                 id="port"
                 name="port"
+                placeholder="554"
                 value={formData.port}
                 onChange={handleChange}
                 className="form-control"
@@ -129,6 +129,7 @@ const AddDeviceForm: React.FC = () => {
                 type="text"
                 id="id"
                 name="id"
+                placeholder="admin"
                 value={formData.id}
                 onChange={handleChange}
                 className="form-control"
@@ -149,13 +150,21 @@ const AddDeviceForm: React.FC = () => {
                 <p className={styles.error}>{errors.password}</p>
               )}
             </div>
-            <button
-              type="submit"
-              className={`${styles.addButton} btn btn-warning`}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              <img src={plusIcon} alt="" />
-              Add Device
-            </button>
+              <button
+                type="submit"
+                className={`${styles.addButton} btn btn-warning`}
+              >
+                <img src={plusIcon} alt="" />
+                Add Device
+              </button>
+            </div>
           </form>
         </div>
       </div>

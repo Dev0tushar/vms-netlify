@@ -240,12 +240,6 @@
 
 // export default AiConfiguration;
 
-
-
-
-
-
-
 // import React from "react";
 // import DataTable from "react-data-table-component";
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -406,7 +400,6 @@
 
 // export default DataTableComponent;
 
-
 import React from "react";
 import DataTable from "react-data-table-component";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -537,10 +530,32 @@ const DataTableComponent: React.FC = () => {
             <span className={styles.headerText}>AI Configuration</span>
           </div>
 
-          <div className={`d-flex ${styles.topInputs}`}>
+          {/* <div className={`d-flex ${styles.topInputs}`}>
             <input type="text" placeholder="Group" className="form-control" />
             <input type="text" placeholder="Camera" className="form-control" />
             <input type="text" placeholder="AI Model" className="form-control" />
+            <button className={`${styles.TopButton} btn`}>+ Add</button>
+          </div> */}
+
+          <div className={`d-flex ${styles.topInputs}`}>
+            <select className="form-control">
+              <option value="">Select Group</option>
+              <option value="Group 1">Group 1</option>
+              <option value="Group 2">Group 2</option>
+              <option value="Group 3">Group 3</option>
+            </select>
+            <select className="form-control">
+              <option value="">Select Camera</option>
+              <option value="Camera 1">Camera 1</option>
+              <option value="Camera 2">Camera 2</option>
+              <option value="Camera 3">Camera 3</option>
+            </select>
+            <select className="form-control">
+              <option value="">Select AI Model</option>
+              <option value="Model 1">Model 1</option>
+              <option value="Model 2">Model 2</option>
+              <option value="Model 3">Model 3</option>
+            </select>
             <button className={`${styles.TopButton} btn`}>+ Add</button>
           </div>
 
@@ -554,13 +569,13 @@ const DataTableComponent: React.FC = () => {
                 highlightOnHover
               />
             </div>
-            <div className={`card-footer d-flex justify-content-between ${styles.footerButtons}`}>
+            <div
+              className={`card-footer d-flex justify-content-between ${styles.footerButtons}`}
+            >
               <Link to="/Edit-Screen" className={styles.linkButton}>
                 <button className="btn">Edit</button>
               </Link>
-              <button className={`${styles.dltbutton} btn`} style={{ borderRadius: "4px" }}>
-                Delete
-              </button>
+              <button className={`${styles.dltbutton} `}>Delete</button>
             </div>
           </div>
         </div>

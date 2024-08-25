@@ -345,10 +345,12 @@ body::-webkit-scrollbar{
   display: none;
 }
 
+
 /* In your global.css or deviceConfiguration.module.css */
  body {
   height: 100%;
   margin: 0;
+
   background-color: #F5F5F5; /* Ensure this matches your desired background color */
 }
 
@@ -357,6 +359,8 @@ body::-webkit-scrollbar{
   background-color: inherit; /* Inherit background color from body */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
 }
 
 .deviceTableContainer {
@@ -521,6 +525,7 @@ img {
   
     align-items: flex-start;
   }
+ 
   .topcontant .filterButtonIcon {
     height: auto;
     width: auto;
@@ -535,6 +540,7 @@ img {
  
   }
   
+
   .deviceTableContainer {
     margin-left: auto;
     width: 100vw;
@@ -549,7 +555,5 @@ img {
     margin-top: 15px;
     font-size: 0.750rem;
   }
-  .filterButtonIcon {
-    /* width: 10px; */
-  }
+
 }

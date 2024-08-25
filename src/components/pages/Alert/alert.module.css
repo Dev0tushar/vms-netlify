@@ -494,7 +494,7 @@
 
 @media (max-width: 1024px) {
   .layoutContainer {
-    margin-left: 20px; /* Adjust margin for medium screens */
+    margin-left: 60px; /* Adjust margin for medium screens */
   }
 
   .alertButtons button {

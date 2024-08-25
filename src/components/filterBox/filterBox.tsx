@@ -69,8 +69,6 @@
 
 // // export default FilterBox;
 
-
-
 // import React, { useState } from "react";
 // import styles from "./filterBox.module.css";
 // import { IoIosArrowDropdownCircle } from "react-icons/io";
@@ -135,18 +133,6 @@
 // };
 
 // export default FilterBox;
-
-
-
-
-
-
-
-
-
-
-
-
 
 import React, { useState } from "react";
 import styles from "./filterBox.module.css";
@@ -219,14 +205,14 @@ const FilterBox: React.FC<FilterBoxProps> = ({
   };
 
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <div className={styles.panel}>
         {showCalendar && (
           <div className={styles.dropdownContainer}>
             <h3
               className={styles.dropdownHeading}
               onClick={toggleAdditionalContent}
-              style={{fontSize:"1rem"}}
+              style={{ fontSize: "1rem" }}
             >
               Calendar
               <BsChevronDown

@@ -134,11 +134,13 @@
 .maincontainer {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   width: 100%;
   background-color: #F5F5F5;
-  margin-top: 100px;
+  margin-top: 70px;
+  overflow: hidden;
+ 
 }
 
 .flexRowContainer {
@@ -167,7 +169,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .iconWrapper {
@@ -301,9 +303,12 @@
   .blocksContainer {
     grid-template-columns: 1fr; /* 1 block per row */
   }
+.block{
+  width: 100%;
 
+}
   .filterBoxContainer {
-    margin-left: 0;
+    margin-left: 0px;
     margin-bottom: 20px;
   }
   .iconGroup {
@@ -316,5 +321,9 @@
   }
   .iconWrapper h1 {
     font-size: 1.2rem;
+  }
+  .block{
+    width: 100%;
+    /* max-width: 10%; */
   }
 }
