@@ -1,72 +1,105 @@
-// import axios from "axios";
 
-// const API_BASE_URL = "http://192.168.29.241:8000";
 
-// export const signUpUser = async (userData: any) => {
-//   try {
-//     const formData = new FormData();
-//     Object.keys(userData).forEach((key) => formData.append(key, userData[key]));
 
-//     const response = await axios.post(
-//       `${API_BASE_URL}/access/users`,
-//       formData,
-//       {
-//         headers: {
-//           "Content-Type": "multipart/form-data",
-//         },
-//       }
-//     );
+// import axios from 'axios';
+ 
+// export async function baseApi(method: string, url: string, data?: any) {
+//     try {
+//         const response = await axios({
+//             method,
+//             url: `http://127.0.0.1:8000/${url}`,
+//             data,
+//         });
+//         return response.data;
+//     } catch (error) {
+//         console.error(`API request failed: ${error}`);
+//         throw error;
+//     }
+// }
 
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error signing up user:", error);
-//     throw error;
-//   }
-// };
 
-// export const loginUser = async (loginData: {
+// export async function runPostApi(url: string, data: any) {
+//     return await baseApi("POST", url, data);
+// }
+
+// export async function runGetApi(url: string) {
+//     return await baseApi("GET", url);
+// }
+
+// export async function runDeleteApi(url: string) {
+//     return await baseApi("DELETE", url);
+// }
+
+
+// export async function logIn(data: any) {
+//     const result = await runGetApi("access/users", data );
+//     if (result?.token) {
+//         localStorage.setItem('token', result.token);
+//     }
+//     return result;
+// }
+
+
+// export const signUp = async (data: {
+//   name: string;
 //   email: string;
-//   password: string;
+//   // password: string;
+//   // phoneNumber: string;
 // }) => {
-//   try {
-//     const response = await axios.post(
-//       `${API_BASE_URL}/access/users`,
-//       loginData,
-//       {
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       }
-//     );
-
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error logging in user:", error);
-//     throw error;
-//   }
+//     return await runPostApi("access/users", data);
 // };
 
-import axios from "axios";
 
-const axiosInstance = axios.create({
-  baseURL: "http://192.168.29.241:8000/access/users", // Base URL for your API
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+import axios from 'axios';
 
-// Add a request interceptor to include the token in every request
-axiosInstance.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem("token"); // Assuming you're storing the token in localStorage
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
+export async function baseApi(method: string, url: string, data?: any) {
+    try {
+        const response = await axios({
+            method,
+            url: `http://127.0.0.1:8000/${url}`,
+            data,
+        });
+        return response.data;
+    } catch (error) {
+        console.error(`API request failed: ${error}`);
+        throw error;
     }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+}
 
-export default axiosInstance;
+export async function runPostApi(url: string, data: any) {
+    return await baseApi("POST", url, data);
+}
+
+export async function runGetApi(url: string) {
+    return await baseApi("GET", url);
+}
+
+export async function runDeleteApi(url: string) {
+    return await baseApi("DELETE", url);
+}
+
+export async function logIn(data: {name:string; email:string}) {
+    const result = await runGetApi("access/users", data);
+    if (result?.token) {
+        localStorage.setItem('token', result.token);
+        
+    }
+    return result;
+
+}
+
+
+export const signUp = async (data: { name: string; email: string }) => {
+    return await runPostApi("access/users", data);
+};
+
+// New function to check if user exists by email
+export async function checkUserExists(email: string) {
+    try {
+        const response = await runGetApi(`access/users?email=${email}`);
+        return response && response.exists; // Assuming backend returns an `exists` field
+    } catch (error) {
+        console.error(`Failed to check if user exists: ${error}`);
+        throw error;
+    }
+}

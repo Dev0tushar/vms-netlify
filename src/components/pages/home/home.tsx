@@ -47,7 +47,7 @@ function Home() {
     {
       icon: User_Home,
       header: "User",
-      route: "/user",
+      route: "/user-page",
     },
   ];
 

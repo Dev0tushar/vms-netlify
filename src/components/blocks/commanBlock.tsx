@@ -168,9 +168,137 @@
 
 // export default BlockData;
 
+// import { useState, useEffect } from "react";
+// import FilterBox from "../filterBox/filterBox";
+// import SideBarMenu from "../sideMenu/sideBar";
+// import styles from "./commanBlock.module.css";
+// import Live from "../../assets/liveIcon.svg";
+// import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
+// import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
+// import twoStepIcon from "../../assets/TwoStep-dashboardIcon-png.png";
+// import VideoStream from "./WebRTCPlayer";
 
+// function CommonBlock() {
+//   const [columns, setColumns] = useState(2);
+//   const [columnSize, setColumnSize] = useState("medium");
 
+//   const nvr1Items = [
+//     { name: "CAM 01", active: true },
+//     { name: "CAM 02" },
+//     { name: "CAM 03" },
+//     { name: "CAM 04" },
+//   ];
 
+//   const nvr2Items = [
+//     { name: "CH 01" },
+//     { name: "CH 02" },
+//     { name: "CH 03", subItems: ["GRP 1"] },
+//     { name: "CH 04" },
+//   ];
+
+//   const blocks = [
+//     { id: "1", title: "CAM 01" },
+//     { id: "2", title: "CAM 02" },
+//     { id: "3", title: "CAM 03" },
+//     { id: "4", title: "CAM 04" },
+//   ];
+
+//   const handleIconClick = (columnsCount: number, size: string) => {
+//     setColumns(columnsCount);
+//     setColumnSize(size);
+//   };
+
+//   const getColumnWidth = () => {
+//     switch (columnSize) {
+//       case "small":
+//         return "100%";
+//       case "medium":
+//         return "100%";
+//       case "large":
+//         return "100%";
+//       default:
+//         return "50%";
+//     }
+//   };
+
+//   const handleResize = () => {
+//     if (window.innerWidth < 768) {
+//       setColumns(1);
+//       setColumnSize("large");
+//     } else {
+//       setColumns(2);
+//       setColumnSize("medium");
+//     }
+//   };
+
+//   useEffect(() => {
+//     handleResize();
+//     window.addEventListener("resize", handleResize);
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
+
+//   const rtspLink = "rtsp://datatute.ddns.net:5543/live/channel0";
+
+//   return (
+//     <div className={`container-fluid ${styles.maincontainer}`}>
+//       <SideBarMenu />
+//       <div className={`row ${styles.flexRowContainer}`}>
+//         <div className={`col-12 col-md-4 ${styles.filterBoxContainer}`}>
+//           <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
+//         </div>
+//         <div className={`  ${styles.iconAndBlocksContainer}`}>
+//           <div
+//             className={`d-flex justify-content-between ${styles.iconContainer}`}
+//           >
+//             <div className={styles.iconWrapper}>
+//               <img src={Live} alt="Live" className={styles.Liveicon} />
+//               <h1 style={{ marginTop: "10px" }}>Live</h1>
+//             </div>
+//             <div className={styles.iconGroup}>
+//               <img
+//                 src={fourStepIcon}
+//                 alt="Four Step"
+//                 className={styles.icon}
+//                 onClick={() => handleIconClick(2, "medium")}
+//               />
+//               <img
+//                 src={sixStepIcon}
+//                 alt="Six Step"
+//                 className={styles.icon}
+//                 onClick={() => handleIconClick(3, "small")}
+//               />
+//               {/* <img
+//                 src={twoStepIcon}
+//                 alt="Two Step"
+//                 className={styles.icon}
+//                 onClick={() => handleIconClick(2, "medium")}
+//               /> */}
+//             </div>
+//           </div>
+//           <div
+//             className={`${styles.blocksContainer} ${
+//               columns === 1 ? styles.singleBlockContainer : ""
+//             }`}
+//             style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+//           >
+//             {blocks.map((block) => (
+//               <div
+//                 className={styles.block}
+//                 style={{ width: getColumnWidth(), height: "35vh" }}
+//                 key={block.id}
+//               >
+//                 <VideoStream rtspUrl={rtspLink} />
+//                 <div className={styles.blockTitle}>{block.title}</div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default CommonBlock;
 
 import { useState, useEffect } from "react";
 import FilterBox from "../filterBox/filterBox";
@@ -179,12 +307,20 @@ import styles from "./commanBlock.module.css";
 import Live from "../../assets/liveIcon.svg";
 import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
-import twoStepIcon from "../../assets/TwoStep-dashboardIcon-png.png";
+import VideoStream from "./WebRTCPlayer";
+import CameraDataFetcher from "../blocks/WebRTCPlayer";
+
+interface Camera {
+  id: string;
+  title: string;
+  rtspLink: string;
+}
 
 function CommonBlock() {
   const [columns, setColumns] = useState(2);
   const [columnSize, setColumnSize] = useState("medium");
-
+  const [cameras, setCameras] = useState<Camera[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const nvr1Items = [
     { name: "CAM 01", active: true },
     { name: "CAM 02" },
@@ -198,7 +334,6 @@ function CommonBlock() {
     { name: "CH 03", subItems: ["GRP 1"] },
     { name: "CH 04" },
   ];
-
   const blocks = [
     { id: "1", title: "CAM 01" },
     { id: "2", title: "CAM 02" },
@@ -239,7 +374,13 @@ function CommonBlock() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const handleDataFetched = (data: Camera[]) => {
+    setCameras(data);
+  };
 
+  const handleError = (message: string) => {
+    setError(message);
+  };
   return (
     <div className={`container-fluid ${styles.maincontainer}`}>
       <SideBarMenu />
@@ -247,7 +388,7 @@ function CommonBlock() {
         <div className={`col-12 col-md-4 ${styles.filterBoxContainer}`}>
           <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
         </div>
-        <div className={`  ${styles.iconAndBlocksContainer}`}>
+        <div className={`${styles.iconAndBlocksContainer}`}>
           <div
             className={`d-flex justify-content-between ${styles.iconContainer}`}
           >
@@ -268,12 +409,6 @@ function CommonBlock() {
                 className={styles.icon}
                 onClick={() => handleIconClick(3, "small")}
               />
-              <img
-                src={twoStepIcon}
-                alt="Two Step"
-                className={styles.icon}
-                onClick={() => handleIconClick(2, "medium")}
-              />
             </div>
           </div>
           <div
@@ -282,15 +417,24 @@ function CommonBlock() {
             }`}
             style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
           >
-            {blocks.map((block) => (
-              <div
-                className={styles.block}
-                style={{ width: getColumnWidth(), height: "35vh" }}
-                key={block.id}
-              >
-                <div className={styles.blockTitle}>{block.title}</div>
-              </div>
-            ))}
+            {error ? (
+              <div>{error}</div>
+            ) : (
+              blocks.map((block) => (
+                <div
+                  className={styles.block}
+                  style={{ width: getColumnWidth(), height: "35vh" }}
+                  key={block.id}
+                >
+                  <CameraDataFetcher
+                    onDataFetched={handleDataFetched}
+                    onError={handleError}
+                  />
+                  {/* <VideoStream rtspUrl={camera.rtspLink} /> */}
+                  <div className={styles.blockTitle}>{block.title}</div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
