@@ -1,6 +1,7 @@
 import "./App.css";
 import BlockData from "./components/blocks/commanBlock";
 import Navbar from "./components/navbar/navbar";
+
 import Home from "./components/pages/home/home";
 import Login from "./components/pages/login/login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -17,37 +18,42 @@ import { AuthProvider } from "./Hooks/useAuth";
 import ErrorBoundary from "./components/pages/PlayBackScreen/ErrorBoundary";
 import PrivateRoute from "./PrivateRoute";
 import UserPage from "./components/pages/UserPage/UserPage";
+import { DeviceProvider } from "./components/pages/deviceConfiguration/ParentDevice";
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Navbar />
-        <ErrorBoundary>
-          <Routes>
-            <Route path="/SignUpForm-screen" element={<SignUpForm />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/"
-              element={
-                <PrivateRoute>
+      <DeviceProvider>
+        <Router>
+          <Navbar />
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/SignUpForm-screen" element={<SignUpForm />} />
+
+              <Route
+                path="/"
+                element={
+                  //  <PrivateRoute>
                   <Home />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/sidebar" element={<SideBarMenu />} />
-            <Route path="/liveview" element={<BlockData />} />
-            <Route path="/playback" element={<Playback />} />
-            <Route path="/reportChart-Screen" element={<ChartsComponent />} />
-            <Route path="/alert" element={<AlertTable />} />
-            <Route path="/device-config" element={<DeviceConfiguration />} />
-            <Route path="/ai-config" element={<AiConfiguration />} />
-            <Route path="/user-page" element={<UserPage />}></Route>
-            <Route path="/AddDevice-Screen" element={<AddDeviceForm />} />
-            <Route path="/Edit-Screen" element={<EditForm />} />
-          </Routes>
-        </ErrorBoundary>
-      </Router>
+                  /* </PrivateRoute>  */
+                }
+              />
+              <Route path="/sidebar" element={<SideBarMenu />} />
+              <Route path="/liveview" element={<BlockData />} />
+              <Route path="/playback" element={<Playback />} />
+              <Route path="/reportChart-Screen" element={<ChartsComponent />} />
+              <Route path="/alert" element={<AlertTable />} />
+              <Route path="/device-config" element={<DeviceConfiguration />} />
+              <Route path="/AddDevice-Screen" element={<AddDeviceForm />} />
+              <Route path="/ai-config" element={<AiConfiguration />} />
+              <Route path="/user-page" element={<UserPage />}></Route>
+              <Route path="/AddDevice-Screen" element={<AddDeviceForm />} />
+              <Route path="/Edit-Screen" element={<EditForm />} />
+            </Routes>
+          </ErrorBoundary>
+        </Router>
+      </DeviceProvider>
     </AuthProvider>
   );
 }
@@ -75,7 +81,7 @@ export default App;
 // import PrivateRoute from "./PrivateRoute";
 
 // function App() {
-//
+
 //   const allowedRoutes = [
 //     "/",
 //     "/sidebar",

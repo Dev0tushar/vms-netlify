@@ -1,5 +1,4 @@
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -22,6 +21,7 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .additionalContent {
@@ -61,6 +61,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .nvrlist {
@@ -144,7 +145,7 @@
   }
 
   .nvrtitle {
-    cursor: default;
+    cursor: pointer;
   }
 
   .nvrlist {

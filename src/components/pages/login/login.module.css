@@ -28,6 +28,8 @@ h3 {
   color: #666;
   display: flex;
   font-size: 5px;
+  /* margin-top: revert; */
+  margin-top: 10px;
 }
 
 .inputGroup {
@@ -95,7 +97,8 @@ label {
 
 p {
   margin-top: 20px;
-  color: #666;
+  color: red;
+
 }
 
  a {
@@ -106,7 +109,9 @@ p {
 p a:hover {
   text-decoration: underline;
 }
-
+.error{
+  color: red;
+}
 /* Media Queries for responsiveness */
 
 /* For screens between 576px and 768px */
@@ -228,6 +233,7 @@ p a:hover {
   p a {
     font-size: 12px;
   }
+  
 }
 
 /* Additional tight responsiveness for screens between 320px and 375px */

@@ -62,18 +62,24 @@
 .navbar_right {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .profile {
   display: flex;
   align-items: center;
   color: #080808; 
+  cursor: pointer;
 }
 
 .userName {
   margin-right: 10px; 
+  cursor: pointer;
 }
-
+.profileContainer {
+  display: flex;
+  align-items: center; /* Vertically centers text and image */
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .navbar_cont {

@@ -112,20 +112,22 @@ img {
   display: none; 
 }
 .filterButton:hover {
-  background-color: #f4f8fa;
+  background-color: white;
 }
-
+.filtercontent:hover{
+  background-color: #F5F5F5;
+}
 .filterButton .filterButtonIcon {
   width: 1vw;
   height: 5vh;
 }
 
 .statusOnline {
-  color: rgb(138, 140, 138);
+  color: rgb(103, 238, 103);
 }
 
 .statusOffline {
-  color: rgb(97, 95, 95);
+  color: rgb(242, 88, 88);
 }
 
 .btnedit {

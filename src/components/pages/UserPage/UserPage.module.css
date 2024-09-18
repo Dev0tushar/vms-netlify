@@ -45,21 +45,25 @@ body {
 .form_bg {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+.container{
+  display: flex;
+  height: 100%;
+  max-height: 90%;
+}
 /* CSS */
 .button57 {
-  background-color: #ff914d;
+  background-color: #ff7f00;
   border: 0;
   border-radius: 56px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu,
-    "Helvetica Neue", sans-serif;
+ font-family: "Poppins";
   font-size: 18px;
   font-weight: 600;
   outline: 0;
   padding: 12px 21px;
-  position: relative;
+  /* position: relative; */
   text-align: center;
   text-decoration: none;
   transition: all 0.3s;
@@ -69,7 +73,7 @@ body {
   overflow: hidden;
 }
 
-.button57:before {
+/* .button57:before {
   background-color: initial;
   background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
   border-radius: 125px;
@@ -81,7 +85,7 @@ body {
   top: 0;
   transition: all 0.3s;
   width: 92%;
-}
+} */
 
 .button57:hover {
   box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
@@ -94,6 +98,13 @@ body {
   max-width: 205px;
   margin: 50px auto 25px;
 }
+.avatarPreview img {
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50%;
+  border: 5px solid #f95d;
+}
+
 .avatarUpload .avatar-edit {
   position: absolute;
   right: 12px;
@@ -115,6 +126,9 @@ body {
   cursor: pointer;
   font-weight: normal;
   transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 10px;
+  right: 28px;
 }
 .avatarUpload .avatarEdit input + label:hover {
   background: #f1f1f1;
@@ -201,3 +215,4 @@ body {
     padding: 10px 30px;
   }
 }
+

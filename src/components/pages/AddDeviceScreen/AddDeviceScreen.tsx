@@ -1,58 +1,328 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+{
+  // import { useState, ChangeEvent, FormEvent } from "react";
+  // import styles from "./AddDeviceScreen.module.css";
+  // import plusIcon from "../../../assets/PlusIcon-addDevice-button.png";
+  // import "bootstrap/dist/css/bootstrap.min.css";
+  // import CrosIcon from "../../../assets/CrossIcon.png";
+  // type FormData = {
+  //   name: string;
+  //   igrp: string;
+  //   ipDomain: string;
+  //   port: string;
+  //   id: string;
+  //   password: string;
+  // };
+  // const initialFormData: FormData = {
+  //   name: "",
+  //   igrp: "",
+  //   ipDomain: "",
+  //   port: "",
+  //   id: "",
+  //   password: "",
+  // };
+  // const AddDeviceForm: React.FC = () => {
+  //   const [formData, setFormData] = useState<FormData>(initialFormData);
+  //   const [errors, setErrors] = useState<Partial<FormData>>({});
+  //   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //     const { name, value } = e.target;
+  //     setFormData((prev) => ({ ...prev, [name]: value }));
+  //   };
+  //   const validate = (): Partial<FormData> => {
+  //     const newErrors: Partial<FormData> = {};
+  //     const ipRegex = /^\d{1,3}(\.\d{1,3}){3}$/;
+  //     const portRegex = /^\d+$/;
+  //     if (!formData.name) newErrors.name = "Name is required";
+  //     if (!formData.igrp) newErrors.igrp = "IGRP is required";
+  //     if (!formData.ipDomain || !ipRegex.test(formData.ipDomain))
+  //       newErrors.ipDomain = "Invalid IP address";
+  //     if (!formData.port || !portRegex.test(formData.port))
+  //       newErrors.port = "Port must be a number";
+  //     if (!formData.id) newErrors.id = "ID is required";
+  //     if (!formData.password) newErrors.password = "Password is required";
+  //     return newErrors;
+  //   };
+  //   const handleSubmit = (e: FormEvent) => {
+  //     e.preventDefault();
+  //     const newErrors = validate();
+  //     if (Object.keys(newErrors).length === 0) {
+  //       console.log(formData);
+  //     } else {
+  //       setErrors(newErrors);
+  //     }
+  //   };
+  //   return (
+  //     <div className={`${styles.container} container-fluid`}>
+  //       <div className={`${styles.formWrapper} row justify-content-center`}>
+  //         <div>
+  //           <div className={styles.formHeader}>
+  //             <h2>ADD DEVICE</h2>
+  //             <button className={styles.closeButton}>
+  //               <img src={CrosIcon} alt="" className={styles.CrosIcon} />{" "}
+  //             </button>
+  //           </div>
+  //           <form onSubmit={handleSubmit} className={styles.form}>
+  //             <div className="form-group">
+  //               <label htmlFor="name">Name</label>
+  //               <input
+  //                 type="text"
+  //                 id="name"
+  //                 name="name"
+  //                 value={formData.name}
+  //                 onChange={handleChange}
+  //                 className="form-control"
+  //                 placeholder="-"
+  //               />
+  //               {errors.name && <p className={styles.error}>{errors.name}</p>}
+  //             </div>
+  //             <div className="form-group">
+  //               <label htmlFor="igrp">IGRP</label>
+  //               <input
+  //                 type="text"
+  //                 id="igrp"
+  //                 name="igrp"
+  //                 value={formData.igrp}
+  //                 onChange={handleChange}
+  //                 className="form-control"
+  //                 placeholder="-"
+  //               />
+  //               {errors.igrp && <p className={styles.error}>{errors.igrp}</p>}
+  //             </div>
+  //             <div className="form-group">
+  //               <label htmlFor="ipDomain">IP/Domain</label>
+  //               <input
+  //                 type="text"
+  //                 id="ipDomain"
+  //                 name="ipDomain"
+  //                 placeholder="192.168.1.1"
+  //                 value={formData.ipDomain}
+  //                 onChange={handleChange}
+  //                 className="form-control"
+  //               />
+  //               {errors.ipDomain && (
+  //                 <p className={styles.error}>{errors.ipDomain}</p>
+  //               )}
+  //             </div>
+  //             <div className="form-group">
+  //               <label htmlFor="port">Port</label>
+  //               <input
+  //                 type="text"
+  //                 id="port"
+  //                 name="port"
+  //                 placeholder="554"
+  //                 value={formData.port}
+  //                 onChange={handleChange}
+  //                 className="form-control"
+  //               />
+  //               {errors.port && <p className={styles.error}>{errors.port}</p>}
+  //             </div>
+  //             <div className="form-group">
+  //               <label htmlFor="id">ID</label>
+  //               <input
+  //                 type="text"
+  //                 id="id"
+  //                 name="id"
+  //                 placeholder="admin"
+  //                 value={formData.id}
+  //                 onChange={handleChange}
+  //                 className="form-control"
+  //               />
+  //               {errors.id && <p className={styles.error}>{errors.id}</p>}
+  //             </div>
+  //             <div className="form-group">
+  //               <label htmlFor="password">Password</label>
+  //               <input
+  //                 type="password"
+  //                 id="password"
+  //                 name="password"
+  //                 value={formData.password}
+  //                 onChange={handleChange}
+  //                 className="form-control"
+  //               />
+  //               {errors.password && (
+  //                 <p className={styles.error}>{errors.password}</p>
+  //               )}
+  //             </div>
+  //             <div
+  //               style={{
+  //                 display: "flex",
+  //                 justifyContent: "center",
+  //                 alignItems: "center",
+  //               }}
+  //             >
+  //               <button
+  //                 type="submit"
+  //                 className={`${styles.addButton} btn btn-warning`}
+  //               >
+  //                 <img src={plusIcon} alt="" />
+  //                 Add Device
+  //               </button>
+  //             </div>
+  //           </form>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+  // export default AddDeviceForm;
+}
+
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import axios from "axios";
 import styles from "./AddDeviceScreen.module.css";
 import plusIcon from "../../../assets/PlusIcon-addDevice-button.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CrosIcon from "../../../assets/CrossIcon.png";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useDevice } from "../deviceConfiguration/ParentDevice";
 
 type FormData = {
+  camera_id: string;
+  serial_number: string;
   name: string;
-  igrp: string;
-  ipDomain: string;
-  port: string;
-  id: string;
+  camera_make_model: string;
+  status: string;
+  location_id: string;
+  username: string;
   password: string;
+  is_nvr: string;
+  camera_url: string;
+};
+type Location = {
+  location_id: string;
+  name: string;
 };
 
 const initialFormData: FormData = {
+  camera_id: "",
+  serial_number: "",
   name: "",
-  igrp: "",
-  ipDomain: "",
-  port: "",
-  id: "",
+  camera_make_model: "",
+  status: "",
+  location_id: "",
+  username: "",
   password: "",
+  is_nvr: "",
+  camera_url: "",
 };
 
 const AddDeviceForm: React.FC = () => {
+  const { addDevice, devices, updateDevice } = useDevice();
   const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [locations, setLocations] = useState<Location[]>([]);
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [success, setSuccess] = useState(false);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const editId = searchParams.get("edit");
+    if (editId) {
+      const deviceToEdit = devices.find((d) => d.camera_id === editId);
+      if (deviceToEdit) {
+        setFormData(deviceToEdit);
+      }
+    }
+  }, [searchParams, devices]);
+
+
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/config/locations");
+        setLocations(response.data);
+      } catch (error) {
+        console.error("Error fetching locations:", error);
+      }
+    };
+    fetchLocations();
+  }, [])
+
+  
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
   const validate = (): Partial<FormData> => {
     const newErrors: Partial<FormData> = {};
-    const ipRegex = /^\d{1,3}(\.\d{1,3}){3}$/;
-    const portRegex = /^\d+$/;
+  //   if (!formData.camera_id) newErrors.camera_id = "Camera ID is required";
+  //   if (!formData.serial_number)
+  //     newErrors.serial_number = "Serial number is required";
+  //   if (!formData.name) newErrors.name = "Name is required";
+  //   if (!formData.camera_make_model)
+  //     newErrors.camera_make_model = "Camera Make/Model is required";
+  //   if (!formData.status) newErrors.status = "Status is required";
+  //   if (!formData.location_id)
+  //     newErrors.location_id = "Location ID is required";
+  //   if (!formData.username) newErrors.username = "Username is required";
+  //   if (!formData.password) newErrors.password = "Password is required";
+  //   if (!formData.is_nvr) newErrors.is_nvr = "is_nvr is required";
+  //   return newErrors;
+  // };
 
-    if (!formData.name) newErrors.name = "Name is required";
-    if (!formData.igrp) newErrors.igrp = "IGRP is required";
-    if (!formData.ipDomain || !ipRegex.test(formData.ipDomain))
-      newErrors.ipDomain = "Invalid IP address";
-    if (!formData.port || !portRegex.test(formData.port))
-      newErrors.port = "Port must be a number";
-    if (!formData.id) newErrors.id = "ID is required";
-    if (!formData.password) newErrors.password = "Password is required";
+  const duplicateDevice = devices.find(
+    (device) =>
+      device.camera_id === formData.camera_id &&
+      device.location_id === formData.location_id &&
+      device.camera_id !== (searchParams.get("edit") || "")
+  );
 
-    return newErrors;
-  };
+  if (!formData.camera_id) newErrors.camera_id = "Camera ID is required";
+  if (!formData.serial_number)
+    newErrors.serial_number = "Serial number is required";
+  if (!formData.name) newErrors.name = "Name is required";
+  if (!formData.camera_make_model)
+    newErrors.camera_make_model = "Camera Make/Model is required";
+  if (!formData.status) newErrors.status = "Status is required";
+  if (!formData.location_id)
+    newErrors.location_id = "Location ID is required";
+  if (!formData.username) newErrors.username = "Username is required";
+  if (!formData.password) newErrors.password = "Password is required";
+  if (!formData.is_nvr) newErrors.is_nvr = "is_nvr is required";
 
-  const handleSubmit = (e: FormEvent) => {
+  if (duplicateDevice) {
+    newErrors.camera_id = "This Camera ID is already used in this location.";
+  }
+
+  return newErrors;
+};
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
-      console.log(formData);
+      try {
+        const response = await axios.post(
+          "http://127.0.0.1:8000/config/cameras",
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (response.status === 201) {
+          const editId = searchParams.get("edit");
+          if (editId) {
+            updateDevice(formData); // Update existing device
+          } else {
+            addDevice(formData); // Add new device
+          }
+          addDevice(formData);
+          setSuccess(true);
+          navigate("/device-config");
+        } else {
+          setSuccess(false);
+          console.error("Failed to submit form data.");
+        }
+      } catch (error) {
+        setSuccess(false);
+        console.error("Error submitting form:", error);
+      }
     } else {
       setErrors(newErrors);
     }
@@ -60,15 +330,72 @@ const AddDeviceForm: React.FC = () => {
 
   return (
     <div className={`${styles.container} container-fluid`}>
-      <div className={`${styles.formWrapper} row justify-content-center`}>
+      <div
+        className={`${styles.formWrapper} row justify-content-center`}
+        style={{ marginTop: "250px" }}
+      >
         <div>
           <div className={styles.formHeader}>
-            <h2>ADD DEVICE</h2>
+            <h2>
+              {/* ADD DEVICE */}
+
+              {searchParams.get("edit") ? "EDIT DEVICE" : "ADD DEVICE"}
+            </h2>
             <button className={styles.closeButton}>
-              <img src={CrosIcon} alt="" className={styles.CrosIcon} />{" "}
+              <Link to="/device-config" className={styles.linkButton}>
+                <img src={CrosIcon} alt="Close" className={styles.CrosIcon} />
+              </Link>
             </button>
           </div>
           <form onSubmit={handleSubmit} className={styles.form}>
+            <div className="form-group">
+              <label htmlFor="camera_id">Camera ID</label>
+              <input
+                type="text"
+                id="camera_id"
+                name="camera_id"
+                value={formData.camera_id}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter Camera ID"
+              />
+              {errors.camera_id && (
+                <p className={styles.error}>{errors.camera_id}</p>
+              )}
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="camera_url">Camera URL</label>
+              <input
+                type="text"
+                id="camera_url"
+                name="camera_url"
+                value={formData.camera_url}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter Camera URL"
+              />
+              {errors.camera_url && (
+                <p className={styles.error}>{errors.camera_url}</p>
+              )}
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="serial_number">Serial Number</label>
+              <input
+                type="text"
+                id="serial_number"
+                name="serial_number"
+                value={formData.serial_number}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter Serial Number"
+              />
+              {errors.serial_number && (
+                <p className={styles.error}>{errors.serial_number}</p>
+              )}
+            </div>
+
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -78,64 +405,73 @@ const AddDeviceForm: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 className="form-control"
-                placeholder="-"
+                placeholder="Enter Name"
               />
               {errors.name && <p className={styles.error}>{errors.name}</p>}
             </div>
+
             <div className="form-group">
-              <label htmlFor="igrp">IGRP</label>
+              <label htmlFor="camera_make_model">Camera Make/Model</label>
               <input
                 type="text"
-                id="igrp"
-                name="igrp"
-                value={formData.igrp}
+                id="camera_make_model"
+                name="camera_make_model"
+                value={formData.camera_make_model}
                 onChange={handleChange}
                 className="form-control"
-                placeholder="-"
+                placeholder="Enter Camera Make/Model"
               />
-              {errors.igrp && <p className={styles.error}>{errors.igrp}</p>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="ipDomain">IP/Domain</label>
-              <input
-                type="text"
-                id="ipDomain"
-                name="ipDomain"
-                placeholder="192.168.1.1"
-                value={formData.ipDomain}
-                onChange={handleChange}
-                className="form-control"
-              />
-              {errors.ipDomain && (
-                <p className={styles.error}>{errors.ipDomain}</p>
+              {errors.camera_make_model && (
+                <p className={styles.error}>{errors.camera_make_model}</p>
               )}
             </div>
+
             <div className="form-group">
-              <label htmlFor="port">Port</label>
+              <label htmlFor="status">Status</label>
               <input
                 type="text"
-                id="port"
-                name="port"
-                placeholder="554"
-                value={formData.port}
+                id="status"
+                name="status"
+                value={formData.status}
                 onChange={handleChange}
                 className="form-control"
+                placeholder="Enter Status"
               />
-              {errors.port && <p className={styles.error}>{errors.port}</p>}
+              {errors.status && <p className={styles.error}>{errors.status}</p>}
             </div>
+
             <div className="form-group">
-              <label htmlFor="id">ID</label>
+              <label htmlFor="location_id">Location ID</label>
               <input
                 type="text"
-                id="id"
-                name="id"
-                placeholder="admin"
-                value={formData.id}
+                id="location_id"
+                name="location_id"
+                value={formData.location_id}
                 onChange={handleChange}
                 className="form-control"
+                placeholder="Enter Location ID"
               />
-              {errors.id && <p className={styles.error}>{errors.id}</p>}
+              {errors.location_id && (
+                <p className={styles.error}>{errors.location_id}</p>
+              )}
             </div>
+
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter Username"
+              />
+              {errors.username && (
+                <p className={styles.error}>{errors.username}</p>
+              )}
+            </div>
+
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
@@ -145,11 +481,27 @@ const AddDeviceForm: React.FC = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className="form-control"
+                placeholder="Enter Password"
               />
               {errors.password && (
                 <p className={styles.error}>{errors.password}</p>
               )}
             </div>
+
+            <div className="form-group">
+              <label htmlFor="is_nvr">Is Nvr</label>
+              <input
+                type="text"
+                id="is_nvr"
+                name="is_nvr"
+                value={formData.is_nvr}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter Nvr"
+              />
+              {errors.is_nvr && <p className={styles.error}>{errors.is_nvr}</p>}
+            </div>
+
             <div
               style={{
                 display: "flex",
@@ -159,10 +511,11 @@ const AddDeviceForm: React.FC = () => {
             >
               <button
                 type="submit"
-                className={`${styles.addButton} btn btn-warning`}
+                className={`${styles.addButton} btn btn-primary`}
               >
-                <img src={plusIcon} alt="" />
-                Add Device
+                <img src={plusIcon} alt="Plus" className={styles.plusIcon} />
+                {/* Add */}
+                {searchParams.get("edit") ? "Update Device" : "Add Device"}
               </button>
             </div>
           </form>

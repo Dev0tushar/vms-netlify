@@ -1,207 +1,54 @@
-// import { useState } from "react";
-// import FilterBox from "../filterBox/filterBox";
-// import SideBarMenu from "../sideMenu/sideBar";
-// import styles from "./commanBlock.module.css";
-// import Navbar from "../navbar/navbar";
-// import liveIcon from "../../assets/liveDashboard-icon-png.png";
-// import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
-// import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
-// import twoStepIcon from "../../assets/TwoStep-dashboardIcon-png.png";
 
-// function BlockData() {
-//   const [activeIcon, setActiveIcon] = useState("fourStep");
 
-//   const nvr1Items = [
-//     { name: "CAM 01", active: true },
-//     { name: "CAM 02" },
-//     { name: "CAM 03" },
-//     { name: "CAM 04" },
-//   ];
-
-//   const nvr2Items = [
-//     { name: "CH 01" },
-//     { name: "CH 02" },
-//     { name: "CH 03", subItems: ["GRP 1"] },
-//     { name: "CH 04" },
-//   ];
-
-//   const blocks = [
-//     { id: "1", title: "CAM 01" },
-//     { id: "2", title: "CAM 02" },
-//     { id: "3", title: "CAM 03" },
-//     { id: "4", title: "CAM 04" },
-//   ];
-
-//   const handleIconClick = (icon: string) => {
-//     setActiveIcon(icon);
-//   };
-
-//   return (
-//     <>
-//       <Navbar />
-//       <div style={{ display: "flex" }}>
-//         <SideBarMenu />
-
-//         <div className={styles.container}>
-//           <div style={{ position: "fixed", left: "100px", top: "130px" }}>
-//             <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
-//           </div>
-//           <div
-//             style={{
-//               display: "block",
-//               marginLeft: "300px",
-//               marginTop: "0px",
-//               width: "900px",
-//               height: "700px",
-//               padding: "20px",
-//               position: "relative",
-//               top: "150px",
-//               left: "20px",
-//             }}
-//           >
-//             <div
-//               style={{
-//                 display: "flex",
-//                 justifyContent: "space-between",
-//               }}
-//             >
-//               <div
-//                 style={{
-//                   display: "flex",
-//                 }}
-//               >
-//                 <img src={liveIcon} alt="" width="32" height="32" />
-//                 <div className={styles.charStyle}>Live</div>
-//               </div>
-//               <div className={styles.titleNameIconSecondBox}>
-//                 <div className={styles.tileIconBox}>
-//                   <img
-//                     src={fourStepIcon}
-//                     alt=""
-//                     width="33"
-//                     height="33"
-//                     onClick={() => handleIconClick("fourStep")}
-//                   />
-//                 </div>
-//                 <div className={styles.tileIconBox}>
-//                   <img
-//                     src={sixStepIcon}
-//                     alt=""
-//                     width="33"
-//                     height="33"
-//                     onClick={() => handleIconClick("sixStep")}
-//                   />
-//                 </div>
-//                 <div className={styles.tileIconBox}>
-//                   <img
-//                     src={twoStepIcon}
-//                     alt=""
-//                     width="33"
-//                     height="33"
-//                     onClick={() => handleIconClick("twoStep")}
-//                   />
-//                 </div>
-//               </div>
-//             </div>
-//             <div>
-//               {activeIcon === "fourStep" && (
-//                 <div
-//                   style={{
-//                     display: "grid",
-//                     gridTemplateColumns: "400px 400px",
-//                     rowGap: "20px",
-//                     columnGap: "20px",
-//                     margin: "20px",
-//                   }}
-//                 >
-//                   {blocks.map((block) => (
-//                     <div className={styles.containerBlock} key={block.id}>
-//                       <div className={styles.boxContent}>{block.title}</div>
-//                     </div>
-//                   ))}
-//                 </div>
-//               )}
-
-//               {activeIcon === "sixStep" && (
-//                 <div
-//                   style={{
-//                     display: "grid",
-//                     gridTemplateColumns: "300px 300px 300px",
-//                     rowGap: "20px",
-//                     columnGap: "20px",
-//                     margin: "25px",
-//                   }}
-//                 >
-//                   {blocks.map((block) => (
-//                     <div className={styles.containerBlock2} key={block.id}>
-//                       <div className={styles.boxContent}>{block.title}</div>
-//                     </div>
-//                   ))}
-//                 </div>
-//               )}
-
-//               {activeIcon === "twoStep" && (
-//                 <div
-//                   style={{
-//                     display: "grid",
-//                     gridTemplateColumns: "700px ",
-//                     rowGap: "20px",
-//                     columnGap: "20px",
-//                     margin: "25px",
-//                     height: "200px",
-//                   }}
-//                 >
-//                   {blocks.map((block) => (
-//                     <div className={styles.containerBlock3} key={block.id}>
-//                       <div className={styles.boxContent}>{block.title}</div>
-//                     </div>
-//                   ))}
-//                 </div>
-//               )}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default BlockData;
-
-// import { useState, useEffect } from "react";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 // import FilterBox from "../filterBox/filterBox";
 // import SideBarMenu from "../sideMenu/sideBar";
 // import styles from "./commanBlock.module.css";
 // import Live from "../../assets/liveIcon.svg";
 // import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
 // import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
-// import twoStepIcon from "../../assets/TwoStep-dashboardIcon-png.png";
-// import VideoStream from "./WebRTCPlayer";
+// import VideocamOffTwoToneIcon from "@mui/icons-material/VideocamOffTwoTone";
+
+// interface Camera {
+//   camera_url: string | undefined;
+//   name: string;
+// }
 
 // function CommonBlock() {
 //   const [columns, setColumns] = useState(2);
 //   const [columnSize, setColumnSize] = useState("medium");
+//   const [cameraData, setCameraData] = useState<Camera[]>([]);
+//   const [selectedBlock, setSelectedBlock] = useState<number | null>(null);
 
-//   const nvr1Items = [
-//     { name: "CAM 01", active: true },
-//     { name: "CAM 02" },
-//     { name: "CAM 03" },
-//     { name: "CAM 04" },
-//   ];
+//   useEffect(() => {
+//     const fetchCameraData = async () => {
+//       try {
+//         const response = await axios.get(
+//           "http://127.0.0.1:8000/config/cameras"
+//         );
+//         console.log("Full API response:", response?.data);
+//         setCameraData(response?.data);
+//       } catch (error) {
+//         console.error("Error fetching camera data:", error.message);
+//       }
+//     };
+//     fetchCameraData();
+//   }, []);
 
-//   const nvr2Items = [
-//     { name: "CH 01" },
-//     { name: "CH 02" },
-//     { name: "CH 03", subItems: ["GRP 1"] },
-//     { name: "CH 04" },
-//   ];
+//   // const nvr1Items = [
+//   //   { name: "CAM 01", active: true },
+//   //   { name: "CAM 02" },
+//   //   { name: "CAM 03" },
+//   //   { name: "CAM 04" },
+//   // ];
 
-//   const blocks = [
-//     { id: "1", title: "CAM 01" },
-//     { id: "2", title: "CAM 02" },
-//     { id: "3", title: "CAM 03" },
-//     { id: "4", title: "CAM 04" },
-//   ];
+//   // const nvr2Items = [
+//   //   { name: "CH 01" },
+//   //   { name: "CH 02" },
+//   //   { name: "CH 03", subItems: ["GRP 1"] },
+//   //   { name: "CH 04" },
+//   // ];
 
 //   const handleIconClick = (columnsCount: number, size: string) => {
 //     setColumns(columnsCount);
@@ -237,16 +84,24 @@
 //     return () => window.removeEventListener("resize", handleResize);
 //   }, []);
 
-//   const rtspLink = "rtsp://datatute.ddns.net:5543/live/channel0";
+//   const handleBlockClick = (index: number) => {
+//     if (selectedBlock === index) {
+//       setSelectedBlock(null);
+//     } else {
+//       setSelectedBlock(index);
+//     }
+//   };
 
 //   return (
 //     <div className={`container-fluid ${styles.maincontainer}`}>
 //       <SideBarMenu />
 //       <div className={`row ${styles.flexRowContainer}`}>
 //         <div className={`col-12 col-md-4 ${styles.filterBoxContainer}`}>
-//           <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
+//           <FilterBox
+//           //  nvr1Items={nvr1Items} nvr2Items={nvr2Items} 
+//            />
 //         </div>
-//         <div className={`  ${styles.iconAndBlocksContainer}`}>
+//         <div className={styles.iconAndBlocksContainer}>
 //           <div
 //             className={`d-flex justify-content-between ${styles.iconContainer}`}
 //           >
@@ -267,28 +122,62 @@
 //                 className={styles.icon}
 //                 onClick={() => handleIconClick(3, "small")}
 //               />
-//               {/* <img
-//                 src={twoStepIcon}
-//                 alt="Two Step"
-//                 className={styles.icon}
-//                 onClick={() => handleIconClick(2, "medium")}
-//               /> */}
 //             </div>
 //           </div>
+
 //           <div
 //             className={`${styles.blocksContainer} ${
 //               columns === 1 ? styles.singleBlockContainer : ""
 //             }`}
 //             style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
 //           >
-//             {blocks.map((block) => (
+//             {cameraData.map((cam, index) => (
 //               <div
-//                 className={styles.block}
-//                 style={{ width: getColumnWidth(), height: "35vh" }}
-//                 key={block.id}
+//                 key={index}
+//                 className={`${styles.block} ${
+//                   selectedBlock === index ? styles.enlargedBlock : ""
+//                 }`}
+//                 style={{
+//                   width: selectedBlock === index ? "100%" : getColumnWidth(),
+//                   height: selectedBlock === index ? "70vh" : "35vh",
+//                   cursor: "pointer",
+//                   display:
+//                     selectedBlock === null || selectedBlock === index
+//                       ? "block"
+//                       : "none",
+//                 }}
+//                 onClick={() => handleBlockClick(index)}
 //               >
-//                 <VideoStream rtspUrl={rtspLink} />
-//                 <div className={styles.blockTitle}>{block.title}</div>
+//                 {cam.camera_url ? (
+//                   <img
+//                     className={styles.LiveData}
+//                     style={{ width: "100%", maxWidth: "100%", height: "100%" }}
+//                     src={cam.camera_url}
+//                     alt={cam.name}
+//                     onError={(e) => {
+//                       console.log(e, "event");
+
+//                       e.currentTarget.style.display = "none";
+//                       e.currentTarget.nextSibling.style.display = "block";
+//                     }}
+//                   />
+//                 ) : (
+//                   <div className={styles.errorMessage}>No data available</div>
+//                 )}
+
+//                 <div
+//                   className={styles.noDataMessage}
+//                   style={{
+//                     display: "none",
+//                     marginTop: "60px",
+//                     marginLeft: "170px",
+//                   }}
+//                 >
+//                   <div className={styles.networkissue}>
+//                     <VideocamOffTwoToneIcon style={{ fontSize: 50 }} />
+//                     <h2> Network issue or unable to load feed</h2>
+//                   </div>
+//                 </div>
 //               </div>
 //             ))}
 //           </div>
@@ -300,46 +189,47 @@
 
 // export default CommonBlock;
 
-import { useState, useEffect } from "react";
+
+
+import { useEffect, useState } from "react";
+import axios from "axios";
 import FilterBox from "../filterBox/filterBox";
 import SideBarMenu from "../sideMenu/sideBar";
 import styles from "./commanBlock.module.css";
 import Live from "../../assets/liveIcon.svg";
 import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
-import VideoStream from "./WebRTCPlayer";
-import CameraDataFetcher from "../blocks/WebRTCPlayer";
+import VideocamOffTwoToneIcon from "@mui/icons-material/VideocamOffTwoTone";
 
 interface Camera {
-  id: string;
-  title: string;
-  rtspLink: string;
+  camera_url: string | undefined;
+  name: string;
+  location_id: string;
+  // name:string;
 }
 
 function CommonBlock() {
   const [columns, setColumns] = useState(2);
   const [columnSize, setColumnSize] = useState("medium");
-  const [cameras, setCameras] = useState<Camera[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const nvr1Items = [
-    { name: "CAM 01", active: true },
-    { name: "CAM 02" },
-    { name: "CAM 03" },
-    { name: "CAM 04" },
-  ];
+  const [cameraData, setCameraData] = useState<Camera[]>([]);
+  const [filteredCameras, setFilteredCameras] = useState<Camera[]>([]);
+  const [selectedBlock, setSelectedBlock] = useState<number | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
 
-  const nvr2Items = [
-    { name: "CH 01" },
-    { name: "CH 02" },
-    { name: "CH 03", subItems: ["GRP 1"] },
-    { name: "CH 04" },
-  ];
-  const blocks = [
-    { id: "1", title: "CAM 01" },
-    { id: "2", title: "CAM 02" },
-    { id: "3", title: "CAM 03" },
-    { id: "4", title: "CAM 04" },
-  ];
+  useEffect(() => {
+    const fetchCameraData = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8000/config/cameras"
+        );
+        setCameraData(response?.data);
+        setFilteredCameras(response?.data); 
+      } catch (error) {
+        console.error("Error fetching camera data:", error.message);
+      }
+    };
+    fetchCameraData();
+  }, []);
 
   const handleIconClick = (columnsCount: number, size: string) => {
     setColumns(columnsCount);
@@ -374,21 +264,35 @@ function CommonBlock() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const handleDataFetched = (data: Camera[]) => {
-    setCameras(data);
+
+  const handleBlockClick = (index: number) => {
+    if (selectedBlock === index) {
+      setSelectedBlock(null);
+    } else {
+      setSelectedBlock(index);
+    }
   };
 
-  const handleError = (message: string) => {
-    setError(message);
+  // Handle location selection from FilterBox
+  const handleLocationSelect = (locationId: string) => {
+    setSelectedLocation(locationId);
+    if (locationId) {
+      setFilteredCameras(cameraData.filter((cam) => cam.location_id === locationId));
+    } else {
+      setFilteredCameras(cameraData); // Show all cameras if no location is selected
+    }
   };
+
   return (
     <div className={`container-fluid ${styles.maincontainer}`}>
       <SideBarMenu />
       <div className={`row ${styles.flexRowContainer}`}>
         <div className={`col-12 col-md-4 ${styles.filterBoxContainer}`}>
-          <FilterBox nvr1Items={nvr1Items} nvr2Items={nvr2Items} />
+          <FilterBox
+            onLocationSelect={handleLocationSelect} // Pass the handler to FilterBox
+          />
         </div>
-        <div className={`${styles.iconAndBlocksContainer}`}>
+        <div className={styles.iconAndBlocksContainer}>
           <div
             className={`d-flex justify-content-between ${styles.iconContainer}`}
           >
@@ -411,30 +315,62 @@ function CommonBlock() {
               />
             </div>
           </div>
+
           <div
             className={`${styles.blocksContainer} ${
               columns === 1 ? styles.singleBlockContainer : ""
             }`}
             style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
           >
-            {error ? (
-              <div>{error}</div>
-            ) : (
-              blocks.map((block) => (
-                <div
-                  className={styles.block}
-                  style={{ width: getColumnWidth(), height: "35vh" }}
-                  key={block.id}
-                >
-                  <CameraDataFetcher
-                    onDataFetched={handleDataFetched}
-                    onError={handleError}
+            {filteredCameras.map((cam, index) => (
+              <div
+                key={index}
+                className={`${styles.block} ${
+                  selectedBlock === index ? styles.enlargedBlock : ""
+                }`}
+                style={{
+                  width: selectedBlock === index ? "100%" : getColumnWidth(),
+                  height: selectedBlock === index ? "70vh" : "35vh",
+                  cursor: "pointer",
+                  display:
+                    selectedBlock === null || selectedBlock === index
+                      ? "block"
+                      : "none",
+                }}
+                onClick={() => handleBlockClick(index)}
+              >
+                {cam.camera_url ? (
+                  <img
+                    className={styles.LiveData}
+                    style={{ width: "100%", maxWidth: "100%", height: "100%" }}
+                    src={cam.camera_url}
+                    alt={cam.name}
+                    onError={(e) => {
+                      console.log(e, "event");
+
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.nextSibling.style.display = "block";
+                    }}
                   />
-                  {/* <VideoStream rtspUrl={camera.rtspLink} /> */}
-                  <div className={styles.blockTitle}>{block.title}</div>
+                ) : (
+                  <div className={styles.errorMessage}>No data available</div>
+                )}
+
+                <div
+                  className={styles.noDataMessage}
+                  style={{
+                    display: "none",
+                    marginTop: "20px",
+                    // marginLeft: "170px",
+                  }}
+                >
+                  <div className={styles.networkissue}>
+                    <VideocamOffTwoToneIcon style={{ fontSize: 50 }} />
+                    <h2 style={{display:"flex", justifyContent:"center", alignItems:"center", fontFamily:"Poppins"}}> Network issue or unable to load feed</h2>
+                  </div>
                 </div>
-              ))
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
