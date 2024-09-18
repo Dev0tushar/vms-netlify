@@ -1,8 +1,3 @@
-
-
-
-
-// src/context/AuthContext.tsx
 import React, { createContext, useContext, useState } from "react";
 
 // Define the shape of your context state
@@ -15,13 +10,19 @@ interface AuthContextType {
 // Create the context with a default value
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   // Function to register a new user
   const registerUser = (email: string, password: string) => {
-    const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
-    const userExists = registeredUsers.some((user: any) => user.email === email);
+    const registeredUsers = JSON.parse(
+      localStorage.getItem("registeredUsers") || "[]"
+    );
+    const userExists = registeredUsers.some(
+      (user: any) => user.email === email
+    );
 
     if (!userExists) {
       const newUser = { email, password };
@@ -33,7 +34,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Function to login user
   const loginUser = (email: string, password: string): boolean => {
-    const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+    const registeredUsers = JSON.parse(
+      localStorage.getItem("registeredUsers") || "[]"
+    );
     const userExists = registeredUsers.some(
       (user: any) => user.email === email && user.password === password
     );
