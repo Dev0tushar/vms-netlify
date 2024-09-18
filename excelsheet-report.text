@@ -1,0 +1,57 @@
+
+Task Name- 
+- UI Design"
+- Authentication
+- Live API Integration
+- Filter Box"
+- Add Device Form
+- Filter Devices by Location
+- Add Device by Location
+- Double Tap Long Screen Action
+
+
+Description-
+- Completed the entire UI design, ensuring a user-friendly interface.
+- Developed secure login and signup processes with API integration.
+- Integrated a live API to display real-time camera data dynamically.
+- Added a filter box to filter cameras by location for focused viewing.
+- DataTute Project- Frontend work with React Typescript
+- Add the ability to filter devices based on location.
+- Add functionality to insert new devices according to location.
+- Implement double-tap and long-press screen functionalities.
+
+
+Libraries Used-
+- React, CSS, Bootstrap
+- Axios
+- Axios
+- Axios
+
+- React, Axios
+
+- React, Event Listeners
+
+
+Functionalities Implemented-
+- UI components, Responsive design for all device screen, bootstrap for grid
+- User authentication with form handling and validation via API, no token used
+- Real-time data fetch, error handling if data not shown, live camera updates
+- Location-based filtering with camera location ID and name via live API
+- Form handling with API integration; form data added to device configuration table
+- React, Material UI, Axios	Location-based filtering with API integration"
+- Device addition, Location handling
+- Gesture handling, Event-driven actions
+
+
+
+
+Authentication:
+  - Currently, there is no proper token-based authentication implemented. In the future, implementing token-based authentication (e.g., JWT) is recommended to secure user sessions more effectively.
+
+Edit/Update Functionality:
+  - There was no PUT or PATCH API available for updating or editing data. This is essential for handling update operations efficiently in the future.
+  - Although there was a POST API available, it was not sufficient for handling edit/update operations. To properly implement edit and update features, a PUT or PATCH API is needed.
+
+Future Enhancements:
+  - For future work on this project, integrating these missing API endpoints (PUT/PATCH) is crucial to provide full CRUD functionality and ensure that users can modify data as required.
+
