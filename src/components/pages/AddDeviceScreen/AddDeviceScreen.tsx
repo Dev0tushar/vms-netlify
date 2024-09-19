@@ -62,7 +62,7 @@ const AddDeviceForm: React.FC = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/config/locations");
+        const response = await axios.get("http://13.200.174.209/config/locations");
         setLocations(response.data);
       } catch (error) {
         console.error("Error fetching locations:", error);
