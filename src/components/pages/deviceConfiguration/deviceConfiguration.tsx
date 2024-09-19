@@ -654,7 +654,7 @@ const DeviceTable: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get("http://13.200.174.209/config/cameras");
+      const response = await axios.get("http://127.0.0.1:8000/config/cameras");
       setTableData(response.data); 
     } catch (err) {
       setError("Failed to fetch data");
@@ -669,7 +669,7 @@ const DeviceTable: React.FC = () => {
   const removeDevice = async (id: string) => {
     try {
       const response = await axios.delete(
-        `http://13.200.174.209/config/camera/${id}`
+        `http://127.0.0.1:8000/config/camera/${id}`
       );
       console.log("Device deleted successfully", response);
     

@@ -19,7 +19,7 @@ const VideoFetcher: React.FC<VideoFetcherProps> = ({ location, onVideosFetched }
       setError(null);
 
       try {
-        const response = await axios.get("http://13.200.174.209/config/locations");
+        const response = await axios.get("http://127.0.0.1:8000/config/locations");
         const data = response.data;
 
         if (Array.isArray(data)) {

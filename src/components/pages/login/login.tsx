@@ -135,7 +135,7 @@ const LoginForm: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://13.200.174.209/access/users");
+        const response = await axios.get("http://127.0.0.1:8000/access/users");
         setFetchedUsers(response.data);
         // console.log("Fetched users:", response.data);
       } catch (error) {
