@@ -118,7 +118,7 @@ function Navbar() {
       if (isAuthenticated && user?.name) {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/access/users?email=${user.email}`
+            `http://13.200.174.209/access/users?email=${user.email}`
           );
 
           if (response.data.length > 0) {

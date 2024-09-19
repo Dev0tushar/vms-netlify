@@ -220,7 +220,7 @@ function CommonBlock() {
     const fetchCameraData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/config/cameras"
+          "http://13.200.174.209/config/cameras"
         );
         setCameraData(response?.data);
         setFilteredCameras(response?.data); 
@@ -273,13 +273,13 @@ function CommonBlock() {
     }
   };
 
-  // Handle location selection from FilterBox
+  
   const handleLocationSelect = (locationId: string) => {
     setSelectedLocation(locationId);
     if (locationId) {
       setFilteredCameras(cameraData.filter((cam) => cam.location_id === locationId));
     } else {
-      setFilteredCameras(cameraData); // Show all cameras if no location is selected
+      setFilteredCameras(cameraData); 
     }
   };
 

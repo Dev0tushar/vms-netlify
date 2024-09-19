@@ -34,7 +34,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/access/login", {
+      const response = await axios.post("http://13.200.174.209/access/login", {
         email,
         // password,
       });

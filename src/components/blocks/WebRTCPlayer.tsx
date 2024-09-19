@@ -18,7 +18,7 @@ const CameraDataFetcher = ({
   useEffect(() => {
     const fetchCameraData = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/config/cameras");
+        let response = await axios.get("http://13.200.174.209/config/cameras");
 
         console.log("Full API response:", response?.data);
 

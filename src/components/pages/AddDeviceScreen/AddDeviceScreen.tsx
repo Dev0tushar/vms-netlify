@@ -130,7 +130,7 @@ const AddDeviceForm: React.FC = () => {
     if (Object.keys(newErrors).length === 0) {
       try {
         const response = await axios.post(
-          "http://127.0.0.1:8000/config/cameras",
+          "http://13.200.174.209/config/cameras",
           formData,
           {
             headers: {

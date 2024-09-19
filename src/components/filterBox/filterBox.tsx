@@ -56,7 +56,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
   useEffect(() => {
     const fetchCameraData = async () => {
       try {
-        const cameraResponse = await axios.get("http://127.0.0.1:8000/config/cameras");
+        const cameraResponse = await axios.get("http://13.200.174.209/config/cameras");
         setCameraItems(cameraResponse.data);
       } catch (error) {
         console.error("Error fetching camera data:", error.message);
@@ -65,7 +65,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
 
     const fetchLocationData = async () => {
       try {
-        const locationResponse = await axios.get("http://127.0.0.1:8000/config/locations");
+        const locationResponse = await axios.get("http://13.200.174.209/config/locations");
         setLocations(locationResponse.data);
       } catch (error) {
         console.error("Error fetching location data:", error.message);

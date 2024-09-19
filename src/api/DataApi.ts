@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "http://13.200.174.209";
 
 
 export const signUp = async (userData: { user_id: string; name: string; email: string }) => {
