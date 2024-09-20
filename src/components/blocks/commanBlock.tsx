@@ -216,11 +216,13 @@ function CommonBlock() {
   const [selectedBlock, setSelectedBlock] = useState<number | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     const fetchCameraData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/config/cameras"
+          `${API_BASE_URL}/config/cameras`
         );
         setCameraData(response?.data);
         setFilteredCameras(response?.data); 

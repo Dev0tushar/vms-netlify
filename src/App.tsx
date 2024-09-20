@@ -20,6 +20,7 @@ import PrivateRoute from "./PrivateRoute";
 import UserPage from "./components/pages/UserPage/UserPage";
 import { DeviceProvider } from "./components/pages/deviceConfiguration/ParentDevice";
 
+
 function App() {
   return (
     <AuthProvider>

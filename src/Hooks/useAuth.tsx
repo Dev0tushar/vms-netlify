@@ -33,8 +33,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (email: string, password: string) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     try {
-      const response = await axios.post("http://127.0.0.1:8000/access/login", {
+      const response = await axios.post(`${API_BASE_URL}/access/login`, {
         email,
         // password,
       });

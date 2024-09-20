@@ -112,13 +112,14 @@ function Navbar() {
   const [name, setName] = useState<string | null>(null);
   const [userImage, setUserImage] = useState<string>(defaultUserImage);
   const navigate = useNavigate();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchUserData = async () => {
       if (isAuthenticated && user?.name) {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/access/users?email=${user.email}`
+            `${API_BASE_URL}/access/users?email=${user.email}`
           );
 
           if (response.data.length > 0) {

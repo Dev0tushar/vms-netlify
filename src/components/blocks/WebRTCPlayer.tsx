@@ -14,11 +14,12 @@ const CameraDataFetcher = ({
   onError: (message: string) => void;
 }) => {
   const [cameraData, setCameraData] = useState<Camera[]>([]);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchCameraData = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/config/cameras");
+        let response = await axios.get(`${API_BASE_URL}/config/cameras`);
 
         console.log("Full API response:", response?.data);
 

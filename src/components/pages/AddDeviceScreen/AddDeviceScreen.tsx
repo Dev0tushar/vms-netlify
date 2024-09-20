@@ -1,5 +1,3 @@
-
-
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import axios from "axios";
 import styles from "./AddDeviceScreen.module.css";
@@ -48,6 +46,8 @@ const AddDeviceForm: React.FC = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     const editId = searchParams.get("edit");
     if (editId) {
@@ -58,20 +58,18 @@ const AddDeviceForm: React.FC = () => {
     }
   }, [searchParams, devices]);
 
-
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/config/locations");
+        const response = await axios.get(`${API_BASE_URL}/config/locations`);
         setLocations(response.data);
       } catch (error) {
         console.error("Error fetching locations:", error);
       }
     };
     fetchLocations();
-  }, [])
+  }, []);
 
-  
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -82,47 +80,47 @@ const AddDeviceForm: React.FC = () => {
 
   const validate = (): Partial<FormData> => {
     const newErrors: Partial<FormData> = {};
-  //   if (!formData.camera_id) newErrors.camera_id = "Camera ID is required";
-  //   if (!formData.serial_number)
-  //     newErrors.serial_number = "Serial number is required";
-  //   if (!formData.name) newErrors.name = "Name is required";
-  //   if (!formData.camera_make_model)
-  //     newErrors.camera_make_model = "Camera Make/Model is required";
-  //   if (!formData.status) newErrors.status = "Status is required";
-  //   if (!formData.location_id)
-  //     newErrors.location_id = "Location ID is required";
-  //   if (!formData.username) newErrors.username = "Username is required";
-  //   if (!formData.password) newErrors.password = "Password is required";
-  //   if (!formData.is_nvr) newErrors.is_nvr = "is_nvr is required";
-  //   return newErrors;
-  // };
+    //   if (!formData.camera_id) newErrors.camera_id = "Camera ID is required";
+    //   if (!formData.serial_number)
+    //     newErrors.serial_number = "Serial number is required";
+    //   if (!formData.name) newErrors.name = "Name is required";
+    //   if (!formData.camera_make_model)
+    //     newErrors.camera_make_model = "Camera Make/Model is required";
+    //   if (!formData.status) newErrors.status = "Status is required";
+    //   if (!formData.location_id)
+    //     newErrors.location_id = "Location ID is required";
+    //   if (!formData.username) newErrors.username = "Username is required";
+    //   if (!formData.password) newErrors.password = "Password is required";
+    //   if (!formData.is_nvr) newErrors.is_nvr = "is_nvr is required";
+    //   return newErrors;
+    // };
 
-  const duplicateDevice = devices.find(
-    (device) =>
-      device.camera_id === formData.camera_id &&
-      device.location_id === formData.location_id &&
-      device.camera_id !== (searchParams.get("edit") || "")
-  );
+    const duplicateDevice = devices.find(
+      (device) =>
+        device.camera_id === formData.camera_id &&
+        device.location_id === formData.location_id &&
+        device.camera_id !== (searchParams.get("edit") || "")
+    );
 
-  if (!formData.camera_id) newErrors.camera_id = "Camera ID is required";
-  if (!formData.serial_number)
-    newErrors.serial_number = "Serial number is required";
-  if (!formData.name) newErrors.name = "Name is required";
-  if (!formData.camera_make_model)
-    newErrors.camera_make_model = "Camera Make/Model is required";
-  if (!formData.status) newErrors.status = "Status is required";
-  if (!formData.location_id)
-    newErrors.location_id = "Location ID is required";
-  if (!formData.username) newErrors.username = "Username is required";
-  if (!formData.password) newErrors.password = "Password is required";
-  if (!formData.is_nvr) newErrors.is_nvr = "is_nvr is required";
+    if (!formData.camera_id) newErrors.camera_id = "Camera ID is required";
+    if (!formData.serial_number)
+      newErrors.serial_number = "Serial number is required";
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.camera_make_model)
+      newErrors.camera_make_model = "Camera Make/Model is required";
+    if (!formData.status) newErrors.status = "Status is required";
+    if (!formData.location_id)
+      newErrors.location_id = "Location ID is required";
+    if (!formData.username) newErrors.username = "Username is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    if (!formData.is_nvr) newErrors.is_nvr = "is_nvr is required";
 
-  if (duplicateDevice) {
-    newErrors.camera_id = "This Camera ID is already used in this location.";
-  }
+    if (duplicateDevice) {
+      newErrors.camera_id = "This Camera ID is already used in this location.";
+    }
 
-  return newErrors;
-};
+    return newErrors;
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -130,7 +128,7 @@ const AddDeviceForm: React.FC = () => {
     if (Object.keys(newErrors).length === 0) {
       try {
         const response = await axios.post(
-          "http://127.0.0.1:8000/config/cameras",
+          `${API_BASE_URL}/config/cameras`,
           formData,
           {
             headers: {
@@ -142,9 +140,9 @@ const AddDeviceForm: React.FC = () => {
         if (response.status === 201) {
           const editId = searchParams.get("edit");
           if (editId) {
-            updateDevice(formData); // Update existing device
+            updateDevice(formData); 
           } else {
-            addDevice(formData); // Add new device
+            addDevice(formData); 
           }
           addDevice(formData);
           setSuccess(true);

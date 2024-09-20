@@ -10,6 +10,7 @@ interface VideoFetcherProps {
 const VideoFetcher: React.FC<VideoFetcherProps> = ({ location, onVideosFetched }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -19,7 +20,7 @@ const VideoFetcher: React.FC<VideoFetcherProps> = ({ location, onVideosFetched }
       setError(null);
 
       try {
-        const response = await axios.get("http://127.0.0.1:8000/config/locations");
+        const response = await axios.get(`${API_BASE_URL}/config/locations`);
         const data = response.data;
 
         if (Array.isArray(data)) {

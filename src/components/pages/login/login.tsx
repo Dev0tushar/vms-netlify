@@ -112,9 +112,6 @@
 
 // export default LoginForm;
 
-
-
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -131,11 +128,11 @@ const LoginForm: React.FC = () => {
   const [fetchedUsers, setFetchedUsers] = useState<any[]>([]);
 
   const { setIsAuthenticated, setUser } = useAuth();
-
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/access/users");
+        const response = await axios.get(`${API_BASE_URL}/access/users`);
         setFetchedUsers(response.data);
         // console.log("Fetched users:", response.data);
       } catch (error) {
@@ -223,7 +220,9 @@ const LoginForm: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-              {errors.password && <span className={styles.error}>{errors.password}</span>}
+            {errors.password && (
+              <span className={styles.error}>{errors.password}</span>
+            )}
           </div>
         </div>
         <button type="submit" className={`  ${styles.loginButton}`}>

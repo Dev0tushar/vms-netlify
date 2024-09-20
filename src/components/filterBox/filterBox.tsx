@@ -53,10 +53,12 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
   const [locations, setLocations] = useState<Location[]>([]);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     const fetchCameraData = async () => {
       try {
-        const cameraResponse = await axios.get("http://127.0.0.1:8000/config/cameras");
+        const cameraResponse = await axios.get(`${API_BASE_URL}/config/cameras`);
         setCameraItems(cameraResponse.data);
       } catch (error) {
         console.error("Error fetching camera data:", error.message);
@@ -65,7 +67,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
 
     const fetchLocationData = async () => {
       try {
-        const locationResponse = await axios.get("http://127.0.0.1:8000/config/locations");
+        const locationResponse = await axios.get(`${API_BASE_URL}/config/locations`);
         setLocations(locationResponse.data);
       } catch (error) {
         console.error("Error fetching location data:", error.message);

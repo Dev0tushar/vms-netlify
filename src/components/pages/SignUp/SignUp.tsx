@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./SignUp.module.css";
 import { signUp } from "../../../api/DataApi";
+import { log } from "console";
 
 const SignUpForm: React.FC = () => {
   const navigate = useNavigate();
@@ -67,7 +68,6 @@ const SignUpForm: React.FC = () => {
       try {
         const { username, email } = formValues;
 
-        // Check if email is already registered
         const response = await signUp({
           user_id: generateUserId(),
           name: username,
@@ -75,7 +75,9 @@ const SignUpForm: React.FC = () => {
         });
 
         if (!response.success) {
-          setSignUpMessage("Signup successful!");
+          setSignUpMessage("Signup successful!",);
+          console.log("signup", response);
+          
           navigate("/login");
         } else {
           setSignUpMessage("Signup failed. Please try again.");
