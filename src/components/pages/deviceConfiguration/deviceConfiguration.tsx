@@ -1,3 +1,6 @@
+
+
+
 import DataTable from "react-data-table-component";
 import styles from "./deviceConfiguration.module.css";
 import camera from "../../../assets/Camera-png.png";
@@ -32,7 +35,6 @@ const DeviceTable: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const { devices } = useDevice();
   const navigate = useNavigate();
-  
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const fetchData = async () => {
@@ -40,7 +42,7 @@ const DeviceTable: React.FC = () => {
     setError(null);
     try {
       const response = await axios.get(`${API_BASE_URL}/config/cameras`);
-      setTableData(response.data);
+      setTableData(response.data); 
     } catch (err) {
       setError("Failed to fetch data");
     }
@@ -59,7 +61,7 @@ const DeviceTable: React.FC = () => {
         `${API_BASE_URL}/config/camera/${id}`
       );
       console.log("Device deleted successfully", response);
-
+    
       fetchData();
     } catch (error) {
       console.error("Failed to delete device", error);
@@ -67,16 +69,19 @@ const DeviceTable: React.FC = () => {
     }
   };
 
+
   const handleDelete = (id: string) => {
-    console.log(id, "chekk idsss");
+    console.log(id,"chekk idsss")
     if (window.confirm("Are you sure you want to delete this device?")) {
       removeDevice(id);
     }
   };
 
+
   const handleEdit = (id: string) => {
     navigate(`/AddDevice-Screen?edit=${id}`);
   };
+
 
   const columns = [
     {
