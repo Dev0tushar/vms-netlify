@@ -8,7 +8,7 @@ import fourStepIcon from "../../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../../assets/sixStep-dashboardIcon-png.png";
 import KeyboardDoubleArrowLeftSharpIcon from "@mui/icons-material/KeyboardDoubleArrowLeftSharp";
 import ReactPlayer from "react-player";
-// import PlaybackVideo from "../../../assets/video_20240918214450.mp4";
+import PlaybackVideo from "../../../assets/video_20240918214450.mp4";
 
 const Playback = () => {
   const [columns, setColumns] = useState(2);
@@ -25,22 +25,22 @@ const Playback = () => {
       id: "1",
       title: "cam 1",
       // url: "http://181.57.169.89:8080/mjpg/video.mjpg"
-      // url: { PlaybackVideo },
+      url: { PlaybackVideo },
     },
     {
       id: "2",
       title: "cam 2",
       // url: "http://example.com/video2.mp4"
-      // url: { PlaybackVideo },
+      url: { PlaybackVideo },
     },
     {
       id: "3",
       title: "cam 3",
       // url: "http://example.com/video3.mp4"
-      // url: { PlaybackVideo },
+      url: { PlaybackVideo },
     },
     { id: "4", title: "cam 4",
-      //  url: { PlaybackVideo }
+       url: { PlaybackVideo }
        },
   ];
 
@@ -168,15 +168,13 @@ const Playback = () => {
                 onDoubleClick={() => handleBlockDoubleClick(block.id)}
               >
                 <div className={styles.blockContent}>
-                  {/* <ReactPlayer
+                  <ReactPlayer
                     url={block.url}
                     width="100%"
                     height="100%"
                     controls
-                  /> */}
-                  <video width="100%" height="100%" controls>
-                    <source src="video_20240918214450.mp4"  type="video/mp4"/>
-                  </video>
+                  />
+                 
                   <div className={styles.blockTitle}>{block.title}</div>
                 </div>
                 {/* Show return button in full-screen mode */}

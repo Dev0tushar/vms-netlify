@@ -512,7 +512,8 @@ function CommonBlock() {
       case "large":
         return "100%";
       default:
-        return "100%";
+        // return "100%";
+        return "50%";
     }
   };
 
@@ -533,24 +534,24 @@ function CommonBlock() {
   }, []);
 
   const handleBlockClick = (index: number) => {
-    // Prevent single-click from resizing if the block is in full screen
+   
     if (expandedBlockId !== null) {
-      // You can add any other single-click actions here (e.g., showing information)
+    
       return;
     }
 
     if (selectedBlock === index) {
-      setSelectedBlock(null); // De-select block if it's already selected
+      setSelectedBlock(null); 
     } else {
-      setSelectedBlock(index); // Set clicked block as selected
+      setSelectedBlock(index); 
     }
   };
 
   const handleBlockDoubleClick = (index: number) => {
     if (expandedBlockId === index) {
-      setExpandedBlockId(null); // Exit full screen if the same block is double-clicked again
+      setExpandedBlockId(null); 
     } else {
-      setExpandedBlockId(index); // Expand to full screen
+      setExpandedBlockId(index); 
     }
   };
 
@@ -566,8 +567,8 @@ function CommonBlock() {
   };
 
   const handleReturnClick = () => {
-    setSelectedBlock(null); // Reset selected block
-    setExpandedBlockId(null); // Exit full screen on return click
+    setSelectedBlock(null); 
+    setExpandedBlockId(null);
   };
 
   return (
@@ -620,9 +621,9 @@ function CommonBlock() {
                 key={index}
                 className={`${styles.block} ${
                   selectedBlock === index ? styles.enlargedBlock : ""
-                } ${expandedBlockId === index ? styles.fullScreenBlock : ""}`} // Add full screen style
+                } ${expandedBlockId === index ? styles.fullScreenBlock : ""}`} 
                 style={{
-                  width: expandedBlockId === index ? "100%" : "auto",
+                  width: expandedBlockId === index ? "100%" : getColumnWidth(),
                   height: expandedBlockId === index ? "100vh" : "35vh",
                   cursor: "pointer",
                   position: expandedBlockId === index ? "fixed" : "relative",
@@ -647,7 +648,7 @@ function CommonBlock() {
                     <KeyboardDoubleArrowLeftSharpIcon
                       style={{ marginTop: "-3px" }}
                     />
-                    Back
+                    
                   </button>
                 )}
                 {cam.camera_url ? (

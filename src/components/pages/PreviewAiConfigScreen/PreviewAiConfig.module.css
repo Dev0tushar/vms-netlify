@@ -1,110 +1,4 @@
-/* .container {
-    position: absolute;
-    width: 270px;
-    height: 525px;
-    top: 110px;
-    left: 110px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 20px;
-  }
-  
-  .previewText {
-    font-size: 24px;
 
-    font-weight: 500;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: "Poppins";
-    margin-right: auto;
-  }
-  
-  .imageContainer {
-    width: 250px;
-    max-height: 325px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  
-  .image {
-    width: 100%;
-    height: auto;
-  }
- 
-  
-  @media (max-width: 1024px) {
-    .container {
-      width: 80%;
-      height: auto;
-      top: 10%;
-      left: 10%;
-      padding: 10px;
-    }
-  
-    .previewText {
-      font-size: 20px;
-    }
-  
-    .imageContainer {
-      width: 80%;
-      height: auto;
-      margin-top: 20px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      width: 90%;
-      height: auto;
-      top: 5%;
-      left: 5%;
-      padding: 5px;
-    }
-  
-    .previewText {
-      font-size: 18px;
-    }
-  
-    .imageContainer {
-      width: 90%;
-      height: auto;
-      margin-top: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .container {
-      width: 95%;
-      height: auto;
-      top: 2%;
-      left: 2%;
-      padding: 2px;
-    }
-  
-    .previewText {
-      font-size: 16px;
-    }
-  
-    .imageContainer {
-      width: 100%;
-      height: auto;
-      margin-top: 5px;
-    }
-  
-    .emptyScreen {
-      margin-top: 10px;
-    }
-  }
-   */
 
 .container {
   position: relative;
@@ -153,6 +47,10 @@
   width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+.videoContainer {
+  margin-top: 20px; 
 }
 
 @media (max-width: 1024px) {

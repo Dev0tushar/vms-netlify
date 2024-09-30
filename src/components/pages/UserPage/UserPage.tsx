@@ -34,7 +34,7 @@ const UserPage: React.FC = () => {
 
   useEffect(() => {
     const currentUser = localStorage.getItem("currentUser");
-    if (!currentUser) {
+    if (currentUser) {
       navigate("/login");
     }
   }, [navigate]);

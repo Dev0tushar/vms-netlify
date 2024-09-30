@@ -41,7 +41,7 @@ const SideBarMenu: React.FC = () => {
         </div>
         <div className={styles.columnContainer}>
           <Link
-            to="/Playback"
+            to="/playback"
             style={getLinkStyle("/Playback")}
             className={styles.link}
           >

@@ -16,24 +16,30 @@
  display: flex;
  margin-right: auto;
 }
-
-.alertText {
+.trafficDetected{
   margin: 10px 0;
   text-align: left;
-  font-size: 0.700rem; /* Adjusted for better readability */
+  font-size: 1rem;
+}
+.alertText p {
+  margin-top: -10px;
+  /* margin: 10px 0; */
+  text-align: left;
+  font-size: 0.700rem; 
+ color: gray;
 }
 
 .alertImages {
   display: flex;
-  flex-direction: column; /* Ensure images are in a column */
+  flex-direction: column; 
   gap: 10px;
-  align-items: center; /* Center images horizontally */
+  align-items: center; 
 }
 
 .smallImage,
 .largeImage {
   width: 100%;
-  max-width: 300px; /* Max width for images */
+  max-width: 300px; 
   height: auto;
   border-radius: 10px;
 }
