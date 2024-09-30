@@ -7,8 +7,11 @@ import playback from "../../../assets/PlayBack-Icon.png";
 import fourStepIcon from "../../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../../assets/sixStep-dashboardIcon-png.png";
 import KeyboardDoubleArrowLeftSharpIcon from "@mui/icons-material/KeyboardDoubleArrowLeftSharp";
-import ReactPlayer from "react-player";
-import PlaybackVideo from "../../../assets/video_20240918214450.mp4";
+
+import beachvideo from "../../../assets/videos/beach.mp4";
+import beachvideo2 from '../../../assets/videos/beach2.mp4'
+import hotelvideo from "../../../assets/videos/hotel.mp4";
+import signalvideo from "../../../assets/videos/signal.mp4";
 
 const Playback = () => {
   const [columns, setColumns] = useState(2);
@@ -25,23 +28,21 @@ const Playback = () => {
       id: "1",
       title: "cam 1",
       // url: "http://181.57.169.89:8080/mjpg/video.mjpg"
-      url: { PlaybackVideo },
+      url:  beachvideo ,
     },
     {
       id: "2",
       title: "cam 2",
       // url: "http://example.com/video2.mp4"
-      url: { PlaybackVideo },
+      url:  beachvideo2 ,
     },
     {
       id: "3",
       title: "cam 3",
       // url: "http://example.com/video3.mp4"
-      url: { PlaybackVideo },
+      url:  hotelvideo ,
     },
-    { id: "4", title: "cam 4",
-       url: { PlaybackVideo }
-       },
+    { id: "4", title: "cam 4", url:  signalvideo},
   ];
 
   // useEffect(() => {
@@ -83,7 +84,6 @@ const Playback = () => {
 
   return (
     <div className={`container-fluid ${styles.maincontainer}`}>
-  
       {expandedBlockId === null && <SideBarMenu />}
       <div className={`row ${styles.flexRowContainer}`}>
         {expandedBlockId === null && (
@@ -120,6 +120,12 @@ const Playback = () => {
                   className={styles.Playicon}
                 />
                 <h1 style={{ marginTop: "10px" }}>Playback</h1>
+              </div>
+              <div>
+                {/* <video width="700" controls>
+                  <source src={PlaybackVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video> */}
               </div>
               <div className={styles.iconGroup}>
                 <img
@@ -168,14 +174,13 @@ const Playback = () => {
                 onDoubleClick={() => handleBlockDoubleClick(block.id)}
               >
                 <div className={styles.blockContent}>
-                  <ReactPlayer
-                    url={block.url}
-                    width="100%"
-                    height="100%"
-                    controls
-                  />
                  
-                  <div className={styles.blockTitle}>{block.title}</div>
+                  <video width="100%" controls>
+                    <source src={block.url} type="video/mp4" />
+                  
+                  </video>
+
+                  {/* <div className={styles.blockTitle}>{block.title}</div> */}
                 </div>
                 {/* Show return button in full-screen mode */}
                 {expandedBlockId === block.id && (

@@ -217,7 +217,7 @@ const DeviceTable: React.FC = () => {
                   <Link to="/AddDevice-Screen" className={styles.linkButton}>
                     <button className={styles.topButton}>ADD</button>
                   </Link>
-                  <button className={`${styles.dltButton}`}>DELETE</button>
+                  {/* <button className={`${styles.dltButton}`}>DELETE</button> */}
                 </div>
                 <div className={`${styles.filtercontent} `}>
                   <button
