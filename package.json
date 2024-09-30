@@ -20,6 +20,7 @@
     "chart.js": "^4.4.3",
     "dotenv": "^16.4.5",
     "hls.js": "^1.5.15",
+    "jwt-decode": "^4.0.0",
     "mediasoup": "^3.14.12",
     "mediasoup-client": "^3.7.16",
     "mjpeg-camera": "^2.0.1",

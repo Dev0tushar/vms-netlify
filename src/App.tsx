@@ -1,6 +1,3 @@
-
-
-
 // src/App.tsx
 
 import "./App.css";
@@ -9,7 +6,12 @@ import Navbar from "./components/navbar/navbar";
 import Home from "./components/pages/home/home";
 import Login from "./components/pages/login/login";
 import SignUpForm from "./components/pages/SignUp/SignUp";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import SideBarMenu from "./components/sideMenu/sideBar";
 import AiConfiguration from "./components/pages/aiConfiguration/aiConfiguration";
 import DeviceConfiguration from "./components/pages/deviceConfiguration/deviceConfiguration";
@@ -24,9 +26,6 @@ import UserPage from "./components/pages/UserPage/UserPage";
 import { AuthProvider, useAuth } from "./Hooks/useAuth";
 import { DeviceProvider } from "./components/pages/deviceConfiguration/ParentDevice";
 
-
-
-
 const AppRoutes: React.FC = () => {
   const { isAuthenticated } = useAuth();
 
@@ -34,7 +33,6 @@ const AppRoutes: React.FC = () => {
     <Routes>
       {isAuthenticated ? (
         <>
-        
           <Route
             path="/"
             element={
@@ -58,10 +56,9 @@ const AppRoutes: React.FC = () => {
         </>
       ) : (
         <>
-     
           <Route path="/login" element={<Login />} />
           <Route path="/SignUpForm-screen" element={<SignUpForm />} />
-          
+
           <Route path="*" element={<Navigate to="/login" />} />
         </>
       )}
@@ -85,7 +82,6 @@ function App() {
 }
 
 export default App;
-
 
 {
   // import "./App.css";

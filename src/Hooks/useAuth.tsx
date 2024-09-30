@@ -76,6 +76,7 @@
 
 
 
+
 // import { useState, useContext, createContext } from "react";
 // import axios from "axios";
 
@@ -160,6 +161,7 @@
 
 
 
+
 import { useState, useContext, createContext } from "react";
 import axios from "axios";
 
@@ -172,7 +174,7 @@ const AuthContext = createContext<{
   setIsAuthenticated: (isAuthenticated: boolean) => void;
   user: User | null;
   setUser: (user: User | null) => void;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string) => Promise<void>;
   logout: () => void;
 }>({
   isAuthenticated: false,
@@ -185,7 +187,9 @@ const AuthContext = createContext<{
 
 export const useAuth = () => useContext(AuthContext);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<User | null>(null);
 
@@ -194,17 +198,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const response = await axios.post(`${API_BASE_URL}/access/users`, {
         email,
-        // password, 
+        // password,
       });
 
       if (response.data.success) {
-        const token = response.data.token; 
-        localStorage.setItem("accessToken", token); 
+        
+        const token = response.data.token;
+        localStorage.setItem("accessToken", token);
         const userData = response.data.user;
         setUser({ name: userData.name });
         setIsAuthenticated(true);
         console.log("accessTOken", userData);
-        
       } else {
         throw new Error("Login failed");
       }
@@ -217,11 +221,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
-    localStorage.removeItem("accessToken"); 
+    localStorage.removeItem("accessToken");
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, user, setUser, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        isAuthenticated,
+        setIsAuthenticated,
+        user,
+        setUser,
+        login,
+        logout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
