@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./SignUp.module.css";
 import { signUp } from "../../../api/DataApi";
-import { log } from "console";
 
 const SignUpForm: React.FC = () => {
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ const SignUpForm: React.FC = () => {
     return Object.keys(errors).length === 0;
   };
 
-  // Function to generate a unique user ID
+
   const generateUserId = () => {
     const currentCount = parseInt(localStorage.getItem("userCount") || "0", 10);
     const newCount = currentCount + 1;
@@ -75,9 +74,9 @@ const SignUpForm: React.FC = () => {
         });
 
         if (!response.success) {
-          setSignUpMessage("Signup successful!",);
+          setSignUpMessage("Signup successful!");
           console.log("signup", response);
-          
+
           navigate("/login");
         } else {
           setSignUpMessage("Signup failed. Please try again.");

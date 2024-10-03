@@ -9,7 +9,7 @@ import sixStepIcon from "../../../assets/sixStep-dashboardIcon-png.png";
 import KeyboardDoubleArrowLeftSharpIcon from "@mui/icons-material/KeyboardDoubleArrowLeftSharp";
 
 import beachvideo from "../../../assets/videos/beach.mp4";
-import beachvideo2 from '../../../assets/videos/beach2.mp4'
+import beachvideo2 from "../../../assets/videos/beach2.mp4";
 import hotelvideo from "../../../assets/videos/hotel.mp4";
 import signalvideo from "../../../assets/videos/signal.mp4";
 
@@ -27,22 +27,22 @@ const Playback = () => {
     {
       id: "1",
       title: "cam 1",
-      // url: "http://181.57.169.89:8080/mjpg/video.mjpg"
-      url:  beachvideo ,
+
+      url: beachvideo,
     },
     {
       id: "2",
       title: "cam 2",
-      // url: "http://example.com/video2.mp4"
-      url:  beachvideo2 ,
+
+      url: beachvideo2,
     },
     {
       id: "3",
       title: "cam 3",
-      // url: "http://example.com/video3.mp4"
-      url:  hotelvideo ,
+
+      url: hotelvideo,
     },
-    { id: "4", title: "cam 4", url:  signalvideo},
+    { id: "4", title: "cam 4", url: signalvideo },
   ];
 
   // useEffect(() => {
@@ -174,10 +174,8 @@ const Playback = () => {
                 onDoubleClick={() => handleBlockDoubleClick(block.id)}
               >
                 <div className={styles.blockContent}>
-                 
-                  <video width="100%" controls>
+                  <video width="100%" height="100%"  controls>
                     <source src={block.url} type="video/mp4" />
-                  
                   </video>
 
                   {/* <div className={styles.blockTitle}>{block.title}</div> */}
@@ -187,12 +185,12 @@ const Playback = () => {
                   <button
                     className={styles.returnButton}
                     onClick={handleReturnClick}
-                    style={{ position: "absolute", top: "10px", left: "10px" }}
+                    style={{ position: "absolute", top: "10px", left: "10px", opacity:".8" }}
                   >
                     <KeyboardDoubleArrowLeftSharpIcon
                       style={{ marginTop: "-3px" }}
                     />
-                    Back
+                    
                   </button>
                 )}
               </div>

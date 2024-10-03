@@ -41,7 +41,7 @@ const UserPage: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
     setIsAuthenticated(false);
     navigate("/login");
   };

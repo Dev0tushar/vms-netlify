@@ -643,7 +643,8 @@ function CommonBlock() {
                   <button
                     className={styles.returnButton}
                     onClick={handleReturnClick}
-                    style={{ position: "absolute", top: "10px", left: "10px" }}
+                    style={{ position: "absolute", top: "10px", left: "10px",  
+                    opacity:".8" }}
                   >
                     <KeyboardDoubleArrowLeftSharpIcon
                       style={{ marginTop: "-3px" }}

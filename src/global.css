@@ -1,5 +1,9 @@
 /* global.css */
 
 .sc-eEPDDI{
-    scrollbar-width: none;
+    scrollbar-width: 0;
+  }
+
+  .Table_scroll::-webkit-scrollbar {
+    display: none;
   }

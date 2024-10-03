@@ -128,6 +128,7 @@ const AlertTable: React.FC = () => {
                   columns={columns}
                   data={data}
                   pagination
+                  className={styles.Table_scroll}
                 />
               </div>
             </div>

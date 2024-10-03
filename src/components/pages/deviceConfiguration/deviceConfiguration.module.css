@@ -1,9 +1,9 @@
 
 
-
+/* 
 body::-webkit-scrollbar{
   display: none;
-}
+} */
 
 
 /* In your global.css or deviceConfiguration.module.css */
@@ -13,6 +13,19 @@ body::-webkit-scrollbar{
 
   background-color: #F5F5F5; /* Ensure this matches your desired background color */
 }
+.tableContainer {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  overflow-y: auto;          /* Enable vertical scrolling */
+}
+
+.Table_scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
 
 .TopMainContainer {
   min-height: 100vh; /* Make sure the container takes up at least the full viewport height */

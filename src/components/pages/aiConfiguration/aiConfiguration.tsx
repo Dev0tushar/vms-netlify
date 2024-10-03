@@ -166,6 +166,7 @@ const DataTableComponent: React.FC = () => {
                 selectableRows
                 pagination
                 highlightOnHover
+                className={styles.Table_scroll}
               />
             </div>
             <div

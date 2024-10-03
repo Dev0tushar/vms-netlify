@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import liveIcon from "../../../assets/liveIcon.svg";
 import playIcon from "../../../assets/playIcon.svg";
 import vectorIcon from "../../../assets/vectorIcon.svg";
@@ -8,8 +8,11 @@ import Ai_Home from "../../../assets/Ai-home.png";
 import User_Home from "../../../assets/User-home.png";
 import styles from "./home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect } from "react";
+import { useAuth } from "../../../Hooks/useAuth";
 
 function Home() {
+  const navigate = useNavigate()
   const operation_arr = [
     {
       icon: liveIcon,
@@ -50,7 +53,14 @@ function Home() {
       route: "/user-page",
     },
   ];
+  const {isAuthenticated} =useAuth();
+  useEffect(()=>{
+    if(!isAuthenticated) {
+      console.log({check : "aslkdjfisl"})
+      navigate('/login')
+    }
 
+  },[])
   return (
     <div className={`container-fluid ${styles.homeContainer}`}>
       <div

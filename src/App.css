@@ -1,0 +1,6 @@
+.Table_scroll::-webkit-scrollbar {
+    display: none !important;
+  }
+body::-webkit-scrollbar {
+    display: none ;
+  }
