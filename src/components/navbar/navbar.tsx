@@ -174,7 +174,7 @@ function Navbar() {
                 onClick={handleProfileClick}
                 className={styles.profileContainer}
               >
-                <div className={styles.userName}>{user?.name || "User"}</div>
+                <div className={styles.userName}>{user?.name || "Abhishek Mehta"}</div>
                 <div className={styles.userCont}>
                   <img src={userImage} alt="User Avatar" />
                 </div>

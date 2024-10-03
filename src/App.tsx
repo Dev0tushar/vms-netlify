@@ -82,7 +82,7 @@ function App() {
 
 export default App;
 
-
+{
 //   import "./App.css";
 //   import BlockData from "./components/blocks/commanBlock";
 //   import Navbar from "./components/navbar/navbar";
@@ -142,7 +142,7 @@ export default App;
 //     );
 //   }
 //   export default App;
-
+}
 {
 
   // import "./App.css";
