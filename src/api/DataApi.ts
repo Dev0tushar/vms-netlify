@@ -5,7 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const signUp = async (userData: { user_id: string; name: string; email: string }) => {
   try {
-    console.log("check base url", API_BASE_URL);
+    // console.log("check base url", API_BASE_URL);
     const response = await axios.post(`${API_BASE_URL}/access/users`, userData);
     return response.data;
 
