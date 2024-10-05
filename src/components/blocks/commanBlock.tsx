@@ -575,7 +575,7 @@ function CommonBlock() {
             <FilterBox onLocationSelect={handleLocationSelect} />
           </div>
         )}
-        <div className={styles.iconAndBlocksContainer}>
+        <div className={`col-12 col-md-6 col-lg ${styles.iconAndBlocksContainer}`}>
           {expandedBlockId === null && (
             <div
               className={`d-flex justify-content-between ${styles.iconContainer}`}
