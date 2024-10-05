@@ -65,14 +65,15 @@
   .container {
     width: 50vw;
     height: fit-content;
-    padding-top: 60px;
+    padding-top: 35px;
     transform: translateX(-100%);
-    border-radius: 50px;
+    border-radius: 30px;
   }
 
   .container.open {
     transform: translateX(0);
   }
+
 
   .image {
     width: 80px;
@@ -110,6 +111,7 @@
     width: 80vw;
     height: fit-content;
     padding-top: 60px;
+    z-index: 11;
     transform: translateX(-100%);
   }
 

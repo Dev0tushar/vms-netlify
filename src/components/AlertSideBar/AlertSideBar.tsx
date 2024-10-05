@@ -46,6 +46,9 @@ const AlertContent: React.FC = () => {
               width="100%"
               controls
               className={`img-fluid ${styles.smallImage}`}
+              autoPlay
+              muted
+              loop
             >
               <source src={firstvideo} type="video/mp4" />
             </video>
@@ -53,6 +56,9 @@ const AlertContent: React.FC = () => {
               width="100%"
               controls
               className={`img-fluid ${styles.largeImage}`}
+              autoPlay
+              muted
+              loop
             >
               <source src={secondvideo} type="video/mp4" />
             </video>

@@ -174,7 +174,7 @@ const Playback = () => {
                 onDoubleClick={() => handleBlockDoubleClick(block.id)}
               >
                 <div className={styles.blockContent}>
-                  <video width="100%" height="100%"  controls>
+                    <video width="100%" height="100%"  controls style={{borderRadius:"6px"}}>
                     <source src={block.url} type="video/mp4" />
                   </video>
 

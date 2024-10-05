@@ -467,6 +467,7 @@ import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
 import VideocamOffTwoToneIcon from "@mui/icons-material/VideocamOffTwoTone";
 import KeyboardDoubleArrowLeftSharpIcon from "@mui/icons-material/KeyboardDoubleArrowLeftSharp";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface Camera {
   camera_url: string | undefined;
@@ -480,7 +481,7 @@ function CommonBlock() {
   const [cameraData, setCameraData] = useState<Camera[]>([]);
   const [filteredCameras, setFilteredCameras] = useState<Camera[]>([]);
   const [selectedBlock, setSelectedBlock] = useState<number | null>(null);
-  const [expandedBlockId, setExpandedBlockId] = useState<number | null>(null); // For full-screen mode
+  const [expandedBlockId, setExpandedBlockId] = useState<number | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -534,25 +535,18 @@ function CommonBlock() {
   }, []);
 
   const handleBlockClick = (index: number) => {
-   
-    if (expandedBlockId !== null) {
-    
-      return;
-    }
-
-    if (selectedBlock === index) {
-      setSelectedBlock(null); 
-    } else {
-      setSelectedBlock(index); 
+    if (expandedBlockId === selectedBlock) {
+      setSelectedBlock(index === selectedBlock ? null : index);
     }
   };
 
   const handleBlockDoubleClick = (index: number) => {
     if (expandedBlockId === index) {
-      setExpandedBlockId(null); 
+      setExpandedBlockId(null);
     } else {
-      setExpandedBlockId(index); 
+      setExpandedBlockId(index);
     }
+    setSelectedBlock(null);
   };
 
   const handleLocationSelect = (locationId: string) => {
@@ -565,9 +559,10 @@ function CommonBlock() {
       setFilteredCameras(cameraData);
     }
   };
-
-  const handleReturnClick = () => {
-    setSelectedBlock(null); 
+  const handleCloseIconClick = () => {
+    setSelectedBlock(null);
+  };
+  const handleBackButtonClick = () => {
     setExpandedBlockId(null);
   };
 
@@ -621,15 +616,26 @@ function CommonBlock() {
                 key={index}
                 className={`${styles.block} ${
                   selectedBlock === index ? styles.enlargedBlock : ""
-                } ${expandedBlockId === index ? styles.fullScreenBlock : ""}`} 
+                } ${expandedBlockId === index ? styles.fullScreenBlock : ""}`}
                 style={{
-                  width: expandedBlockId === index ? "100%" : getColumnWidth(),
-                  height: expandedBlockId === index ? "100vh" : "35vh",
+                  width:
+                    expandedBlockId === index
+                      ? "100%"
+                      : selectedBlock === index
+                      ? "100%"
+                      : getColumnWidth(),
+                  height:
+                    expandedBlockId === index
+                      ? "100vh"
+                      : selectedBlock === index
+                      ? "70vh"
+                      : "35vh",
                   cursor: "pointer",
+                  padding: "0",
                   position: expandedBlockId === index ? "fixed" : "relative",
                   top: expandedBlockId === index ? 0 : "auto",
                   left: expandedBlockId === index ? 0 : "auto",
-                  zIndex: expandedBlockId === index ? 9999 : "auto",
+                  zIndex: expandedBlockId === index ? 9999 : 1,
                   display:
                     (selectedBlock !== null && selectedBlock !== index) ||
                     (expandedBlockId !== null && expandedBlockId !== index)
@@ -639,23 +645,53 @@ function CommonBlock() {
                 onClick={() => handleBlockClick(index)}
                 onDoubleClick={() => handleBlockDoubleClick(index)}
               >
-                {expandedBlockId !== null && (
+                {selectedBlock === index && expandedBlockId === null && (
+                  <button
+                    className={styles.closeButton}
+                    onClick={handleCloseIconClick}
+                    style={{
+                      position: "absolute",
+                      top: "10px",
+                      right: "10px",
+                      zIndex: 10000,
+                      background: "rgba(0, 0, 0, 0.6)",
+                      backdropFilter: "blur(5px)",
+                      border: "none",
+                      cursor: "pointer",
+                      borderRadius: "50%",
+                      padding: "8px",
+                    }}
+                  >
+                    <CloseIcon style={{ fontSize: "30px", color: "white" }} />
+                  </button>
+                )}
+                {expandedBlockId === index && (
                   <button
                     className={styles.returnButton}
-                    onClick={handleReturnClick}
-                    style={{ position: "absolute", top: "10px", left: "10px",  
-                    opacity:".8" }}
+                    onClick={handleBackButtonClick}
+                    style={{
+                      position: "absolute",
+                      top: "10px",
+                      left: "10px",
+                      backgroundColor: "#ffffff61",
+                      zIndex: 10000,
+                      border: "none",
+                      cursor: "pointer",
+                    }}
                   >
                     <KeyboardDoubleArrowLeftSharpIcon
-                      style={{ marginTop: "-3px" }}
+                      style={{ fontSize: "30px", color: "white" }}
                     />
-                    
                   </button>
                 )}
                 {cam.camera_url ? (
                   <img
                     className={styles.LiveData}
-                    style={{ width: "100%", height: "100%" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "4px",
+                    }}
                     src={cam.camera_url}
                     alt={cam.name}
                     onError={(e) => {
