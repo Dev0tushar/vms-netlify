@@ -543,7 +543,8 @@ function CommonBlock() {
   const handleBlockDoubleClick = (index: number) => {
     if (expandedBlockId === index) {
       setExpandedBlockId(null);
-    } else {
+    } 
+    else {
       setExpandedBlockId(index);
     }
     setSelectedBlock(null);

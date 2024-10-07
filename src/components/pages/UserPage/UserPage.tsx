@@ -1,7 +1,4 @@
 
-
-
-
 import React, { useState, useEffect } from "react";
 import styles from "./UserPage.module.css";
 import avtar from "../../../assets/avtar.png";
@@ -19,7 +16,7 @@ const UserPage: React.FC = () => {
   const [stateRegion, setStateRegion] = useState<string>("");
 
   const navigate = useNavigate();
-  const { setIsAuthenticated } = useAuth();
+  const { setIsAuthenticated , logout} = useAuth();
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -40,8 +37,9 @@ const UserPage: React.FC = () => {
   }, [navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("currentUser");
-    localStorage.removeItem('token');
+    localStorage.removeItem("user");
+    localStorage.removeItem('token_expiration');
+    
     setIsAuthenticated(false);
     navigate("/login");
   };

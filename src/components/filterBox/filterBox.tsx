@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./filterBox.module.css";
@@ -8,12 +6,12 @@ import { BsChevronDown } from "react-icons/bs";
 interface Camera {
   camera_id: string;
   name: string;
-  location_id: string; 
+  location_id: string;
 }
 
 interface Location {
   location_id: string;
-  name: string; // Location name
+  name: string; 
 }
 
 interface NvrProps {
@@ -45,10 +43,13 @@ const Nvr: React.FC<NvrProps> = ({ title, items, isOpen, onClick }) => {
 
 interface FilterBoxProps {
   showCalendar?: boolean;
-  onLocationSelect?: (locationId: string) => void; // Add this prop
+  onLocationSelect?: (locationId: string) => void;
 }
 
-const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect }) => {
+const FilterBox: React.FC<FilterBoxProps> = ({
+  showCalendar,
+  onLocationSelect,
+}) => {
   const [cameraItems, setCameraItems] = useState<Camera[]>([]);
   const [locations, setLocations] = useState<Location[]>([]);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -58,7 +59,9 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
   useEffect(() => {
     const fetchCameraData = async () => {
       try {
-        const cameraResponse = await axios.get(`${API_BASE_URL}/config/cameras`);
+        const cameraResponse = await axios.get(
+          `${API_BASE_URL}/config/cameras`
+        );
         setCameraItems(cameraResponse.data);
       } catch (error) {
         console.error("Error fetching camera data:", error.message);
@@ -67,7 +70,9 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
 
     const fetchLocationData = async () => {
       try {
-        const locationResponse = await axios.get(`${API_BASE_URL}/config/locations`);
+        const locationResponse = await axios.get(
+          `${API_BASE_URL}/config/locations`
+        );
         setLocations(locationResponse.data);
       } catch (error) {
         console.error("Error fetching location data:", error.message);
@@ -79,7 +84,9 @@ const FilterBox: React.FC<FilterBoxProps> = ({ showCalendar, onLocationSelect })
   }, []);
 
   const getLocationName = (cameraLocationId: string) => {
-    const location = locations.find((loc) => loc.location_id === cameraLocationId);
+    const location = locations.find(
+      (loc) => loc.location_id === cameraLocationId
+    );
     return location ? location.name : "Unknown Location";
   };
 
