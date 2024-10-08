@@ -1,8 +1,3 @@
-
-
-
-
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -101,6 +96,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
     console.log("set token");
     localStorage.setItem("token", token);
     localStorage.setItem("tokenExpiration", expirationTime.toString());
+
     setTokenExpirationTime(expirationTime);
   };
 
@@ -118,13 +114,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
       );
 
       if (user) {
-        console.log("inside if");
         setIsAuthenticated(true);
-        console.log("setIsAuthenticated");
+
         // setAuthenticate(true);
-        console.log("authenticate");
+        localStorage.setItem("user", JSON.stringify(user));
         setUser(user);
-        console.log("setUser");
+
         storeToken(user.user_id);
         toast.success("User login successful!");
 

@@ -58,12 +58,16 @@ function Navbar() {
   }
 
   useEffect(() => {
-    console.log("User data:", user); 
+    // console.log("User data:", user); 
+    // console.log("Navbar - Is Authenticated: ", isAuthenticated);
+    
   
-  }, [user]);
+  }, [isAuthenticated, user]);
   // console.log("hello", user);
   const handleProfileClick = () => {
     if (isAuthenticated) {
+
+      
       navigate("/user-page");
     } else {
       navigate("/login");

@@ -3,8 +3,6 @@ import axios from "axios";
 
 type User = {
   name: string;
-  
-  
 };
 
 const AuthContext = createContext<{
@@ -31,9 +29,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const token = localStorage.getItem("token");
+  const storedUser = localStorage.getItem("user");
 
   const [isAuthenticated, setIsAuthenticated] = useState(token ? true : false);
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(
+    storedUser ? JSON.parse(storedUser) : null
+  );
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   // useEffect(() => {
@@ -50,24 +51,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   //   }
   // }, []);
 
-  
   const login = async (email: string, password: string) => {
-    
     try {
       const response = await axios.get(`${API_BASE_URL}/access/users`, {
         email,
       });
-      
+
       if (response.data.token) {
-        
         const { token, user, expiresIn } = response.data;
         setUser(user);
-      
+
         setIsAuthenticated(true);
-      
-        
+
         localStorage.setItem("token", token);
-        localStorage.setItem("token_expiration", (new Date().getTime() + expiresIn).toString());
+        localStorage.setItem(
+          "token_expiration",
+          (new Date().getTime() + expiresIn).toString()
+        );
+        localStorage.setItem("user", JSON.stringify(user));
       }
     } catch (error) {
       console.error("Login failed", error);
@@ -79,6 +80,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     setUser(null);
     localStorage.removeItem("token");
     localStorage.removeItem("token_expiration");
+    localStorage.removeItem("user");
   };
 
   return (

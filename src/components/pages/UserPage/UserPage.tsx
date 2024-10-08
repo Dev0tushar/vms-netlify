@@ -16,7 +16,7 @@ const UserPage: React.FC = () => {
   const [stateRegion, setStateRegion] = useState<string>("");
 
   const navigate = useNavigate();
-  const { setIsAuthenticated , logout} = useAuth();
+  const { isAuthenticated , logout} = useAuth();
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -30,17 +30,20 @@ const UserPage: React.FC = () => {
   };
 
   useEffect(() => {
-    const currentUser = localStorage.getItem("currentUser");
-    if (currentUser) {
+    // const currentUser = localStorage.getItem("user");
+    if (!isAuthenticated) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [isAuthenticated, navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem('token_expiration');
-    
-    setIsAuthenticated(false);
+    // localStorage.removeItem("token");
+   
+    // localStorage.removeItem('token_expiration');
+    // localStorage.removeItem("user");
+    // console.log("hii");
+    // setIsAuthenticated(false);
+    logout()
     navigate("/login");
   };
 
