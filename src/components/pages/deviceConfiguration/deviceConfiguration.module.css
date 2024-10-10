@@ -136,7 +136,7 @@ img {
 }
 
 .statusOnline {
-  color: rgb(103, 238, 103);
+  color: green;
   font-weight: bold;
 }
 
@@ -155,9 +155,9 @@ img {
   margin-left: 5px;
   background-color: white;
 }
-.btnedit:hover {
+/* .btnedit:hover {
   background-color: #f5f5f5;
-}
+} */
 .btndelete {
   color: #666666;
   border: none;
@@ -169,9 +169,9 @@ img {
   background-color: white;
 }
 
-.btndelete:hover {
+/* .btndelete:hover {
   background-color: #f5f5f5;
-}
+} */
 
 @media (max-width:1024px){
   .deviceTableContainer {

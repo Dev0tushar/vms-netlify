@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import styles from "./UserPage.module.css";
 import avtar from "../../../assets/avtar.png";
 import userimage from "../../../assets/side_bg.png";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from '../../../Hooks/useAuth';
+import { useAuth } from "../../../Hooks/useAuth";
 
 const UserPage: React.FC = () => {
   const [image, setImage] = useState<string>(avtar);
@@ -16,7 +15,7 @@ const UserPage: React.FC = () => {
   const [stateRegion, setStateRegion] = useState<string>("");
 
   const navigate = useNavigate();
-  const { isAuthenticated , logout} = useAuth();
+  const { isAuthenticated, logout } = useAuth();
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -38,16 +37,17 @@ const UserPage: React.FC = () => {
 
   const handleLogout = () => {
     // localStorage.removeItem("token");
-   
+
     // localStorage.removeItem('token_expiration');
     // localStorage.removeItem("user");
     // console.log("hii");
     // setIsAuthenticated(false);
-    logout()
+    logout();
     navigate("/login");
   };
 
-  const handleChange = (setter: React.Dispatch<React.SetStateAction<string>>) => 
+  const handleChange =
+    (setter: React.Dispatch<React.SetStateAction<string>>) =>
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setter(event.target.value);
     };
@@ -223,7 +223,14 @@ const UserPage: React.FC = () => {
               </div>
             </div>
             <div className="col-12">
-              <div className="my-4 text-center" style={{ gap: "10px", display: "flex", justifyContent: 'center' }}>
+              <div
+                className="my-4 text-center"
+                style={{
+                  gap: "10px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <button className={`${styles.button57}`} type="button">
                   <span className={styles.text}>Save Profile</span>
                 </button>

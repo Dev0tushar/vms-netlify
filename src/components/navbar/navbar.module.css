@@ -76,12 +76,22 @@
   margin-right: 10px; 
   cursor: pointer;
   flex-direction: row;
-  display: contents;
+  /* display: contents; */
+  display: flex;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 .profileContainer {
   display: flex;
   align-items: center; 
-  gap: 5px;/* Vertically centers text and image */
+  /* gap: 5px; */
+}
+.welcomeMessage{
+  /* margin-top: 15px;
+  margin-bottom: 1rem; */
+  color: #FF914D
 }
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {

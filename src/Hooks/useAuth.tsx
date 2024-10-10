@@ -36,8 +36,8 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const token = localStorage.getItem("token");
-  const storedUser = localStorage.getItem("user");
+  const token = sessionStorage.getItem("token");
+  const storedUser = sessionStorage.getItem("user");
 
   const [isAuthenticated, setIsAuthenticated] = useState(token ? true : false);
   const [user, setUser] = useState<User | null>(
@@ -48,11 +48,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
 
   const [onlineDeviceCount, setOnlineDeviceCount] = useState(() => {
-    const storedCount = localStorage.getItem("onlineDeviceCount");
+    const storedCount = sessionStorage.getItem("onlineDeviceCount");
     return storedCount ? Number(storedCount) : 0;
   });
   const [totalDeviceCount, setTotalDeviceCount] = useState(() => {
-    const storedCount = localStorage.getItem("totalDeviceCount");
+    const storedCount = sessionStorage.getItem("totalDeviceCount");
     return storedCount ? Number(storedCount) : 0;
   });
 
@@ -73,8 +73,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     // }, []);
   }
   useEffect(() => {
-    const storedOnlineCount = localStorage.getItem("onlineDeviceCount");
-    const storedTotalCount = localStorage.getItem("totalDeviceCount");
+    const storedOnlineCount = sessionStorage.getItem("onlineDeviceCount");
+    const storedTotalCount = sessionStorage.getItem("totalDeviceCount");
 
     if (storedOnlineCount) {
       setOnlineDeviceCount(Number(storedOnlineCount));
@@ -86,11 +86,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("onlineDeviceCount", onlineDeviceCount);
+    sessionStorage.setItem("onlineDeviceCount", onlineDeviceCount);
   }, [onlineDeviceCount]);
 
   useEffect(() => {
-    localStorage.setItem("totalDeviceCount", totalDeviceCount);
+    sessionStorage.setItem("totalDeviceCount", totalDeviceCount);
   }, [totalDeviceCount]);
 
 
@@ -122,11 +122,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("token_expiration");
-    localStorage.removeItem("user");
-    localStorage.removeItem("onlineDeviceCount", onlineDeviceCount);
-    localStorage.removeItem("totalDeviceCount", totalDeviceCount);
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("token_expiration");
+    sessionStorage.removeItem("user");
+    sessionStorage.removeItem("onlineDeviceCount", );
+    sessionStorage.removeItem("totalDeviceCount", );
   };
 
   return (

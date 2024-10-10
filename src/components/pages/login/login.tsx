@@ -38,8 +38,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
   }, []);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const expiration = localStorage.getItem("tokenExpiration");
+    const token = sessionStorage.getItem("token");
+    const expiration = sessionStorage.getItem("tokenExpiration");
 
     if (token && expiration) {
       const expirationTime = parseInt(expiration, 10);
@@ -84,8 +84,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
   const handleLogout = () => {
     setIsAuthenticated(false);
     setUser(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("tokenExpiration");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("tokenExpiration");
     toast.success("You have been logged out.");
     navigate("/login");
   };
@@ -94,8 +94,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
     const token = `${userId}-${new Date().getTime()}`;
     const expirationTime = new Date().getTime() + 3600 * 1000;
     console.log("set token");
-    localStorage.setItem("token", token);
-    localStorage.setItem("tokenExpiration", expirationTime.toString());
+    sessionStorage.setItem("token", token);
+    sessionStorage.setItem("tokenExpiration", expirationTime.toString());
 
     setTokenExpirationTime(expirationTime);
   };
@@ -117,7 +117,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
         setIsAuthenticated(true);
 
         // setAuthenticate(true);
-        localStorage.setItem("user", JSON.stringify(user));
+        sessionStorage.setItem("user", JSON.stringify(user));
         setUser(user);
 
         storeToken(user.user_id);
