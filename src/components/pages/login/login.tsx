@@ -35,7 +35,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setAuthenticate }) => {
       }
     };
     fetchUsers();
-  }, [API_BASE_URL]);
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");

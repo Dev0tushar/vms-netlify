@@ -137,10 +137,12 @@ img {
 
 .statusOnline {
   color: rgb(103, 238, 103);
+  font-weight: bold;
 }
 
 .statusOffline {
   color: rgb(242, 88, 88);
+  font-weight: bold;
 }
 
 .btnedit {

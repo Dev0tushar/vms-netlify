@@ -55,9 +55,9 @@
 
 @media (max-width: 1024px) {
   .previewBox {
-    width: 80%;
-    height: auto;
-    padding: 10px;
+    width: 100%;
+    /* height: auto; */
+    padding: 1px;
   }
 
   .previewText {
@@ -65,7 +65,7 @@
   }
 
   .imageContainer {
-    width: 80%;
+    width: 95%;
     height: auto;
     margin-top: 20px;
   }

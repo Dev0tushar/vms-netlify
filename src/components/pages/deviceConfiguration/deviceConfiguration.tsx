@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css"; 
+import "react-confirm-alert/src/react-confirm-alert.css";
 import axios from "axios";
 import DataTable from "react-data-table-component";
 import styles from "./deviceConfiguration.module.css";
@@ -112,7 +112,7 @@ const DeviceTable: React.FC = () => {
       cell: (row: Device) => (
         <span
           className={
-            row.status === "Online" ? styles.statusOnline : styles.statusOffline
+            row.status === "Online" || "Offline"? styles.statusOnline : styles.statusOffline
           }
         >
           {row.status}

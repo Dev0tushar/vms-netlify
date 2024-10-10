@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from "react";
+import { useState, useContext, createContext, useEffect } from "react";
 import axios from "axios";
 
 type User = {
@@ -13,6 +13,10 @@ const AuthContext = createContext<{
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   checkAuthToken: () => void;
+  onlineDeviceCount: number;
+  totalDeviceCount: number;
+  setOnlineDeviceCount: (count: number) => void;
+  setTotalDeviceCount: (count: number) => void;
 }>({
   isAuthenticated: false,
   setIsAuthenticated: () => {},
@@ -21,6 +25,10 @@ const AuthContext = createContext<{
   login: async () => {},
   logout: () => {},
   checkAuthToken: () => {},
+  onlineDeviceCount: () => {},
+  totalDeviceCount: () => {},
+  setOnlineDeviceCount: () => {},
+  setTotalDeviceCount: () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -36,25 +44,61 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     storedUser ? JSON.parse(storedUser) : null
   );
 
+
+
+
+  const [onlineDeviceCount, setOnlineDeviceCount] = useState(() => {
+    const storedCount = localStorage.getItem("onlineDeviceCount");
+    return storedCount ? Number(storedCount) : 0;
+  });
+  const [totalDeviceCount, setTotalDeviceCount] = useState(() => {
+    const storedCount = localStorage.getItem("totalDeviceCount");
+    return storedCount ? Number(storedCount) : 0;
+  });
+
+
+
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     const expiration = localStorage.getItem("token_expiration");
-  //     if (expiration && new Date().getTime() < parseInt(expiration)) {
-  //       setIsAuthenticated(true);
+  {
+    // useEffect(() => {
+    //   const token = localStorage.getItem("token");
+    //   if (token) {
+    //     const expiration = localStorage.getItem("token_expiration");
+    //     if (expiration && new Date().getTime() < parseInt(expiration)) {
+    //       setIsAuthenticated(true);
+    //     } else {
+    //       logout();
+    //     }
+    //   }
+    // }, []);
+  }
+  useEffect(() => {
+    const storedOnlineCount = localStorage.getItem("onlineDeviceCount");
+    const storedTotalCount = localStorage.getItem("totalDeviceCount");
 
-  //     } else {
+    if (storedOnlineCount) {
+      setOnlineDeviceCount(Number(storedOnlineCount));
+    }
 
-  //       logout();
-  //     }
-  //   }
-  // }, []);
+    if (storedTotalCount) {
+      setTotalDeviceCount(Number(storedTotalCount));
+    }
+  }, []);
 
+  useEffect(() => {
+    localStorage.setItem("onlineDeviceCount", onlineDeviceCount);
+  }, [onlineDeviceCount]);
+
+  useEffect(() => {
+    localStorage.setItem("totalDeviceCount", totalDeviceCount);
+  }, [totalDeviceCount]);
+
+
+  
   const login = async (email: string, password: string) => {
     try {
       const response = await axios.get(`${API_BASE_URL}/access/users`, {
-        email,
+        params: { email },
       });
 
       if (response.data.token) {
@@ -81,6 +125,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.removeItem("token");
     localStorage.removeItem("token_expiration");
     localStorage.removeItem("user");
+    localStorage.removeItem("onlineDeviceCount", onlineDeviceCount);
+    localStorage.removeItem("totalDeviceCount", totalDeviceCount);
   };
 
   return (
@@ -92,6 +138,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         setUser,
         login,
         logout,
+        onlineDeviceCount,
+        totalDeviceCount,
+        setOnlineDeviceCount,
+        setTotalDeviceCount,
       }}
     >
       {children}

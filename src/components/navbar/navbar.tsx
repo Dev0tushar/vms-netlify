@@ -9,7 +9,7 @@ import companyIcon from "../../assets/companyIcon.svg";
 import styles from "./navbar.module.css";
 
 function Navbar() {
-  const { isAuthenticated, user, setUser } = useAuth();
+  const { isAuthenticated, user, setUser , onlineDeviceCount, totalDeviceCount} = useAuth();
   const navigate = useNavigate();
 
 
@@ -58,8 +58,8 @@ function Navbar() {
   }
 
   useEffect(() => {
-    // console.log("User data:", user); 
-    // console.log("Navbar - Is Authenticated: ", isAuthenticated);
+    console.log("User data:", user); 
+    console.log("Navbar - Is Authenticated: ", isAuthenticated);
     
   
   }, [isAuthenticated, user]);
@@ -85,10 +85,10 @@ function Navbar() {
             </Link>
           </div>
         </div>
-        {isAuthenticated && (
+        {isAuthenticated && onlineDeviceCount > 0 && (
           <div className={styles.deviceOnlineBox}>
             <span className={styles.deviceOnlineHeader}>Device Online</span>
-            <span className={styles.deviceOnlineValue}>09/10</span>
+            <span className={styles.deviceOnlineValue}>{`${onlineDeviceCount}/${totalDeviceCount}`}</span>
           </div>
         )}
       </div>
@@ -102,7 +102,7 @@ function Navbar() {
                 className={styles.profileContainer}
               >
                 <div className={styles.userName}>
-                  {user?.name || "User"}
+               <p> Welcome,</p>  {user?.name || "User"}
                 </div>
                 <div className={styles.userCont}>
                   <img 

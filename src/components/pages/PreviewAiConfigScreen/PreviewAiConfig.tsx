@@ -1,7 +1,3 @@
-
-
-
-
 import styles from "./PreviewAiConfig.module.css";
 import PlaybackVideo from "../../../assets/videos/Ai_demo..mp4";
 
@@ -14,11 +10,11 @@ const PreviewScreen: React.FC = () => {
       <div className={styles.previewBox}>
         <div className={styles.previewText}>Preview</div>
         <div className={styles.imageContainer}>
-          <video 
-            width="100%" 
-            autoPlay 
-            muted 
-            loop 
+          <video
+            width="100%"
+            autoPlay
+            muted
+            loop
             // controls
             className={styles.image}
           >

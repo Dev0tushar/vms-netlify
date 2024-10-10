@@ -1,21 +1,21 @@
-
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FilterBox from "../filterBox/filterBox";
 import SideBarMenu from "../sideMenu/sideBar";
 import styles from "./commanBlock.module.css";
-import Live from "../../assets/liveIcon.svg";
+import Live from "../../assets/liveDashboard-icon-png.png";
 import fourStepIcon from "../../assets/FourStep-dashboardIcon-png.png";
 import sixStepIcon from "../../assets/sixStep-dashboardIcon-png.png";
 import VideocamOffTwoToneIcon from "@mui/icons-material/VideocamOffTwoTone";
 import KeyboardDoubleArrowLeftSharpIcon from "@mui/icons-material/KeyboardDoubleArrowLeftSharp";
 import CloseIcon from "@mui/icons-material/Close";
+import { useAuth } from "../../Hooks/useAuth";
 
 interface Camera {
   camera_url: string | undefined;
   name: string;
   location_id: string;
+  status: string;
 }
 
 function CommonBlock() {
@@ -26,6 +26,11 @@ function CommonBlock() {
   const [selectedBlock, setSelectedBlock] = useState<number | null>(null);
   const [expandedBlockId, setExpandedBlockId] = useState<number | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  // const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  // const [imageColors, setImageColors] = useState<string[]>(["", ""]);
+  const [activeImage, setActiveImage] = useState<number | null>(null);
+
+  const { setOnlineDeviceCount, setTotalDeviceCount } = useAuth();
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -33,18 +38,38 @@ function CommonBlock() {
     const fetchCameraData = async () => {
       try {
         const response = await axios.get(`${API_BASE_URL}/config/cameras`);
-        setCameraData(response?.data);
-        setFilteredCameras(response?.data);
+        const cameraList = response?.data;
+        setCameraData(cameraList);
+        setFilteredCameras(cameraList);
+
+        const totalDevices = cameraList.length;
+        const onlineDevices = cameraList.filter(
+          (cam: Camera) =>
+            (cam.camera_url && cam.status === "online") ||
+            cam.status === "Network issue or unable to load feed"
+        );
+
+        setOnlineDeviceCount(onlineDevices.length);
+        setTotalDeviceCount(totalDevices);
       } catch (error) {
         console.error("Error fetching camera data:", error.message);
       }
     };
     fetchCameraData();
-  }, []);
+  }, [setOnlineDeviceCount, setTotalDeviceCount]);
 
-  const handleIconClick = (columnsCount: number, size: string) => {
+  const handleIconClick = (
+    index: number,
+    columnsCount: number,
+    size: string
+  ) => {
     setColumns(columnsCount);
     setColumnSize(size);
+    setActiveImage(activeImage === index ? null : index);
+    // setSelectedImage(index);
+    // setImageColors((prev) =>
+    //   prev.map((color, i) => (i === index ? "#FF914D" : ""))
+    // );
   };
 
   const getColumnWidth = () => {
@@ -86,13 +111,16 @@ function CommonBlock() {
   const handleBlockDoubleClick = (index: number) => {
     if (expandedBlockId === index) {
       setExpandedBlockId(null);
-    } 
-    else {
+    } else {
       setExpandedBlockId(index);
     }
     setSelectedBlock(null);
   };
 
+  // const handleBlockDoubleClick = (index: number) => {
+  //   setExpandedBlockId(expandedBlockId === index ? null : index);
+  //   setSelectedBlock(null);
+  // };
   const handleLocationSelect = (locationId: string) => {
     setSelectedLocation(locationId);
     if (locationId) {
@@ -119,7 +147,9 @@ function CommonBlock() {
             <FilterBox onLocationSelect={handleLocationSelect} />
           </div>
         )}
-        <div className={`col-12 col-md-6 col-lg ${styles.iconAndBlocksContainer}`}>
+        <div
+          className={`col-12 col-md-6 col-lg ${styles.iconAndBlocksContainer}`}
+        >
           {expandedBlockId === null && (
             <div
               className={`d-flex justify-content-between ${styles.iconContainer}`}
@@ -132,14 +162,26 @@ function CommonBlock() {
                 <img
                   src={fourStepIcon}
                   alt="Four Step"
-                  className={styles.icon}
-                  onClick={() => handleIconClick(2, "medium")}
+                  className={`${styles.icon} ${
+                    activeImage === 0 ? styles.active : ""
+                  }`}
+                  onClick={() => handleIconClick(0, 2, "medium")}
+                  // style={{
+                  //   filter: imageColors[0] ? "none" : "grayscale(100%)",
+                  //   color: imageColors[0] || "transparent",
+                  // }}
                 />
                 <img
                   src={sixStepIcon}
                   alt="Six Step"
-                  className={styles.icon}
-                  onClick={() => handleIconClick(3, "small")}
+                  className={`${styles.icon} ${
+                    activeImage === 1 ? styles.active : ""
+                  }`}
+                  onClick={() => handleIconClick(1, 3, "small")}
+                  // style={{
+                  //   filter: imageColors[1] ? "none" : "grayscale(100%)",
+                  //   backgroundColor: imageColors[1] || "transparent",
+                  // }}
                 />
               </div>
             </div>

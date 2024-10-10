@@ -53,7 +53,7 @@
   font-weight: bold; 
 }
 .deviceOnlineValue {
-  font-size: 14px; 
+  /* font-size: 14px;  */
   color: 
   #FF914D;
 
@@ -75,10 +75,13 @@
 .userName {
   margin-right: 10px; 
   cursor: pointer;
+  flex-direction: row;
+  display: contents;
 }
 .profileContainer {
   display: flex;
-  align-items: center; /* Vertically centers text and image */
+  align-items: center; 
+  gap: 5px;/* Vertically centers text and image */
 }
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
