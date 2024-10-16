@@ -88,7 +88,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [onlineDeviceCount]);
 
   useEffect(() => {
-    sessionStorage.setItem("totalDeviceCount", String(totalDeviceCount));
+    sessionStorage.setItem("totalDeviceCount", String(totalDeviceCount))
   }, [totalDeviceCount]);
 
   const login = async (email: string, password: string) => {
