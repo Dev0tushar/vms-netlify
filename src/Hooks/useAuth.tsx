@@ -3,6 +3,9 @@ import axios from "axios";
 
 type User = {
   name: string;
+  usename: string;
+  email: string;
+  phonenumber: string;
 };
 
 const AuthContext = createContext<{
@@ -25,8 +28,8 @@ const AuthContext = createContext<{
   login: async () => {},
   logout: () => {},
   checkAuthToken: () => {},
-  onlineDeviceCount: () => {},
-  totalDeviceCount: () => {},
+  onlineDeviceCount: 0,
+  totalDeviceCount: 0,
   setOnlineDeviceCount: () => {},
   setTotalDeviceCount: () => {},
 });
@@ -44,9 +47,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     storedUser ? JSON.parse(storedUser) : null
   );
 
-
-
-
   const [onlineDeviceCount, setOnlineDeviceCount] = useState(() => {
     const storedCount = sessionStorage.getItem("onlineDeviceCount");
     return storedCount ? Number(storedCount) : 0;
@@ -55,8 +55,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     const storedCount = sessionStorage.getItem("totalDeviceCount");
     return storedCount ? Number(storedCount) : 0;
   });
-
-
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   {
@@ -86,15 +84,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   useEffect(() => {
-    sessionStorage.setItem("onlineDeviceCount", onlineDeviceCount);
+    sessionStorage.setItem("onlineDeviceCount", String(onlineDeviceCount));
   }, [onlineDeviceCount]);
 
   useEffect(() => {
-    sessionStorage.setItem("totalDeviceCount", totalDeviceCount);
+    sessionStorage.setItem("totalDeviceCount", String(totalDeviceCount));
   }, [totalDeviceCount]);
 
-
-  
   const login = async (email: string, password: string) => {
     try {
       const response = await axios.get(`${API_BASE_URL}/access/users`, {
@@ -107,12 +103,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
         setIsAuthenticated(true);
 
-        localStorage.setItem("token", token);
-        localStorage.setItem(
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem(
           "token_expiration",
           (new Date().getTime() + expiresIn).toString()
         );
-        localStorage.setItem("user", JSON.stringify(user));
+        sessionStorage.setItem("user", JSON.stringify(user));
       }
     } catch (error) {
       console.error("Login failed", error);
@@ -125,8 +121,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("token_expiration");
     sessionStorage.removeItem("user");
-    sessionStorage.removeItem("onlineDeviceCount", );
-    sessionStorage.removeItem("totalDeviceCount", );
+    sessionStorage.removeItem("onlineDeviceCount");
+    sessionStorage.removeItem("totalDeviceCount");
+  };
+
+  const checkAuthToken = () => {
+    const token = sessionStorage.getItem("token");
+    const expiration = sessionStorage.getItem("token_expiration");
+
+    if (!token || (expiration && new Date().getTime() > parseInt(expiration))) {
+      logout();
+    }
   };
 
   return (
@@ -139,6 +144,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         login,
         logout,
         onlineDeviceCount,
+        checkAuthToken,
         totalDeviceCount,
         setOnlineDeviceCount,
         setTotalDeviceCount,

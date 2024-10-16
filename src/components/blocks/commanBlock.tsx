@@ -295,7 +295,7 @@ function CommonBlock() {
                 >
                   <div className={styles.networkissue}>
                     <VideocamOffTwoToneIcon style={{ fontSize: 50 }} />
-                    <h2>Network issue or unable to load feed</h2>
+                    <span>Network issue or unable to load feed</span>
                   </div>
                 </div>
               </div>

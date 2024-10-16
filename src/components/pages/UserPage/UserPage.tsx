@@ -15,7 +15,7 @@ const UserPage: React.FC = () => {
   const [stateRegion, setStateRegion] = useState<string>("");
 
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, user } = useAuth();
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -26,6 +26,11 @@ const UserPage: React.FC = () => {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const capitalizeFirstLetter = (name: string) => {
+    if (!name) return "";
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
   };
 
   useEffect(() => {
@@ -85,20 +90,20 @@ const UserPage: React.FC = () => {
             </div>
             <div>
               <div className="text-center">
-                <h2>John Smith</h2>
+                <h2> {capitalizeFirstLetter(user?.name || "John Smith")}</h2>
               </div>
               <div className={`${styles.details} mt-4 p-3`}>
                 <div className={styles.proDetails}>
                   <i className="fa-regular fa-user"></i>
-                  <p>@john12</p>
+                  <p> {user?.name || "@john12"}</p>
                 </div>
                 <div className={styles.proDetails}>
                   <i className="fa-regular fa-envelope"></i>
-                  <p>john@gmail.com</p>
+                  <p> {user?.email || "john@gmail.com"}</p>
                 </div>
                 <div className={styles.proDetails}>
                   <i className="fa-solid fa-phone"></i>
-                  <p>98XXXXXXXX</p>
+                  <p> {user?.phonenumber || "98XXXXXXXX"}</p>
                 </div>
               </div>
             </div>
@@ -115,7 +120,7 @@ const UserPage: React.FC = () => {
                     type="text"
                     className="form-control"
                     placeholder="Username"
-                    readOnly
+                    // readOnly
                   />
                 </div>
               </div>
@@ -126,7 +131,7 @@ const UserPage: React.FC = () => {
                     type="text"
                     className="form-control"
                     placeholder="First name"
-                    readOnly
+                    // readOnly
                   />
                 </div>
                 <div className="col-md-6">
@@ -135,7 +140,7 @@ const UserPage: React.FC = () => {
                     type="text"
                     className="form-control"
                     placeholder="Last Name"
-                    readOnly
+                    // readOnly
                   />
                 </div>
               </div>
@@ -146,7 +151,7 @@ const UserPage: React.FC = () => {
                     type="text"
                     className="form-control"
                     placeholder="Enter mobile number"
-                    readOnly
+                    // readOnly
                   />
                 </div>
                 <div className="col-md-6">
@@ -155,7 +160,7 @@ const UserPage: React.FC = () => {
                     type="text"
                     className="form-control"
                     placeholder="Enter email id"
-                    readOnly
+                    // readOnly
                   />
                 </div>
                 <div className="col-md-12 mt-3">
